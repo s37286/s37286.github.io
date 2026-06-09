@@ -2,32 +2,144 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta viewport="width=device-width, initial-scale=1.0">
-<title>แฟมสะสมงานของฉัน  </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio</title>
+
+<!-- ฟอนต์น่ารัก -->
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-body { font-family: sans-serif; background-color: #cdbdeb; text-align: center;
-padding: 30px; }
-.container { max-width: 800px; margin: 0 auto; }
-.project-card { background: white; padding: 20px; margin: 20px 0; border-radius:
-8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; }
-.btn { display: inline-block; background: #9a81b0; color: white; padding: 10px
-20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Mali', cursive;
+}
+
+body{
+    background: linear-gradient(135deg,#f3d9ff,#e4c1ff,#d8b4fe);
+    padding:40px 20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+/* หัวข้อ Portfolio */
+.title{
+    text-align:center;
+    font-size:60px;
+    font-weight:bold;
+    color:black;
+    margin-bottom:20px;
+    letter-spacing:4px;
+    text-shadow:
+        2px 2px #ffffff,
+        4px 4px #d8b4fe;
+}
+
+/* รูปโปรไฟล์ */
+.profile{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 30px;
+    border:6px solid white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* กล่องข้อมูล */
+.section{
+    background:rgba(255,255,255,0.9);
+    border:3px solid black;
+    border-radius:25px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.section:hover{
+    transform:translateY(-5px);
+}
+
+.section h2{
+    color:black;
+    font-weight:bold;
+    margin-bottom:15px;
+    padding-bottom:10px;
+    border-bottom:2px solid black;
+}
+
+.section p,
+.section li{
+    font-size:18px;
+    line-height:1.8;
+    color:#333;
+}
+
+ul{
+    padding-left:25px;
+}
+
+/* ตกแต่งด้านบน */
+.decor{
+    text-align:center;
+    font-size:28px;
+    margin-bottom:15px;
+}
 </style>
 </head>
+
 <body>
+
 <div class="container">
-<h1> แฟมสะสมงาน  (Portfolio)</h1>
-<p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจค่ะ</p>
-<!-- กล่องผลงานชนที่ ้ิ 1 -->
-<div class="project-card">
-<h3>1. โครงงานวิทยาศาสตร์การคำนวณนี้ </h3>
-<p>รายละเอียดชนงานนี้ : เขียนอธิบายสันๆ ว่าทำอะไร ได้เรียนรู้อะไรจากงานนี้บ้าง  </p>
+
+    <div class="decor">🌸 ✨ 🦋 ✨ 🌸</div>
+
+    <div class="title">
+        PORTFOLIO
+    </div>
+
+    <!-- เปลี่ยนชื่อไฟล์รูปตามที่ต้องการ -->
+    <img src="profile.jpg" alt="Profile" class="profile">
+
+    <div class="section">
+        <h2>🌷 1. ข้อมูลส่วนตัว</h2>
+
+        <p><strong>ชื่อ-นามสกุล :</strong> วรินทรา เหลืองอ่อน</p>
+        <p><strong>ชื่อเล่น :</strong> ............</p>
+        <p><strong>อายุ :</strong> ............ ปี</p>
+        <p><strong>มหาวิทยาลัยที่อยากเข้า :</strong> ....................................</p>
+    </div>
+
+    <div class="section">
+        <h2>📚 2. การศึกษา</h2>
+
+        <ul>
+            <li><strong>ประถมศึกษา :</strong> โรงเรียนบุญประทีปวิทยาคาร</li>
+            <li><strong>มัธยมศึกษาตอนต้น :</strong> โรงเรียนบุญประทีปวิทยาคาร</li>
+            <li><strong>มัธยมศึกษาตอนปลาย :</strong> โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>⭐ 3. ทักษะของฉัน</h2>
+
+        <ul>
+            <li>➗ ทักษะด้านคณิตศาสตร์</li>
+            <li>👑 ทักษะด้านการเป็นผู้นำ</li>
+        </ul>
+    </div>
+
 </div>
-<!-- กล่องผลงานชนที่ ้ิ 2 -->
-<div class="project-card">
-<h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
-<p>รายละเอียดชนงานนี้ : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
-</div>
+
+</body>
+</html>
 <!-- ปุ่มกดกลับหน้าแรก -->
 <a href="index.html" class="btn"> กลับหน้าแรก</a>
 </div>

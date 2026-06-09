@@ -3,28 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Portfolio</title>
-
-<!-- ฟอนต์น่ารัก -->
-<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Mali', cursive;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background: linear-gradient(135deg,#f3d9ff,#e4c1ff,#d8b4fe);
-    padding:40px 20px;
+    min-height:100vh;
+    background: linear-gradient(135deg,#f7e8ff,#d8b4fe,#e9d5ff);
+    overflow-x:hidden;
+    padding:30px;
 }
 
-.container{
-    max-width:900px;
-    margin:auto;
+/* หัวใจลอย */
+.heart{
+    position:fixed;
+    color:rgba(255,255,255,0.6);
+    animation: float 8s linear infinite;
+    font-size:20px;
+}
+
+.heart:nth-child(1){left:10%; animation-delay:0s;}
+.heart:nth-child(2){left:30%; animation-delay:2s;}
+.heart:nth-child(3){left:50%; animation-delay:4s;}
+.heart:nth-child(4){left:70%; animation-delay:1s;}
+.heart:nth-child(5){left:90%; animation-delay:3s;}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    30%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-100px);
+        opacity:0;
+    }
 }
 
 /* หัวข้อ Portfolio */
@@ -32,107 +53,120 @@ body{
     text-align:center;
     font-size:60px;
     font-weight:bold;
-    color:black;
-    margin-bottom:20px;
-    letter-spacing:4px;
-    text-shadow:
-        2px 2px #ffffff,
-        4px 4px #d8b4fe;
-}
-
-
+    margin-bottom:30px;
+    background:linear-gradient(90deg,#9333ea,#ec4899);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:2px 2px 10px rgba(255,255,255,0.5);
 }
 
 /* กล่องข้อมูล */
-.section{
-    background:rgba(255,255,255,0.9);
-    border:3px solid black;
+.box{
+    background:white;
     border-radius:25px;
     padding:25px;
-    margin-bottom:25px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+    margin:20px auto;
+    max-width:900px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
     transition:0.3s;
 }
 
-.section:hover{
+.box:hover{
     transform:translateY(-5px);
 }
 
-.section h2{
-    color:black;
-    font-weight:bold;
+.box h2{
+    color:#111;
     margin-bottom:15px;
-    padding-bottom:10px;
-    border-bottom:2px solid black;
+    border-left:6px solid #a855f7;
+    padding-left:10px;
 }
 
-.section p,
-.section li{
+.box p, .box li{
+    color:#444;
     font-size:18px;
     line-height:1.8;
-    color:#333;
 }
 
 ul{
     padding-left:25px;
 }
 
-/* ตกแต่งด้านบน */
-.decor{
-    text-align:center;
-    font-size:28px;
-    margin-bottom:15px;
+/* ปุ่ม */
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:35px;
+}
+
+.btn{
+    text-decoration:none;
+    background:#a855f7;
+    color:white;
+    padding:14px 35px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(168,85,247,0.4);
+}
+
+.btn:hover{
+    background:#9333ea;
+    transform:scale(1.05);
 }
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<!-- หัวใจลอย -->
+<div class="heart">❤</div>
+<div class="heart">❤</div>
+<div class="heart">❤</div>
+<div class="heart">❤</div>
+<div class="heart">❤</div>
 
-    <div class="decor">🌸 ✨ 🦋 ✨ 🌸</div>
+<h1 class="title">Portfolio</h1>
 
-    <div class="title">
-        PORTFOLIO
-    </div>
-
-    <!-- เปลี่ยนชื่อไฟล์รูปตามที่ต้องการ -->
-    <img src="profile.jpg" alt="Profile" class="profile">
-
-    <div class="section">
-        <h2>🌷 1. ข้อมูลส่วนตัว</h2>
-
-        <p><strong>ชื่อ-นามสกุล :</strong> วรินทรา เหลืองอ่อน</p>
-        <p><strong>ชื่อเล่น :</strong> มายด์</p>
-        <p><strong>อายุ :</strong> 17 ปี</p>
-        <p><strong>มหาวิทยาลัยที่อยากเข้า :</strong> มหาลัยจุฬาลงกรณ์วิทยาลัย</p>
-    </div>
-
-    <div class="section">
-        <h2>📚 2. การศึกษา</h2>
-
-        <ul>
-            <li><strong>ประถมศึกษา :</strong> โรงเรียนบุญประทีปวิทยาคาร</li>
-            <li><strong>มัธยมศึกษาตอนต้น :</strong> โรงเรียนบุญประทีปวิทยาคาร</li>
-            <li><strong>มัธยมศึกษาตอนปลาย :</strong> โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>⭐ 3. ทักษะของฉัน</h2>
-
-        <ul>
-            <li>➗ ทักษะด้านคณิตศาสตร์</li>
-            <li>👑 ทักษะด้านการเป็นผู้นำ</li>
-        </ul>
-    </div>
-
+<!-- ข้อมูลส่วนตัว -->
+<div class="box">
+    <h2>1. ข้อมูลส่วนตัว</h2>
+    <p><strong>ชื่อ-นามสกุล :</strong> วรินทรา เหลืองอ่อน</p>
+    <p><strong>ชื่อเล่น :</strong> มายด์</p>
+    <p><strong>วันเกิด :</strong> 13 สิงหาคม พ.ศ.2551</p>
+    <p><strong>น้ำหนัก :</strong> 46 กก.</p>
+    <p><strong>ส่วนสูง :</strong> 157 ซม.</p>
 </div>
 
-</body>
-</html>
-<!-- ปุ่มกดกลับหน้าแรก -->
-<a href="index.html" class="btn"> กลับหน้าแรก</a>
+<!-- ความสามารถพิเศษ -->
+<div class="box">
+    <h2>2. ความสามารถพิเศษ</h2>
+    <ul>
+        <li>มีทักษะการคำนวณยอดเยี่ยม</li>
+        <li>มีทักษะการเป็นผู้นำที่ดี</li>
+    </ul>
 </div>
+
+<!-- การศึกษา -->
+<div class="box">
+    <h2>3. การศึกษา</h2>
+    <p><strong>ประถมศึกษา :</strong> บุญประทีปวิทยาคาร</p>
+    <p><strong>มัธยมต้น :</strong> บุญประทีปวิทยาคาร</p>
+    <p><strong>มัธยมปลาย :</strong> บ้านบึง"อุตสาหกรรมนุเคราะห์"</p>
+</div>
+
+<!-- คติประจำใจ -->
+<div class="box">
+    <h2>4. คติประจำใจ</h2>
+    <p>"ความพยายามไม่เคยทรยศคนที่ตั้งใจ"</p>
+</div>
+
+<!-- ปุ่ม -->
+<div class="buttons">
+    <a href="index.html" class="btn">ย้อนกลับ</a>
+    <a href="next.html" class="btn">Next</a>
+</div>
+
 </body>
 </html>

@@ -1,139 +1,114 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<title>หน้าแนะนำตัวของฉัน</title>
-<style>
-body {
-background-color: #cdbdeb; color: #333;
-text-align: center; padding: 50px;
+:::writing{variant=“document” id=“58241”}
 
-}
-.card {
-background-color: #9a81b0; border-radius: 11px;
-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-max-width: 500px; margin: 0 auto; padding: 30px;
-
-}
-h1 { color: #000000; }
-p { font-size: 20px; line-height: 1.7; color: #4f3f3e }
-</style>
-</head>
-<body>
-<div class="card">
-<h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน ! </h1>
-<p>สวัสดีค่ะ ดิฉันชื่อ <strong>วรินทรา เหลืองอ่อน  (Warintha Lueangoon)</strong></p>
-<p>ขณะนี้กำลังศึกษา ชั้นมัธยมศึกษา ปีที่ 6   สายการเรียน gifted program</p>
-<p>นี่คือเว็บไซต์แรกของดิฉันที่โฮสต์บน GitHub Pages!</p>
-</div>
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gradient Popup Button</title>
-
+<title>Welcome</title>
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
 <style>
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f5f7fa;
-    font-family: Arial, sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Mali', cursive;
 }
-.btn {
-    padding: 14px 32px;
-    border: none;
-    border-radius: 50px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(37,117,252,0.4);
+body{
+    background:linear-gradient(135deg,#f3d9ff,#e4c1ff,#d8b4fe);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
 }
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(37,117,252,0.6);
+.container{
+    background:white;
+    width:90%;
+    max-width:850px;
+    border-radius:30px;
+    padding:50px;
+    text-align:center;
+    border:4px solid white;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
 }
-
-.btn:active {
-    transform: scale(0.95);
+.decor{
+    font-size:30px;
+    margin-bottom:15px;
 }
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
+.title{
+    font-size:42px;
+    font-weight:bold;
+    color:#5b2c87;
+    margin-bottom:25px;
+    text-shadow:2px 2px #e9d5ff;
 }
-
-.modal-content {
-    background: white;
-    width: 320px;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    margin: 15% auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+.content{
+    border:3px solid #d8b4fe;
+    border-radius:20px;
+    padding:25px;
+    background:#faf5ff;
+    line-height:2;
+    font-size:20px;
+    color:#333;
 }
-
-.popup-btn {
-    margin: 8px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    color: white;
+.name{
+    font-size:28px;
+    font-weight:bold;
+    color:#5b2c87;
 }
-
-.confirm {
-    background: #28a745;
+.eng{
+    color:#777;
+    font-size:18px;
 }
-
-.cancel {
-    background: #dc3545;
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 35px;
+    background:#b57edc;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-size:20px;
+    font-weight:bold;
+    transition:0.3s;
+}
+.btn:hover{
+    background:#9d68c2;
+    transform:scale(1.05);
+}
+.footer{
+    margin-top:20px;
+    font-size:22px;
 }
 </style>
 </head>
 <body>
-
-<button class="btn" onclick="openModal()">
-    🚀 หน้าถัดไป
-</button>
-
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <h3>ไปหน้าถัดไป?</h3>
-        <p>กด "ตกลง" เพื่อเปิดหน้าถัดไป</p>
-
-        <button class="popup-btn confirm" onclick="goNext()">
-            ตกลง
-        </button>
-
-        <button class="popup-btn cancel" onclick="closeModal()">
-            ยกเลิก
-        </button>
+<div class="container">
+    <div class="decor">⬇️ ⬇️</div>
+    <h1 class="title">
+        ยินดีต้อนรับสู่โปรไฟล์ของฉัน
+    </h1>
+    <div class="content">
+        <p>สวัสดีค่ะ 👋</p>
+        <p class="name">
+            ดิฉัน นางสาววรินทรา เหลืองอ่อน
+        </p>
+        <p class="eng">
+            (Warintha Lueangoon)
+        </p>
+        <br>
+        <p>
+            ขณะนี้กำลังศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 6
+        </p>
+        <p>
+            สายการเรียน Gifted Program
+        </p>
+        <p>
+            สนใจศึกษาต่อในคณะวิศวกรรมศาสตร์ค่ะ ⚙️
+        </p>
     </div>
-</div>
-
-<script>
-function openModal() {
-    document.getElementById("myModal").style.display = "block";
-}
-
-function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-}
-
-function goNext() {
-    window.location.href = "portfolio.html";
-}
-</script>
-
-</body>
-</html>
+    <a href="portfolio.html" class="btn">
+        เข้าสู่ Portfolio ➜
+    </a>
+    <div cl

@@ -96,14 +96,22 @@ body{
 }
 
 /* ปุ่มกลับ */
-.btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:10px 20px;
+    .btn{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    
+    padding:12px 30px;
     background:#c084fc;
     color:white;
     text-decoration:none;
     border-radius:30px;
+    font-size:20px;
+}
+
+.btn:hover{
+    background:#a855f7;
 }
 
 .btn:hover{

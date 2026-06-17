@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ผลงานและเกียรติบัตร</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Prompt',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#f5e8ff,#e9d5ff);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* หัวใจลอย */
+.heart{
+    position:fixed;
+    color:white;
+    opacity:0.7;
+    animation:float 8s infinite linear;
+    font-size:20px;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-120px);
+    }
+}
+
+/* หัวข้อ */
+.header{
+    text-align:center;
+    padding:80px 20px 40px;
+}
+
+.header h1{
+    font-size:3rem;
+    color:#8b5cf6;
+}
+
+.header p{
+    color:#7c6c9d;
+    margin-top:10px;
+}
+
+/* กล่องผลงาน */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    padding-bottom:60px;
+}
+
+.card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    color:#8b5cf6;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+}
+
+/* ปุ่มกลับ */
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#c084fc;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+}
+
+.btn:hover{
+    background:#a855f7;
+}
+</style>
+</head>
+
+<body>
+
+<!-- หัวใจลอย -->
+<div class="heart" style="left:10%;animation-delay:0s;">🤍</div>
+<div class="heart" style="left:25%;animation-delay:2s;">🤍</div>
+<div class="heart" style="left:45%;animation-delay:4s;">🤍</div>
+<div class="heart" style="left:65%;animation-delay:1s;">🤍</div>
+<div class="heart" style="left:85%;animation-delay:3s;">🤍</div>
+
+<section class="header">
+    <h1>💜 ผลงาน & เกียรติบัตร 💜</h1>
+    <p>รวมผลงานและความภาคภูมิใจของฉัน</p>
+</section>
+
+<section class="container">
+
+    <div class="card">
+        <img src="certificate1.jpg" alt="">
+        <div class="card-content">
+            <h3>เกียรติบัตรการแข่งขัน</h3>
+            <p>ได้รับรางวัลจากการแข่งขันทางวิชาการ</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="certificate2.jpg" alt="">
+        <div class="card-content">
+            <h3>กิจกรรมอบรม</h3>
+            <p>เข้าร่วมอบรมพัฒนาทักษะต่าง ๆ</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="certificate3.jpg" alt="">
+        <div class="card-content">
+            <h3>ผลงานเด่น</h3>
+            <p>โครงงานและผลงานที่ภาคภูมิใจ</p>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>

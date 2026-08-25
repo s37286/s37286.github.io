@@ -1,113 +1,469 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome</title>
-<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
+
+<title>Warintha Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Mali', cursive;
 }
+
 body{
-    background:linear-gradient(135deg,#f3d9ff,#e4c1ff,#d8b4fe);
     min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* แถบด้านบน */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:58px;
+
+    background:rgba(255,255,255,0.96);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    z-index:1000;
+
+    box-shadow:0 3px 15px rgba(60,60,120,0.10);
+}
+
+.school{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* โลโก้เล็กลง */
+
+.school-logo{
+    width:38px;
+    height:38px;
+    object-fit:contain;
+}
+
+/* ชื่อโรงเรียนเล็กลง */
+
+.school-name{
+    color:#374151;
+    font-size:15px;
+    font-weight:bold;
+}
+
+/* หน้าแรก */
+
+.hero{
+    min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:20px;
+
+    text-align:center;
+
+    padding:90px 20px 40px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #dbeafe,
+        #fce7f3,
+        #e9d5ff,
+        #dbeafe
+    );
+
+    background-size:400% 400%;
+    animation:gradientMove 12s ease infinite;
 }
-.container{
-    background:white;
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* ลูกบอลตกแต่ง */
+
+.bubble{
+    position:absolute;
+    border-radius:50%;
+    opacity:0.45;
+    animation:float 6s ease-in-out infinite;
+}
+
+.bubble1{
+    width:180px;
+    height:180px;
+    background:#60a5fa;
+    top:12%;
+    left:5%;
+}
+
+.bubble2{
+    width:250px;
+    height:250px;
+    background:#c084fc;
+    bottom:5%;
+    right:5%;
+    animation-delay:2s;
+}
+
+.bubble3{
+    width:100px;
+    height:100px;
+    background:#f9a8d4;
+    top:25%;
+    right:15%;
+    animation-delay:1s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-25px);
+    }
+}
+
+/* การ์ดโปรไฟล์ */
+
+.profile-card{
+
     width:90%;
     max-width:850px;
-    border-radius:30px;
-    padding:50px;
-    text-align:center;
-    border:4px solid white;
-    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+
+    padding:40px;
+
+    background:rgba(255,255,255,0.78);
+
+    border:3px solid white;
+
+    border-radius:40px;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(70,80,150,0.2);
+
+    position:relative;
+    z-index:2;
+
+    animation:showCard 1s ease;
 }
-.decor{
-    font-size:30px;
-    margin-bottom:15px;
+
+@keyframes showCard{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
+
+/* รูปโปรไฟล์ */
+
+.profile-image{
+
+    width:180px;
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:6px solid white;
+
+    box-shadow:
+        0 0 0 5px #93c5fd,
+        0 15px 30px rgba(70,70,150,0.25);
+
+    margin-bottom:20px;
+
+    transition:0.4s;
+}
+
+.profile-image:hover{
+    transform:scale(1.08) rotate(3deg);
+}
+
+/* ข้อความ */
+
+.welcome{
+    font-size:18px;
+    color:#64748b;
+    margin-bottom:8px;
+}
+
 .title{
-    font-size:42px;
-    font-weight:bold;
-    color:#5b2c87;
+
+    font-size:45px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #ec4899
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
     margin-bottom:25px;
-    text-shadow:2px 2px #e9d5ff;
 }
-.content{
-    border:3px solid #d8b4fe;
-    border-radius:20px;
-    padding:25px;
-    background:#faf5ff;
-    line-height:2;
-    font-size:20px;
-    color:#333;
-}
+
 .name{
-    font-size:28px;
-    font-weight:bold;
-    color:#5b2c87;
+    font-size:36px;
+    color:#3730a3;
+    margin-bottom:5px;
 }
-.eng{
-    color:#777;
+
+.eng-name{
+    font-size:19px;
+    color:#64748b;
+    margin-bottom:25px;
+}
+
+/* กล่องข้อมูล */
+
+.info-box{
+
+    max-width:650px;
+    margin:auto;
+
+    padding:22px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(219,234,254,0.8),
+        rgba(250,232,255,0.8)
+    );
+
+    border-radius:25px;
+
+    color:#334155;
+    line-height:2;
     font-size:18px;
 }
-.btn{
+
+.info-item{
+    margin:7px 0;
+}
+
+/* ปุ่ม */
+
+.button{
+
     display:inline-block;
-    margin-top:30px;
-    padding:14px 35px;
-    background:#b57edc;
-    color:white;
+
+    margin-top:28px;
+
+    padding:14px 38px;
+
+    border-radius:50px;
+
     text-decoration:none;
-    border-radius:30px;
-    font-size:20px;
+
+    color:white;
+
+    font-size:19px;
     font-weight:bold;
-    transition:0.3s;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #ec4899
+    );
+
+    box-shadow:
+        0 10px 25px rgba(100,80,220,0.3);
+
+    transition:0.4s;
 }
-.btn:hover{
-    background:#9d68c2;
-    transform:scale(1.05);
+
+.button:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 15px 30px rgba(100,80,220,0.4);
 }
+
 .footer{
+
     margin-top:20px;
-    font-size:22px;
+
+    font-size:15px;
+
+    color:#64748b;
 }
+
+/* มือถือ */
+
+@media(max-width:700px){
+
+    .navbar{
+        height:52px;
+        padding:0 15px;
+    }
+
+    .school-logo{
+        width:34px;
+        height:34px;
+    }
+
+    .school-name{
+        font-size:11px;
+    }
+
+    .hero{
+        padding-top:75px;
+    }
+
+    .profile-card{
+        padding:30px 18px;
+    }
+
+    .profile-image{
+        width:140px;
+        height:140px;
+    }
+
+    .title{
+        font-size:30px;
+    }
+
+    .name{
+        font-size:26px;
+    }
+
+    .info-box{
+        font-size:16px;
+    }
+}
+
 </style>
 </head>
+
 <body>
-<div class="container">
-    <div class="decor">⬇️ ⬇️</div>
-    <h1 class="title">
-        ยินดีต้อนรับสู่โปรไฟล์ของฉัน
-    </h1>
-    <div class="content">
-        <p>สวัสดีค่ะ 👋</p>
-        <p class="name">
-            ดิฉัน นางสาววรินทรา เหลืองอ่อน
-        </p>
-        <p class="eng">
-            (Warintha Lueangoon)
-        </p>
-        <br>
-        <p>
-            ขณะนี้กำลังศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 6
-        </p>
-        <p>
-            สายการเรียน Gifted Program
-        </p>
-        <p>
-            สนใจศึกษาต่อในคณะเภสัชศาสตร์สาขาอุตสาหกรรมค่ะ ⚙️
-        </p>
+
+<header class="navbar">
+
+    <div class="school">
+
+        <img
+            src="school-logo.png"
+            alt="โลโก้โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์"
+            class="school-logo"
+        >
+
+        <div class="school-name">
+            โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+        </div>
+
     </div>
-    <a href="portfolio.html" class="btn">
-        เข้าสู่ Portfolio ➜
-    </a>
-    <div cl
+
+</header>
+
+
+<section class="hero">
+
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+
+
+    <div class="profile-card">
+
+        <img
+            src="profile.jpg"
+            alt="รูปโปรไฟล์ วรินทรา เหลืองอ่อน"
+            class="profile-image"
+        >
+
+        <p class="welcome">
+            ✨ Welcome to my personal website ✨
+        </p>
+
+        <h1 class="title">
+            ยินดีต้อนรับสู่โปรไฟล์ของฉัน
+        </h1>
+
+        <h2 class="name">
+            วรินทรา เหลืองอ่อน
+        </h2>
+
+        <p class="eng-name">
+            ( Warintha Lueangoon )
+        </p>
+
+
+        <div class="info-box">
+
+            <p class="info-item">
+                🎓 <b>สายการเรียน</b> Gifted Program
+            </p>
+
+            <p class="info-item">
+                📚 <b>สนใจศึกษาต่อ</b>
+                คณะพาณิชยศาสตร์และการบัญชี
+            </p>
+
+            <p class="info-item">
+                💜 ขอบคุณที่เข้ามาเยี่ยมชมเว็บไซต์ของฉัน
+            </p>
+
+        </div>
+
+
+        <a href="portfolio.html" class="button">
+            เลือกหัวข้อ Portfolio ✨
+        </a>
+
+
+        <p class="footer">
+            💙 🩷 💜 Welcome to my Portfolio 💜 🩷 💙
+        </p>
+
+    </div>
+
+</section>
+
+</body>
+</html>

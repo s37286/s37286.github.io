@@ -1,479 +1,607 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Portfolio</title>
+<title>Portfolio | Warintha Lueangoon</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* ตั้งค่าพื้นฐาน */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Mali', cursive;
 }
 
-
 body{
-
     min-height:100vh;
+    padding-top:70px;
 
     background:linear-gradient(
         135deg,
-        #f7e8ff,
-        #d8b4fe,
-        #e9d5ff
+        #dbeafe,
+        #fce7f3,
+        #e9d5ff,
+        #dbeafe
     );
 
-    overflow-x:hidden;
-    padding:30px;
-
+    background-size:400% 400%;
+    animation:gradientMove 12s ease infinite;
 }
 
 
+/* พื้นหลังเคลื่อนไหว */
 
-/* หัวใจลอย */
+@keyframes gradientMove{
 
-.heart{
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+
+/* แถบด้านบน */
+
+.navbar{
 
     position:fixed;
+    top:0;
+    left:0;
 
-    color:black;
+    width:100%;
+    height:58px;
 
-    font-size:25px;
+    background:rgba(255,255,255,0.96);
 
-    animation:float 8s linear infinite;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
+    padding:0 5%;
+
+    z-index:1000;
+
+    box-shadow:0 3px 15px rgba(60,60,120,0.10);
 }
 
 
-.heart:nth-child(1){
-    left:10%;
+/* โลโก้และชื่อโรงเรียน */
+
+.school{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.heart:nth-child(2){
-    left:30%;
-    animation-delay:2s;
+.school-logo{
+    width:38px;
+    height:38px;
+    object-fit:contain;
 }
 
-.heart:nth-child(3){
-    left:50%;
-    animation-delay:4s;
-}
-
-.heart:nth-child(4){
-    left:70%;
-    animation-delay:1s;
-}
-
-.heart:nth-child(5){
-    left:90%;
-    animation-delay:3s;
+.school-name{
+    font-size:15px;
+    font-weight:bold;
+    color:#374151;
 }
 
 
+/* ปุ่มกลับ */
 
-@keyframes float{
+.back-button{
 
+    text-decoration:none;
 
-0%{
+    padding:6px 14px;
 
-transform:translateY(100vh);
+    border-radius:20px;
 
-opacity:0;
+    color:white;
 
+    font-size:13px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    transition:0.3s;
+}
+
+.back-button:hover{
+    transform:scale(1.05);
 }
 
 
-30%{
+/* เนื้อหาหลัก */
 
-opacity:1;
+.container{
 
+    max-width:750px;
+
+    margin:auto;
+
+    padding:30px 20px 50px;
+
+    text-align:center;
 }
 
 
-100%{
-
-transform:translateY(-100px);
-
-opacity:0;
-
-}
-
-}
-
-
-
-/* หัวข้อ */
+/* หัวข้อหลัก */
 
 .title{
 
-text-align:center;
+    font-size:38px;
 
-font-size:60px;
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #ec4899
+    );
 
-font-weight:bold;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 
-margin-bottom:30px;
+    margin-bottom:5px;
+}
 
+.subtitle{
 
-background:linear-gradient(
-90deg,
-#9333ea,
-#ec4899
-);
+    color:#64748b;
 
+    font-size:16px;
 
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
+    margin-bottom:20px;
 }
 
 
+/* รูปตัวเองด้านบน */
 
-/* รูป */
+.top-profile{
 
-.profile{
+    margin:15px 0 25px;
 
-text-align:center;
+    text-align:center;
+}
 
-margin-bottom:40px;
+.top-profile img{
 
+    width:130px;
+    height:130px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid white;
+
+    box-shadow:
+        0 0 0 4px #60a5fa,
+        0 0 0 8px #c084fc,
+        0 0 0 12px #f9a8d4,
+        0 12px 25px rgba(100,80,180,0.25);
+
+    transition:0.4s;
+
+    animation:showImage 1s ease;
+}
+
+.top-profile img:hover{
+
+    transform:
+        scale(1.08)
+        rotate(3deg);
 }
 
 
-.profile img{
+/* เอฟเฟกต์รูปเข้ามา */
 
+@keyframes showImage{
 
-width:220px;
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
 
-height:220px;
-
-object-fit:cover;
-
-border-radius:20px;
-
-border:5px solid white;
-
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
-
-
-transition:0.3s;
-
-
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 
+/* เมนูเรียง 1 - 6 */
 
-.profile img:hover{
+.menu-list{
 
-transform:scale(1.05);
+    display:flex;
+    flex-direction:column;
 
+    gap:12px;
+
+    max-width:650px;
+
+    margin:auto;
 }
 
 
+/* การ์ดหัวข้อ */
 
+.menu-card{
 
-/* กล่องข้อมูล */
+    display:flex;
 
-.box{
+    align-items:center;
 
+    text-decoration:none;
 
-background:white;
+    background:rgba(255,255,255,0.85);
 
-border-radius:25px;
+    padding:13px 20px;
 
-padding:25px;
+    border-radius:18px;
 
-margin:20px auto;
+    border:2px solid white;
 
-max-width:900px;
+    color:#374151;
 
+    box-shadow:
+        0 5px 15px rgba(80,80,150,0.10);
 
-box-shadow:
-0 8px 20px rgba(0,0,0,0.1);
-
-
+    transition:0.3s;
 }
 
 
+/* เอฟเฟกต์เมื่อชี้ */
 
-.box h2{
+.menu-card:hover{
 
+    transform:translateX(8px);
 
-color:#111;
-
-margin-bottom:15px;
-
-border-left:6px solid #a855f7;
-
-padding-left:10px;
-
-
+    box-shadow:
+        0 10px 20px rgba(90,70,180,0.20);
 }
 
 
+/* หมายเลข */
 
-.box p,
-.box li{
+.number{
 
+    width:42px;
+    height:42px;
 
-color:#444;
+    min-width:42px;
 
-font-size:18px;
+    border-radius:50%;
 
-line-height:1.8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
+    color:white;
 
+    font-size:18px;
+    font-weight:bold;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed,
+        #ec4899
+    );
+
+    margin-right:15px;
 }
 
 
-ul{
+/* ไอคอน */
 
-padding-left:25px;
+.icon{
 
+    font-size:26px;
+
+    margin-right:12px;
 }
 
 
+/* กล่องข้อความ */
 
+.menu-text{
 
-/* ปุ่ม */
-
-.buttons{
-
-
-display:flex;
-
-justify-content:center;
-
-gap:25px;
-
-margin-top:35px;
-
-
+    text-align:left;
+    flex:1;
 }
 
 
+/* ชื่อภาษาไทย */
 
-.btn{
+.menu-text h2{
 
+    font-size:19px;
 
-text-decoration:none;
-
-background:#a855f7;
-
-color:white;
-
-padding:14px 35px;
-
-border-radius:50px;
-
-font-size:18px;
-
-font-weight:bold;
-
-
+    color:#4338ca;
 }
 
 
+/* ชื่อภาษาอังกฤษ */
 
-.btn:hover{
+.menu-text p{
 
+    font-size:13px;
 
-background:#9333ea;
+    color:#ec4899;
 
-
+    margin-top:2px;
 }
 
 
+/* ลูกศร */
+
+.arrow{
+
+    font-size:22px;
+
+    color:#7c3aed;
+}
+
+
+/* มือถือ */
+
+@media(max-width:600px){
+
+    body{
+        padding-top:65px;
+    }
+
+    .navbar{
+        height:52px;
+        padding:0 15px;
+    }
+
+    .school-logo{
+        width:32px;
+        height:32px;
+    }
+
+    .school-name{
+        font-size:10px;
+    }
+
+    .back-button{
+        font-size:10px;
+        padding:5px 9px;
+    }
+
+    .container{
+        padding:25px 15px 40px;
+    }
+
+    .title{
+        font-size:29px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+
+    .top-profile img{
+        width:110px;
+        height:110px;
+    }
+
+    .menu-card{
+        padding:11px 12px;
+    }
+
+    .number{
+        width:38px;
+        height:38px;
+        min-width:38px;
+        font-size:16px;
+        margin-right:10px;
+    }
+
+    .icon{
+        font-size:22px;
+        margin-right:8px;
+    }
+
+    .menu-text h2{
+        font-size:16px;
+    }
+
+    .menu-text p{
+        font-size:11px;
+    }
+
+}
 
 </style>
-
-
 </head>
-
-
 
 <body>
 
 
+<!-- แถบด้านบน -->
 
-<!-- หัวใจ -->
+<header class="navbar">
 
-<div class="heart">❤</div>
-<div class="heart">❤</div>
-<div class="heart">❤</div>
-<div class="heart">❤</div>
-<div class="heart">❤</div>
+    <div class="school">
 
+        <img
+            src="school-logo.png"
+            alt="โลโก้โรงเรียน"
+            class="school-logo"
+        >
 
+        <div class="school-name">
+            โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+        </div>
 
+    </div>
 
-<h1 class="title">
-Portfolio
-</h1>
 
+    <a href="index.html" class="back-button">
+        ← หน้าแรก
+    </a>
 
+</header>
 
 
-<!-- รูปโปรไฟล์ -->
+<!-- เนื้อหาหลัก -->
 
-<div class="profile">
+<main class="container">
 
 
-<img src="port.jpg" alt="รูปโปรไฟล์">
+    <h1 class="title">
+        Portfolio ของฉัน
+    </h1>
 
 
-</div>
+    <p class="subtitle">
+        ✨ เลือกหัวข้อที่ต้องการเข้าชม ✨
+    </p>
 
 
+    <!-- รูปตัวเองอยู่ข้างบน -->
 
+    <div class="top-profile">
 
+        <img
+            src="profile.jpg"
+            alt="Warintha Lueangoon"
+        >
 
-<div class="box">
+    </div>
 
 
-<h2>1. ข้อมูลส่วนตัว</h2>
+    <!-- เมนูเรียง 1 - 6 -->
 
+    <div class="menu-list">
 
-<p>
-<strong>ชื่อ-นามสกุล :</strong>
-วรินทรา เหลืองอ่อน
-</p>
 
+        <!-- 1 -->
 
-<p>
-<strong>ชื่อเล่น :</strong>
-มายด์
-</p>
+        <a href="preface.html" class="menu-card">
 
+            <div class="number">1</div>
+            <div class="icon">📖</div>
 
-<p>
-<strong>วันเกิด :</strong>
-13 สิงหาคม พ.ศ.2551
-</p>
+            <div class="menu-text">
+                <h2>คำนำ</h2>
+                <p>Preface</p>
+            </div>
 
+            <div class="arrow">›</div>
 
-<p>
-<strong>น้ำหนัก :</strong>
-46 กก.
-</p>
+        </a>
 
 
-<p>
-<strong>ส่วนสูง :</strong>
-157 ซม.
-</p>
+        <!-- 2 -->
 
+        <a href="profile.html" class="menu-card">
 
-</div>
+            <div class="number">2</div>
+            <div class="icon">👩🏻</div>
 
+            <div class="menu-text">
+                <h2>ประวัติส่วนตัว</h2>
+                <p>Profile</p>
+            </div>
 
+            <div class="arrow">›</div>
 
+        </a>
 
 
-<div class="box">
+        <!-- 3 -->
 
+        <a href="education.html" class="menu-card">
 
-<h2>
-2. ความสามารถพิเศษ
-</h2>
+            <div class="number">3</div>
+            <div class="icon">🎓</div>
 
+            <div class="menu-text">
+                <h2>ประวัติการศึกษา</h2>
+                <p>Education</p>
+            </div>
 
-<ul>
+            <div class="arrow">›</div>
 
-<li>
-มีทักษะการคำนวณยอดเยี่ยม
-</li>
+        </a>
 
 
-<li>
-มีทักษะการเป็นผู้นำที่ดี
-</li>
+        <!-- 4 -->
 
+        <a href="works.html" class="menu-card">
 
-</ul>
+            <div class="number">4</div>
+            <div class="icon">🌟</div>
 
+            <div class="menu-text">
+                <h2>ผลงานและกิจกรรม</h2>
+                <p>Works & Activities</p>
+            </div>
 
-</div>
+            <div class="arrow">›</div>
 
+        </a>
 
 
+        <!-- 5 -->
 
+        <a href="certificates.html" class="menu-card">
 
-<div class="box">
+            <div class="number">5</div>
+            <div class="icon">🏆</div>
 
+            <div class="menu-text">
+                <h2>เกียรติบัตรและรางวัล</h2>
+                <p>Certificates</p>
+            </div>
 
-<h2>
-3. การศึกษา
-</h2>
+            <div class="arrow">›</div>
 
+        </a>
 
-<p>
-<strong>ประถมศึกษา :</strong>
-บุญประทีปวิทยาคาร
-</p>
 
+        <!-- 6 -->
 
-<p>
-<strong>มัธยมต้น :</strong>
-บุญประทีปวิทยาคาร
-</p>
+        <a href="transcript.html" class="menu-card">
 
+            <div class="number">6</div>
+            <div class="icon">📄</div>
 
-<p>
-<strong>มัธยมปลาย :</strong>
-บ้านบึง"อุตสาหกรรมนุเคราะห์"
-</p>
+            <div class="menu-text">
+                <h2>ใบแสดงผลการเรียน ปพ.</h2>
+                <p>Academic Transcript</p>
+            </div>
 
+            <div class="arrow">›</div>
 
-</div>
+        </a>
 
 
+    </div>
 
 
-
-<div class="box">
-
-
-<h2>
-4. คติประจำใจ
-</h2>
-
-
-<p>
-"ความพยายามไม่เคยทรยศคนที่ตั้งใจ"
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="buttons">
-
-
-<a href="index.html" class="btn">
-Back
-</a>
-
-
-<a href="certificate.html" class="btn">
-Next > ผลงานและเกียรติบัตร 
-</a>
-
-
-</div>
-
-
-
+</main>
 
 </body>
-
 </html>

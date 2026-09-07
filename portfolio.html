@@ -10,8 +10,6 @@
 
 <style>
 
-/* ตั้งค่าพื้นฐาน */
-
 *{
     margin:0;
     padding:0;
@@ -210,7 +208,7 @@ body{
 }
 
 
-/* เอฟเฟกต์รูปเข้ามา */
+/* เอฟเฟกต์รูป */
 
 @keyframes showImage{
 
@@ -226,7 +224,7 @@ body{
 }
 
 
-/* เมนูเรียง 1 - 6 */
+/* เมนู */
 
 .menu-list{
 
@@ -268,7 +266,7 @@ body{
 }
 
 
-/* เอฟเฟกต์เมื่อชี้ */
+/* เอฟเฟกต์ */
 
 .menu-card:hover{
 
@@ -320,16 +318,17 @@ body{
 }
 
 
-/* กล่องข้อความ */
+/* ข้อความ */
 
 .menu-text{
 
     text-align:left;
+
     flex:1;
 }
 
 
-/* ชื่อภาษาไทย */
+/* ชื่อหัวข้อ */
 
 .menu-text h2{
 
@@ -339,7 +338,7 @@ body{
 }
 
 
-/* ชื่อภาษาอังกฤษ */
+/* ภาษาอังกฤษ */
 
 .menu-text p{
 
@@ -444,6 +443,7 @@ body{
 
     <div class="school">
 
+        <!-- โลโก้โรงเรียน -->
         <img
             src="IMG_2964.jpeg"
             alt="โลโก้โรงเรียน"
@@ -456,6 +456,8 @@ body{
 
     </div>
 
+
+    <!-- ปุ่มกลับหน้าแรก -->
 
     <a href="index.html" class="back-button">
         ← หน้าแรก
@@ -475,11 +477,11 @@ body{
 
 
     <p class="subtitle">
-        ✨ Saction-เลือกชม✨
+        ✨ Section - เลือกชม ✨
     </p>
 
 
-    <!-- รูปตัวเองอยู่ข้างบน -->
+    <!-- รูปตัวเอง -->
 
     <div class="top-profile">
 
@@ -491,36 +493,46 @@ body{
     </div>
 
 
-    <!-- เมนูเรียง 1 - 6 -->
+    <!-- เมนู -->
 
     <div class="menu-list">
 
 
-        <!-- 1 -->
+        <!-- 1. SOP -->
 
-        <a href="./sop.html" class="menu-card">
-  <div class="number">1</div>
-  <div class="icon">📝</div>
+        <a href="sop.html" class="menu-card">
 
-  <div class="menu-text">
-    <h3>SOP</h3>
-    <span>Statement of Purpose</span>
-  </div>
+            <div class="number">1</div>
 
-  <div class="arrow">→</div>
-</a>
+            <div class="icon">📝</div>
+
+            <div class="menu-text">
+
+                <h2>SOP</h2>
+
+                <p>Statement of Purpose</p>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
 
 
-        <!-- 2 -->
+        <!-- 2. ประวัติส่วนตัว -->
 
         <a href="profile.html" class="menu-card">
 
             <div class="number">2</div>
+
             <div class="icon">👩🏻</div>
 
             <div class="menu-text">
+
                 <h2>ประวัติส่วนตัว</h2>
+
                 <p>Profile</p>
+
             </div>
 
             <div class="arrow">›</div>
@@ -528,16 +540,20 @@ body{
         </a>
 
 
-        <!-- 3 -->
+        <!-- 3. ประวัติการศึกษา -->
 
         <a href="education.html" class="menu-card">
 
             <div class="number">3</div>
+
             <div class="icon">🎓</div>
 
             <div class="menu-text">
+
                 <h2>ประวัติการศึกษา</h2>
+
                 <p>Education</p>
+
             </div>
 
             <div class="arrow">›</div>
@@ -545,16 +561,20 @@ body{
         </a>
 
 
-        <!-- 4 -->
+        <!-- 4. ผลงานและกิจกรรม -->
 
         <a href="works.html" class="menu-card">
 
             <div class="number">4</div>
+
             <div class="icon">🌟</div>
 
             <div class="menu-text">
+
                 <h2>ผลงานและกิจกรรม</h2>
+
                 <p>Works & Activities</p>
+
             </div>
 
             <div class="arrow">›</div>
@@ -562,16 +582,20 @@ body{
         </a>
 
 
-        <!-- 5 -->
+        <!-- 5. เกียรติบัตรและรางวัล -->
 
         <a href="certificates.html" class="menu-card">
 
             <div class="number">5</div>
+
             <div class="icon">🏆</div>
 
             <div class="menu-text">
+
                 <h2>เกียรติบัตรและรางวัล</h2>
+
                 <p>Certificates</p>
+
             </div>
 
             <div class="arrow">›</div>
@@ -579,16 +603,20 @@ body{
         </a>
 
 
-        <!-- 6 -->
+        <!-- 6. ใบแสดงผลการเรียน -->
 
         <a href="transcript.html" class="menu-card">
 
             <div class="number">6</div>
+
             <div class="icon">📄</div>
 
             <div class="menu-text">
+
                 <h2>ใบแสดงผลการเรียน ปพ.</h2>
+
                 <p>Academic Transcript</p>
+
             </div>
 
             <div class="arrow">›</div>
@@ -597,7 +625,6 @@ body{
 
 
     </div>
-
 
 </main>
 

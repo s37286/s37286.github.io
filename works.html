@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ผลงานและกิจกรรม | Warintha Lueangoon</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Mali', cursive;
+      min-height: 100vh;
+      background: linear-gradient(
+        135deg,
+        #d9f0ff,
+        #eadcff,
+        #ffdcef,
+        #d9e9ff
+      );
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      padding-top: 65px;
+      color: #333;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* แถบด้านบน */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: rgba(255,255,255,0.96);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      z-index: 1000;
+    }
+
+    .school-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .school-info img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .school-info span {
+      font-size: 14px;
+      font-weight: 600;
+      color: #4b3f72;
+    }
+
+    .back-btn {
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #7161ef, #b05ce2);
+      padding: 8px 17px;
+      border-radius: 20px;
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(100,80,200,0.3);
+    }
+
+    /* เนื้อหา */
+    .container {
+      width: 92%;
+      max-width: 1050px;
+      margin: 35px auto 60px;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .title h1 {
+      font-size: 34px;
+      color: #51418c;
+      margin-bottom: 5px;
+    }
+
+    .title p {
+      color: #766a91;
+      font-size: 16px;
+    }
+
+    /* กรอบแต่ละงาน */
+    .work-card {
+      background: rgba(255,255,255,0.96);
+      border-radius: 28px;
+      padding: 18px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 25px rgba(80,60,120,0.13);
+      border: 2px solid rgba(255,255,255,0.9);
+      transition: 0.3s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(80,60,120,0.2);
+    }
+
+    /* รูป 2 รูป */
+    .image-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .image-group img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .image-group img:hover {
+      transform: scale(1.02);
+    }
+
+    /* ข้อมูล */
+    .work-content {
+      padding: 20px 10px 8px;
+    }
+
+    .work-number {
+      display: inline-block;
+      background: linear-gradient(135deg, #7161ef, #c06be8);
+      color: white;
+      padding: 5px 13px;
+      border-radius: 15px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .work-content h2 {
+      color: #554397;
+      font-size: 22px;
+      margin-bottom: 9px;
+    }
+
+    .work-content p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    /* ดาวตกแต่ง */
+    .star {
+      position: fixed;
+      font-size: 20px;
+      opacity: 0.5;
+      animation: float 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .star1 {
+      top: 15%;
+      left: 5%;
+    }
+
+    .star2 {
+      top: 35%;
+      right: 6%;
+      animation-delay: 1s;
+    }
+
+    .star3 {
+      bottom: 15%;
+      left: 8%;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    /* มือถือ */
+    @media (max-width: 700px) {
+
+      .top-bar {
+        padding: 0 12px;
+      }
+
+      .school-info span {
+        font-size: 10px;
+      }
+
+      .school-info img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .back-btn {
+        padding: 7px 11px;
+        font-size: 11px;
+      }
+
+      .title h1 {
+        font-size: 27px;
+      }
+
+      .image-group {
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+      }
+
+      .image-group img {
+        height: 180px;
+        border-radius: 15px;
+      }
+
+      .work-content h2 {
+        font-size: 19px;
+      }
+
+      .work-content p {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ดาวตกแต่ง -->
+  <div class="star star1">✦</div>
+  <div class="star star2">✧</div>
+  <div class="star star3">✦</div>
+
+  <!-- แถบด้านบน -->
+  <div class="top-bar">
+
+    <div class="school-info">
+      <img src="school-logo.png" alt="โลโก้โรงเรียน">
+      <span>โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”</span>
+    </div>
+
+    <a href="portfolio.html" class="back-btn">
+      ← กลับหน้าหัวข้อ
+    </a>
+
+  </div>
+
+
+  <!-- เนื้อหา -->
+  <div class="container">
+
+    <div class="title">
+      <h1>🏆 ผลงานและกิจกรรม</h1>
+      <p>Works & Activities</p>
+    </div>
+
+
+    <!-- =========================
+         งานที่ 1
+    ========================== -->
+
+    <div class="work-card">
+
+      <div class="image-group">
+
+        <img src="work1-1.jpg" alt="ผลงานที่ 1 รูปที่ 1">
+
+        <img src="work1-2.jpg" alt="ผลงานที่ 1 รูปที่ 2">
+
+      </div>
+
+      <div class="work-content">
+
+        <span class="work-number">
+          ผลงานที่ 01
+        </span>
+
+        <h2>
+          ชื่อผลงาน / กิจกรรมที่ 1
+        </h2>
+
+        <p>
+          อธิบายรายละเอียดเกี่ยวกับผลงานหรือกิจกรรม
+          หน้าที่ที่ได้รับ และสิ่งที่ได้เรียนรู้จากกิจกรรมนี้
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         งานที่ 2
+    ========================== -->
+
+    <div class="work-card">
+
+      <div class="image-group">
+
+        <img src="work2-1.jpg" alt="ผลงานที่ 2 รูปที่ 1">
+
+        <img src="work2-2.jpg" alt="ผลงานที่ 2 รูปที่ 2">
+
+      </div>
+
+      <div class="work-content">
+
+        <span class="work-number">
+          ผลงานที่ 02
+        </span>
+
+        <h2>
+          ชื่อผลงาน / กิจกรรมที่ 2
+        </h2>
+
+        <p>
+          อธิบายรายละเอียดเกี่ยวกับผลงานหรือกิจกรรม
+          ประสบการณ์ที่ได้รับ และทักษะที่ได้พัฒนาจากกิจกรรมนี้
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         งานที่ 3
+    ========================== -->
+
+    <div class="work-card">
+
+      <div class="image-group">
+
+        <img src="work3-1.jpg" alt="ผลงานที่ 3 รูปที่ 1">
+
+        <img src="work3-2.jpg" alt="ผลงานที่ 3 รูปที่ 2">
+
+      </div>
+
+      <div class="work-content">
+
+        <span class="work-number">
+          ผลงานที่ 03
+        </span>
+
+        <h2>
+          ชื่อผลงาน / กิจกรรมที่ 3
+        </h2>
+
+        <p>
+          อธิบายรายละเอียดเกี่ยวกับผลงานหรือกิจกรรม
+          รวมถึงสิ่งที่ได้รับและประสบการณ์ที่น่าประทับใจ
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         งานที่ 4
+    ========================== -->
+
+    <div class="work-card">
+
+      <div class="image-group">
+
+        <img src="work4-1.jpg" alt="ผลงานที่ 4 รูปที่ 1">
+
+        <img src="work4-2.jpg" alt="ผลงานที่ 4 รูปที่ 2">
+
+      </div>
+
+      <div class="work-content">
+
+        <span class="work-number">
+          ผลงานที่ 04
+        </span>
+
+        <h2>
+          ชื่อผลงาน / กิจกรรมที่ 4
+        </h2>
+
+        <p>
+          อธิบายรายละเอียดเกี่ยวกับผลงานหรือกิจกรรม
+          หน้าที่ที่ได้รับ และความรู้ที่ได้รับจากการเข้าร่วมกิจกรรม
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         งานที่ 5
+    ========================== -->
+
+    <div class="work-card">
+
+      <div class="image-group">
+
+        <img src="work5-1.jpg" alt="ผลงานที่ 5 รูปที่ 1">
+
+        <img src="work5-2.jpg" alt="ผลงานที่ 5 รูปที่ 2">
+
+      </div>
+
+      <div class="work-content">
+
+        <span class="work-number">
+          ผลงานที่ 05
+        </span>
+
+        <h2>
+          ชื่อผลงาน / กิจกรรมที่ 5
+        </h2>
+
+        <p>
+          อธิบายรายละเอียดเกี่ยวกับผลงานหรือกิจกรรม
+          และสิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้
+        </p>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</body>
+</html>

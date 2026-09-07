@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ใบแสดงผลการเรียน ปพ. | Warintha Lueangoon</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Mali', cursive;
+      min-height: 100vh;
+
+      background: linear-gradient(
+        135deg,
+        #d9f0ff,
+        #eadcff,
+        #ffdcef,
+        #d9e9ff
+      );
+
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+
+      padding-top: 65px;
+      color: #333;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* แถบด้านบน */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 60px;
+
+      background: rgba(255,255,255,0.96);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 25px;
+
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+
+      z-index: 1000;
+    }
+
+    .school-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .school-info img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .school-info span {
+      font-size: 14px;
+      font-weight: 600;
+      color: #4b3f72;
+    }
+
+    .back-btn {
+      text-decoration: none;
+
+      color: white;
+
+      background: linear-gradient(
+        135deg,
+        #7161ef,
+        #b05ce2
+      );
+
+      padding: 8px 17px;
+
+      border-radius: 20px;
+
+      font-size: 13px;
+
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 5px 15px rgba(100,80,200,0.3);
+    }
+
+    /* เนื้อหา */
+    .container {
+      width: 92%;
+      max-width: 900px;
+
+      margin: 35px auto 60px;
+    }
+
+    .title {
+      text-align: center;
+
+      margin-bottom: 30px;
+    }
+
+    .title h1 {
+      font-size: 34px;
+
+      color: #51418c;
+
+      margin-bottom: 5px;
+    }
+
+    .title p {
+      color: #766a91;
+
+      font-size: 16px;
+    }
+
+    /* กรอบข้อมูล */
+    .info-card {
+      background: rgba(255,255,255,0.96);
+
+      border-radius: 28px;
+
+      padding: 25px;
+
+      margin-bottom: 25px;
+
+      box-shadow:
+        0 8px 25px rgba(80,60,120,0.13);
+
+      border:
+        2px solid rgba(255,255,255,0.9);
+    }
+
+    .info-card h2 {
+      color: #554397;
+
+      font-size: 22px;
+
+      margin-bottom: 15px;
+
+      text-align: center;
+    }
+
+    .info-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 12px;
+    }
+
+    .info-item {
+      background: #f7f2ff;
+
+      padding: 12px 15px;
+
+      border-radius: 15px;
+
+      color: #555;
+
+      font-size: 14px;
+    }
+
+    .info-item strong {
+      color: #624bb1;
+    }
+
+    /* กรอบเอกสาร ปพ. */
+    .transcript-card {
+      background: rgba(255,255,255,0.97);
+
+      border-radius: 28px;
+
+      padding: 20px;
+
+      box-shadow:
+        0 8px 25px rgba(80,60,120,0.13);
+
+      text-align: center;
+    }
+
+    .transcript-card h2 {
+      color: #554397;
+
+      font-size: 22px;
+
+      margin-bottom: 18px;
+    }
+
+    /* รูป ปพ. */
+    .transcript-images {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 15px;
+    }
+
+    .transcript-images img {
+      width: 100%;
+
+      height: 550px;
+
+      object-fit: contain;
+
+      background: #fafafa;
+
+      border-radius: 18px;
+
+      border: 2px solid #eee;
+
+      transition: 0.3s;
+    }
+
+    .transcript-images img:hover {
+      transform: scale(1.02);
+
+      box-shadow:
+        0 8px 20px rgba(80,60,120,0.15);
+    }
+
+    .note {
+      margin-top: 18px;
+
+      color: #777;
+
+      font-size: 13px;
+
+      line-height: 1.8;
+    }
+
+    /* ดาวตกแต่ง */
+    .star {
+      position: fixed;
+
+      font-size: 20px;
+
+      opacity: 0.5;
+
+      animation:
+        float 4s ease-in-out infinite;
+
+      pointer-events: none;
+    }
+
+    .star1 {
+      top: 15%;
+      left: 5%;
+    }
+
+    .star2 {
+      top: 35%;
+      right: 6%;
+
+      animation-delay: 1s;
+    }
+
+    .star3 {
+      bottom: 15%;
+      left: 8%;
+
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    /* มือถือ */
+    @media (max-width: 700px) {
+
+      .top-bar {
+        padding: 0 12px;
+      }
+
+      .school-info span {
+        font-size: 10px;
+      }
+
+      .school-info img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .back-btn {
+        padding: 7px 11px;
+
+        font-size: 11px;
+      }
+
+      .title h1 {
+        font-size: 27px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .transcript-images {
+        grid-template-columns: 1fr;
+      }
+
+      .transcript-images img {
+        height: auto;
+
+        max-height: 600px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ดาวตกแต่ง -->
+  <div class="star star1">✦</div>
+  <div class="star star2">✧</div>
+  <div class="star star3">✦</div>
+
+
+  <!-- แถบด้านบน -->
+  <div class="top-bar">
+
+    <div class="school-info">
+
+      <img
+        src="school-logo.png"
+        alt="โลโก้โรงเรียน"
+      >
+
+      <span>
+        โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
+      </span>
+
+    </div>
+
+    <a
+      href="portfolio.html"
+      class="back-btn"
+    >
+      ← กลับหน้าหัวข้อ
+    </a>
+
+  </div>
+
+
+  <!-- เนื้อหา -->
+  <div class="container">
+
+    <div class="title">
+
+      <h1>
+        📄 ใบแสดงผลการเรียน ปพ.
+      </h1>
+
+      <p>
+        Academic Transcript
+      </p>
+
+    </div>
+
+
+    <!-- ข้อมูลนักเรียน -->
+    <div class="info-card">
+
+      <h2>
+        🎓 ข้อมูลการศึกษา
+      </h2>
+
+      <div class="info-grid">
+
+        <div class="info-item">
+          <strong>ชื่อ-นามสกุล</strong><br>
+          วรินทรา เหลืองอ่อน
+        </div>
+
+        <div class="info-item">
+          <strong>ระดับการศึกษา</strong><br>
+          ชั้นมัธยมศึกษาปีที่ 6
+        </div>
+
+        <div class="info-item">
+          <strong>สายการเรียน</strong><br>
+          Gifted Program
+        </div>
+
+        <div class="info-item">
+          <strong>เกรดเฉลี่ยรวม 4 เทอม</strong><br>
+          3.95
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- เอกสาร ปพ. -->
+    <div class="transcript-card">
+
+      <h2>
+        📑 ใบแสดงผลการเรียน
+      </h2>
+
+
+      <div class="transcript-images">
+
+        <!-- หน้า 1 -->
+        <img
+          src="transcript1.jpg"
+          alt="ใบแสดงผลการเรียน ปพ. หน้า 1"
+        >
+
+        <!-- หน้า 2 -->
+        <img
+          src="transcript2.jpg"
+          alt="ใบแสดงผลการเรียน ปพ. หน้า 2"
+        >
+
+      </div>
+
+
+      <p class="note">
+        ใบแสดงผลการเรียนของนักเรียน
+        ใช้สำหรับประกอบ Portfolio และการศึกษาต่อ
+      </p>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

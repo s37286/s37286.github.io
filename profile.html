@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ประวัติส่วนตัว | Warintha Lueangoon</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Mali', cursive;
+}
+
+body{
+    min-height:100vh;
+    padding-top:70px;
+
+    background:linear-gradient(
+        135deg,
+        #dbeafe,
+        #fce7f3,
+        #e9d5ff,
+        #dbeafe
+    );
+
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+
+/* พื้นหลังเคลื่อนไหว */
+
+@keyframes bgMove{
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+
+/* =========================
+   แถบด้านบน
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:58px;
+
+    background:rgba(255,255,255,0.96);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    z-index:1000;
+
+    box-shadow:0 3px 15px rgba(60,60,120,0.10);
+}
+
+.school{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.school-logo{
+    width:38px;
+    height:38px;
+    object-fit:contain;
+}
+
+.school-name{
+    font-size:15px;
+    font-weight:bold;
+    color:#374151;
+}
+
+
+/* ปุ่มกลับ */
+
+.back-button{
+    text-decoration:none;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-size:13px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #ec4899
+    );
+
+    transition:0.3s;
+}
+
+.back-button:hover{
+    transform:scale(1.05);
+}
+
+
+/* =========================
+   เนื้อหาหลัก
+========================= */
+
+.container{
+    width:90%;
+    max-width:850px;
+
+    margin:auto;
+
+    padding:35px 20px 50px;
+
+    text-align:center;
+}
+
+
+/* หัวข้อ */
+
+.title{
+    font-size:40px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #ec4899
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#64748b;
+    font-size:16px;
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   รูปสี่เหลี่ยมผืนผ้า
+========================= */
+
+.profile-photo{
+    width:100%;
+    max-width:650px;
+
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:5px solid white;
+
+    box-shadow:
+        0 10px 30px rgba(70,80,150,0.22);
+
+    display:block;
+
+    margin:0 auto 30px;
+
+    transition:0.4s;
+}
+
+.profile-photo:hover{
+    transform:scale(1.02);
+
+    box-shadow:
+        0 15px 35px rgba(90,70,180,0.28);
+}
+
+
+/* =========================
+   กล่องประวัติ
+========================= */
+
+.profile-box{
+
+    background:rgba(255,255,255,0.88);
+
+    border:3px solid white;
+
+    border-radius:28px;
+
+    padding:30px;
+
+    box-shadow:
+        0 10px 25px rgba(80,80,150,0.12);
+
+    text-align:left;
+}
+
+
+/* ชื่อ */
+
+.profile-name{
+    text-align:center;
+
+    font-size:30px;
+
+    color:#4338ca;
+
+    margin-bottom:5px;
+}
+
+.profile-eng{
+    text-align:center;
+
+    color:#ec4899;
+
+    font-size:17px;
+
+    margin-bottom:25px;
+}
+
+
+/* ข้อมูลแต่ละรายการ */
+
+.info{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    padding:13px 5px;
+
+    border-bottom:1px solid #e5e7eb;
+}
+
+.info:last-child{
+    border-bottom:none;
+}
+
+.info-icon{
+    font-size:25px;
+
+    min-width:35px;
+
+    text-align:center;
+}
+
+.info-text{
+    color:#374151;
+
+    font-size:17px;
+
+    line-height:1.7;
+}
+
+.info-text b{
+    color:#5b21b6;
+}
+
+
+/* =========================
+   ปุ่มกลับ
+========================= */
+
+.bottom-button{
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:12px 30px;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    font-size:17px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #ec4899
+    );
+
+    transition:0.3s;
+}
+
+.bottom-button:hover{
+    transform:translateY(-4px);
+}
+
+
+/* =========================
+   มือถือ
+========================= */
+
+@media(max-width:600px){
+
+    body{
+        padding-top:65px;
+    }
+
+    .navbar{
+        height:52px;
+        padding:0 15px;
+    }
+
+    .school-logo{
+        width:32px;
+        height:32px;
+    }
+
+    .school-name{
+        font-size:10px;
+    }
+
+    .back-button{
+        font-size:10px;
+        padding:5px 9px;
+    }
+
+    .container{
+        padding:25px 10px 40px;
+    }
+
+    .title{
+        font-size:30px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+
+    .profile-photo{
+        height:200px;
+        border-radius:20px;
+    }
+
+    .profile-box{
+        padding:22px 18px;
+    }
+
+    .profile-name{
+        font-size:25px;
+    }
+
+    .info-text{
+        font-size:15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     แถบโรงเรียน
+========================= -->
+
+<header class="navbar">
+
+    <div class="school">
+
+        <img
+            src="school-logo.png"
+            alt="โลโก้โรงเรียน"
+            class="school-logo"
+        >
+
+        <div class="school-name">
+            โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+        </div>
+
+    </div>
+
+
+    <a href="portfolio.html" class="back-button">
+        ← หัวข้อ
+    </a>
+
+</header>
+
+
+
+<!-- =========================
+     เนื้อหา
+========================= -->
+
+<main class="container">
+
+
+    <h1 class="title">
+        ประวัติส่วนตัว
+    </h1>
+
+    <p class="subtitle">
+        ✨ Profile ✨
+    </p>
+
+
+    <!-- =========================
+         รูปสี่เหลี่ยมผืนผ้า
+    ========================= -->
+
+    <img
+        src="profile-banner.jpg"
+        alt="รูปของวรินทรา เหลืองอ่อน"
+        class="profile-photo"
+    >
+
+
+    <!-- =========================
+         กล่องข้อมูล
+    ========================= -->
+
+    <div class="profile-box">
+
+
+        <h2 class="profile-name">
+            วรินทรา เหลืองอ่อน
+        </h2>
+
+
+        <p class="profile-eng">
+            ( Warintha Lueangoon )
+        </p>
+
+
+        <div class="info">
+
+            <div class="info-icon">👩🏻</div>
+
+            <div class="info-text">
+                <b>ชื่อ-นามสกุล</b><br>
+                นางสาววรินทรา เหลืองอ่อน
+            </div>
+
+        </div>
+
+
+        <div class="info">
+
+            <div class="info-icon">🎓</div>
+
+            <div class="info-text">
+                <b>ระดับการศึกษา</b><br>
+                ชั้นมัธยมศึกษาปีที่ 6
+            </div>
+
+        </div>
+
+
+        <div class="info">
+
+            <div class="info-icon">📚</div>
+
+            <div class="info-text">
+                <b>สายการเรียน</b><br>
+                Gifted Program
+            </div>
+
+        </div>
+
+
+        <div class="info">
+
+            <div class="info-icon">💼</div>
+
+            <div class="info-text">
+                <b>ความสนใจศึกษาต่อ</b><br>
+                คณะพาณิชยศาสตร์และการบัญชี
+            </div>
+
+        </div>
+
+
+        <div class="info">
+
+            <div class="info-icon">💜</div>
+
+            <div class="info-text">
+                <b>ความสนใจ</b><br>
+                การเรียนรู้สิ่งใหม่ ๆ การพัฒนาตนเอง
+                และการเตรียมตัวสำหรับการศึกษาต่อ
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ปุ่มกลับ -->
+
+    <a href="portfolio.html" class="bottom-button">
+        ← กลับไปเลือกหัวข้อ
+    </a>
+
+
+</main>
+
+</body>
+</html>

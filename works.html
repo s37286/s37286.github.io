@@ -1,737 +1,989 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ผลงานและกิจกรรม | Warintha Lueangoon</title>
+<title>ผลงานและกิจกรรม | Warintha Lueangoon</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
 
-    body {
-      font-family: 'Mali', cursive;
-      min-height: 100vh;
-      background: linear-gradient(
+/* =========================
+   พื้นฐาน
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Mali', cursive;
+    background:linear-gradient(
         135deg,
         #d9f0ff,
         #eadcff,
         #ffdcef,
         #d9e9ff
-      );
-      background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
-      padding-top: 65px;
-      color: #333;
+    );
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    color:#51418c;
+    min-height:100vh;
+    padding-top:80px;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* =========================
+   ดาวตกแต่ง
+========================= */
+
+body::before{
+    content:"✦  ✧  ✦  ✧  ✦  ✧";
+    position:fixed;
+    top:120px;
+    left:20px;
+    font-size:28px;
+    color:rgba(255,255,255,0.7);
+    letter-spacing:15px;
+    z-index:-1;
+}
+
+body::after{
+    content:"✧  ✦  ✧  ✦  ✧";
+    position:fixed;
+    bottom:80px;
+    right:20px;
+    font-size:25px;
+    color:rgba(255,255,255,0.7);
+    letter-spacing:12px;
+    z-index:-1;
+}
+
+/* =========================
+   แถบด้านบน
+========================= */
+
+.top-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:60px;
+
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(10px);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 25px;
+
+    box-shadow:0 4px 15px rgba(80,60,120,0.12);
+
+    z-index:1000;
+}
+
+.school{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.school img{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+}
+
+.school span{
+    font-size:15px;
+    font-weight:600;
+    color:#51418c;
+}
+
+.back-btn{
+    text-decoration:none;
+    color:#51418c;
+    background:#eee6ff;
+    padding:7px 16px;
+    border-radius:20px;
+    font-size:13px;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#d9c9ff;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   เนื้อหาหลัก
+========================= */
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* =========================
+   หัวข้อ
+========================= */
+
+.page-title{
+    text-align:center;
+    margin:35px 0 40px;
+}
+
+.page-title h1{
+    font-size:38px;
+    color:#51418c;
+    margin-bottom:8px;
+}
+
+.page-title p{
+    color:#766a91;
+    font-size:16px;
+}
+
+/* =========================
+   ผลงาน
+========================= */
+
+.work-card{
+    background:rgba(255,255,255,0.95);
+    border-radius:30px;
+
+    padding:25px;
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(80,60,120,0.15);
+
+    border:2px solid rgba(255,255,255,0.9);
+
+    transition:0.3s;
+}
+
+.work-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(80,60,120,0.22);
+}
+
+/* กลุ่มรูป */
+
+.image-group{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.image-group img{
+    width:48%;
+    height:300px;
+
+    object-fit:contain;
+
+    border-radius:20px;
+
+    background:#fafafa;
+
+    box-shadow:0 5px 15px rgba(80,60,120,0.08);
+}
+
+/* หมายเลขผลงาน */
+
+.work-number{
+    display:inline-block;
+
+    background:linear-gradient(
+        135deg,
+        #a8d8ff,
+        #d5b8ff
+    );
+
+    color:#51418c;
+
+    padding:5px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+    font-weight:600;
+
+    margin-bottom:10px;
+}
+
+/* ชื่อผลงาน */
+
+.work-card h2{
+    color:#51418c;
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+/* รายละเอียด */
+
+.work-card p{
+    color:#666;
+    font-size:15px;
+    line-height:1.9;
+}
+
+/* =========================
+   หัวข้อเกียรติบัตร
+========================= */
+
+.certificate-title{
+    text-align:center;
+    margin:65px 0 30px;
+}
+
+.certificate-title h1{
+    font-size:32px;
+    color:#51418c;
+    margin-bottom:5px;
+}
+
+.certificate-title p{
+    color:#766a91;
+    font-size:16px;
+}
+
+/* =========================
+   เกียรติบัตร 10 ใบ
+========================= */
+
+.certificate-card{
+    background:rgba(255,255,255,0.97);
+
+    border-radius:24px;
+
+    padding:15px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 8px 25px rgba(80,60,120,0.13);
+
+    border:2px solid rgba(255,255,255,0.9);
+
+    display:flex;
+    align-items:center;
+
+    gap:25px;
+
+    transition:0.3s;
+}
+
+.certificate-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 14px 30px rgba(80,60,120,0.20);
+}
+
+/* รูปเกียรติบัตร */
+
+.certificate-card img{
+    width:32%;
+    max-width:330px;
+
+    height:190px;
+
+    object-fit:contain;
+
+    border-radius:15px;
+
+    display:block;
+
+    background:#fafafa;
+
+    flex-shrink:0;
+}
+
+/* ข้อความด้านขวา */
+
+.certificate-content{
+    flex:1;
+    padding:10px 15px 10px 0;
+}
+
+.certificate-content .work-number{
+    margin-bottom:10px;
+}
+
+.certificate-content p{
+    color:#666;
+
+    font-size:15px;
+
+    line-height:1.8;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.footer{
+    text-align:center;
+
+    margin:50px 0 30px;
+
+    color:#766a91;
+
+    font-size:14px;
+}
+
+/* =========================
+   มือถือ
+========================= */
+
+@media(max-width:700px){
+
+    body{
+        padding-top:75px;
     }
 
-    @keyframes gradientMove {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
+    .top-bar{
+        height:55px;
+        padding:0 12px;
     }
 
-    /* แถบด้านบน */
-    .top-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 60px;
-      background: rgba(255,255,255,0.96);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 25px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-      z-index: 1000;
+    .school img{
+        width:35px;
+        height:35px;
     }
 
-    .school-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .school span{
+        font-size:11px;
     }
 
-    .school-info img {
-      width: 38px;
-      height: 38px;
-      object-fit: contain;
+    .back-btn{
+        padding:6px 11px;
+        font-size:11px;
     }
 
-    .school-info span {
-      font-size: 14px;
-      font-weight: 600;
-      color: #4b3f72;
+    .page-title{
+        margin:25px 0 30px;
     }
 
-    .back-btn {
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(135deg, #7161ef, #b05ce2);
-      padding: 8px 17px;
-      border-radius: 20px;
-      font-size: 13px;
-      transition: 0.3s;
+    .page-title h1{
+        font-size:28px;
     }
 
-    .back-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(100,80,200,0.3);
+    .page-title p{
+        font-size:13px;
     }
 
-    /* เนื้อหา */
-    .container {
-      width: 92%;
-      max-width: 1050px;
-      margin: 35px auto 60px;
+    /* ผลงาน */
+
+    .work-card{
+        padding:15px;
+        border-radius:22px;
     }
 
-    .title {
-      text-align: center;
-      margin-bottom: 35px;
+    .image-group{
+        display:block;
     }
 
-    .title h1 {
-      font-size: 34px;
-      color: #51418c;
-      margin-bottom: 5px;
+    .image-group img{
+        width:100%;
+        height:180px;
+        margin-bottom:12px;
     }
 
-    .title p {
-      color: #766a91;
-      font-size: 16px;
+    .work-card h2{
+        font-size:19px;
     }
 
-    /* กรอบแต่ละงาน */
-    .work-card {
-      background: rgba(255,255,255,0.96);
-      border-radius: 28px;
-      padding: 18px;
-      margin-bottom: 28px;
-      box-shadow: 0 8px 25px rgba(80,60,120,0.13);
-      border: 2px solid rgba(255,255,255,0.9);
-      transition: 0.3s;
+    .work-card p{
+        font-size:13px;
+        line-height:1.8;
     }
 
-    .work-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 30px rgba(80,60,120,0.2);
+    /* เกียรติบัตร */
+
+    .certificate-title{
+        margin:50px 0 25px;
     }
 
-    /* รูป 2 รูป */
-    .image-group {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+    .certificate-title h1{
+        font-size:27px;
     }
 
-    .image-group img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 20px;
-      display: block;
-      transition: 0.3s;
+    .certificate-title p{
+        font-size:14px;
     }
 
-    .image-group img:hover {
-      transform: scale(1.02);
+    .certificate-card{
+        display:block;
+
+        padding:12px;
+
+        border-radius:20px;
     }
 
-    /* ข้อมูล */
-    .work-content {
-      padding: 20px 10px 8px;
+    .certificate-card img{
+        width:100%;
+        max-width:none;
+
+        height:190px;
+
+        border-radius:15px;
     }
 
-    .work-number {
-      display: inline-block;
-      background: linear-gradient(135deg, #7161ef, #c06be8);
-      color: white;
-      padding: 5px 13px;
-      border-radius: 15px;
-      font-size: 12px;
-      margin-bottom: 10px;
+    .certificate-content{
+        padding:12px 5px 5px;
     }
 
-    .work-content h2 {
-      color: #554397;
-      font-size: 22px;
-      margin-bottom: 9px;
+    .certificate-content p{
+        font-size:13px;
+        line-height:1.7;
     }
+}
 
-    .work-content p {
-      color: #666;
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    /* =========================
-       เกียรติบัตร
-    ========================== */
-
-    .certificate-title {
-      text-align: center;
-      margin: 65px 0 30px;
-    }
-
-    .certificate-title h1 {
-      font-size: 32px;
-      color: #51418c;
-      margin-bottom: 5px;
-    }
-
-    .certificate-title p {
-      color: #766a91;
-      font-size: 16px;
-    }
-
-    .certificate-card {
-      background: rgba(255,255,255,0.97);
-      border-radius: 28px;
-      padding: 18px;
-      margin-bottom: 25px;
-      box-shadow: 0 8px 25px rgba(80,60,120,0.13);
-      border: 2px solid rgba(255,255,255,0.9);
-      transition: 0.3s;
-    }
-
-    .certificate-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 30px rgba(80,60,120,0.2);
-    }
-
-    .certificate-card img {
-      width: 100%;
-      max-height: 600px;
-      object-fit: contain;
-      border-radius: 20px;
-      display: block;
-      background: #fafafa;
-    }
-
-    .certificate-content {
-      padding: 15px 10px 5px;
-    }
-
-    .certificate-content p {
-      color: #666;
-      font-size: 15px;
-      line-height: 1.8;
-    }
-
-    /* ดาวตกแต่ง */
-    .star {
-      position: fixed;
-      font-size: 20px;
-      opacity: 0.5;
-      animation: float 4s ease-in-out infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .star1 {
-      top: 15%;
-      left: 5%;
-    }
-
-    .star2 {
-      top: 35%;
-      right: 6%;
-      animation-delay: 1s;
-    }
-
-    .star3 {
-      bottom: 15%;
-      left: 8%;
-      animation-delay: 2s;
-    }
-
-    @keyframes float {
-      0%,100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-12px);
-      }
-    }
-
-    /* มือถือ */
-    @media (max-width: 700px) {
-
-      .top-bar {
-        padding: 0 12px;
-      }
-
-      .school-info span {
-        font-size: 10px;
-      }
-
-      .school-info img {
-        width: 32px;
-        height: 32px;
-      }
-
-      .back-btn {
-        padding: 7px 11px;
-        font-size: 11px;
-      }
-
-      .title h1 {
-        font-size: 27px;
-      }
-
-      .image-group {
-        grid-template-columns: 1fr 1fr;
-        gap: 7px;
-      }
-
-      .image-group img {
-        height: 180px;
-        border-radius: 15px;
-      }
-
-      .work-content h2 {
-        font-size: 19px;
-      }
-
-      .work-content p {
-        font-size: 13px;
-      }
-
-      .certificate-title h1 {
-        font-size: 27px;
-      }
-
-      .certificate-title p {
-        font-size: 14px;
-      }
-
-      .certificate-card img {
-        max-height: 400px;
-        border-radius: 15px;
-      }
-
-      .certificate-content p {
-        font-size: 13px;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- ดาวตกแต่ง -->
-  <div class="star star1">✦</div>
-  <div class="star star2">✧</div>
-  <div class="star star3">✦</div>
+<!-- =========================
+     TOP BAR
+========================= -->
 
+<div class="top-bar">
 
-  <!-- แถบด้านบน -->
-  <div class="top-bar">
+    <div class="school">
 
-    <div class="school-info">
-      <img src="IMG_2964.jpeg" alt="โลโก้โรงเรียน">
-      <span>โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”</span>
+        <img src="IMG_2964.jpeg" alt="โลโก้โรงเรียน">
+
+        <span>
+            โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
+        </span>
+
     </div>
 
     <a href="portfolio.html" class="back-btn">
-      ← กลับหน้าหัวข้อ
+        ← กลับหน้าโปรไฟล์
     </a>
 
-  </div>
+</div>
 
 
-  <!-- เนื้อหา -->
-  <div class="container">
+<!-- =========================
+     CONTENT
+========================= -->
 
-    <div class="title">
-      <h1>🏆 ผลงานและกิจกรรม</h1>
-      <p>Works & Activities</p>
+<div class="container">
+
+    <!-- หัวข้อ -->
+
+    <div class="page-title">
+
+        <h1>ผลงานและกิจกรรม ✨</h1>
+
+        <p>
+            ผลงาน กิจกรรม และประสบการณ์ที่ได้เข้าร่วม
+        </p>
+
     </div>
 
 
     <!-- =========================
-         งานที่ 1
-    ========================== -->
+         ผลงานที่ 1
+    ========================= -->
 
     <div class="work-card">
 
-      <div class="image-group">
-        <img src="IMG_2988.jpeg" alt="ผลงานที่ 1 รูปที่ 1">
-        <img src="ไม่มีชื่อ 9_20260907212745.png" alt="ผลงานที่ 1 รูปที่ 2">
-      </div>
+        <div class="image-group">
 
-      <div class="work-content">
+            <img
+                src="IMG_2988.jpeg"
+                alt="อบรมระดมสมองคนรุ่นใหม่"
+            >
+
+            <img
+                src="ไม่มีชื่อ 9_20260907212745.png"
+                alt="กิจกรรมระดมสมองคนรุ่นใหม่"
+            >
+
+        </div>
 
         <span class="work-number">
-          ผลงานที่ 01
+            ผลงานที่ 01
         </span>
 
         <h2>
-          อบรมในหัวข้อ "ระดมสมองคนรุ่นใหม่"
+            อบรมในหัวข้อ "ระดมสมองคนรุ่นใหม่"
         </h2>
 
         <p>
-          เข้าร่วมการอบรม "ระดมสมองคนรุ่นใหม่" ในการอบรมครั้งนี้ มีการเยี่ยมชมสถานที่ในวิทยาลัยเทคนิคชลบุรี จังหวัดชลบุรีและได้มีการรณรงค์ความคิดในหัวข้อ "worldclass standard school" ได้รับความรู้ ความกล้าแสดงออก และความสามัคคีในการทำกิจกรรมกลุ่ม
+            เข้าร่วมการอบรม "ระดมสมองคนรุ่นใหม่"
+            ในการอบรมครั้งนี้ มีการเยี่ยมชมสถานที่ในวิทยาลัยเทคนิคชลบุรี
+            จังหวัดชลบุรีและได้มีการรณรงค์ความคิดในหัวข้อ
+            "worldclass standard school"
+            ได้รับความรู้ ความกล้าแสดงออก และความสามัคคีในการทำกิจกรรมกลุ่ม
         </p>
-
-      </div>
 
     </div>
 
 
     <!-- =========================
-         งานที่ 2
-    ========================== -->
+         ผลงานที่ 2
+    ========================= -->
 
     <div class="work-card">
 
-      <div class="image-group">
-        <img src="IMG_2992.jpeg" alt="ผลงานที่ 2 รูปที่ 1">
-        <img src="IMG_2991.jpeg" alt="ผลงานที่ 2 รูปที่ 2">
-      </div>
+        <div class="image-group">
 
-      <div class="work-content">
+            <img
+                src="IMG_2992.jpeg"
+                alt="ฝึกประสบการณ์ทันตแพทย์"
+            >
+
+            <img
+                src="IMG_2991.jpeg"
+                alt="กิจกรรมฝึกประสบการณ์ทันตแพทย์"
+            >
+
+        </div>
 
         <span class="work-number">
-          ผลงานที่ 02
+            ผลงานที่ 02
         </span>
 
         <h2>
-          ฝึกประสบการณ์ทันตแพทย์
+            ฝึกประสบการณ์ทันตแพทย์
         </h2>
 
         <p>
-          เสริมสร้างประสบการณ์และเป็นแนวทางในการประกอบอาชีพด้านทันตกรรม ที่ คลินิกทันตกรรมเอสซี ได้รับความรู้การพิมพ์ฟัน การเอ็กซเรย์ช่องปาก จำลองการเป็นหมอฟัน ผู้ช่วยหมอฟัน และผู้ที่มาทำฟัน
+            เสริมสร้างประสบการณ์และเป็นแนวทางในการประกอบอาชีพด้านทันตกรรม
+            ที่ คลินิกทันตกรรมเอสซี ได้รับความรู้การพิมพ์ฟัน
+            การเอ็กซเรย์ช่องปาก จำลองการเป็นหมอฟัน ผู้ช่วยหมอฟัน
+            และผู้ที่มาทำฟัน
         </p>
-
-      </div>
 
     </div>
 
 
     <!-- =========================
-         งานที่ 3
-    ========================== -->
+         ผลงานที่ 3
+    ========================= -->
 
     <div class="work-card">
 
-      <div class="image-group">
-        <img src="วิทยากรa math.png" alt="ผลงานที่ 3 รูปที่ 1">
-        <img src="เกียรติบัตรวิทยากร .png" alt="ผลงานที่ 3 รูปที่ 2">
-      </div>
+        <div class="image-group">
 
-      <div class="work-content">
+            <img
+                src="วิทยากรa math.png"
+                alt="ผู้ช่วยวิทยากร"
+            >
+
+            <img
+                src="เกียรติบัตรวิทยากร .png"
+                alt="เกียรติบัตรวิทยากร"
+            >
+
+        </div>
 
         <span class="work-number">
-          ผลงานที่ 03
+            ผลงานที่ 03
         </span>
 
         <h2>
-          ผู้ช่วยวิทยากร เกมต่อเลขสมการคณิตศาสตร์
+            ผู้ช่วยวิทยากร เกมต่อเลขสมการคณิตศาสตร์
         </h2>
 
         <p>
-          จิตอาสา เป็นผู้ช่วยวิทยากรกิจกรรม เกมต่อเลขสมการคณิตศาสตร์ที่โรงเรียน ได้รับรู้แนวคิดที่แตกต่าง สอนรุ่นน้องในการเล่น ฝึกการสื่อสาร ฝึกความอดทน และได้รับความสนุกสนาน ให้น้องๆ ไม่มองว่า ตัวเลขไม่ได้น่ากลัวแบบที่คิด
+            จิตอาสา เป็นผู้ช่วยวิทยากรกิจกรรม เกมต่อเลขสมการคณิตศาสตร์ที่โรงเรียน
+            ได้รับรู้แนวคิดที่แตกต่าง สอนรุ่นน้องในการเล่น ฝึกการสื่อสาร
+            ฝึกความอดทน และได้รับความสนุกสนาน ให้น้องๆ ไม่มองว่า
+            ตัวเลขไม่ได้น่ากลัวแบบที่คิด
         </p>
-
-      </div>
 
     </div>
 
 
     <!-- =========================
-         งานที่ 4
-    ========================== -->
+         ผลงานที่ 4
+    ========================= -->
 
     <div class="work-card">
 
-      <div class="image-group">
-        <img src="IMG_2258.jpeg" alt="ผลงานที่ 4 รูปที่ 1">
-        <img src="เกียรติบัตร หมอ.png" alt="ผลงานที่ 4 รูปที่ 2">
-      </div>
+        <div class="image-group">
 
-      <div class="work-content">
+            <img
+                src="IMG_2258.jpeg"
+                alt="เปิดโลกวิชาการ"
+            >
+
+            <img
+                src="เกียรติบัตร หมอ.png"
+                alt="เกียรติบัตรเปิดโลกวิชาการ"
+            >
+
+        </div>
 
         <span class="work-number">
-          ผลงานที่ 04
+            ผลงานที่ 04
         </span>
 
         <h2>
-          เปิดโลกวิชาการ
+            เปิดโลกวิชาการ
         </h2>
 
         <p>
-          เข้าร่วมอบรมโครงการ เปิดโลกวิชาการ 2026 ได้รับความรู้ ได้ลงมือทำ ในการชำและหัวใจกบ ทำฟัน และได้ฝึกความสามัคคีในการสร้างสะพาน
+            เข้าร่วมอบรมโครงการ เปิดโลกวิชาการ 2026
+            ได้รับความรู้ ได้ลงมือทำ ในการชำและหัวใจกบ ทำฟัน
+            และได้ฝึกความสามัคคีในการสร้างสะพาน
         </p>
-
-      </div>
 
     </div>
 
 
     <!-- =========================
-         งานที่ 5
-    ========================== -->
+         ผลงานที่ 5
+    ========================= -->
 
     <div class="work-card">
 
-      <div class="image-group">
-        <img src="ฝึกงานรพ.png" alt="ผลงานที่ 5 รูปที่ 1">
-        <img src="เกียรติบัตรฝึกงานรพ.png" alt="ผลงานที่ 5 รูปที่ 2">
-      </div>
+        <div class="image-group">
 
-      <div class="work-content">
+            <img
+                src="ฝึกงานรพ.png"
+                alt="ฝึกประสบการณ์โรงพยาบาลบ้านบึง"
+            >
+
+            <img
+                src="เกียรติบัตรฝึกงานรพ.png"
+                alt="เกียรติบัตรฝึกงานโรงพยาบาล"
+            >
+
+        </div>
 
         <span class="work-number">
-          ผลงานที่ 05
+            ผลงานที่ 05
         </span>
 
         <h2>
-          ฝึกประสบการณ์โรงพยาบาลบ้านบึง
+            ฝึกประสบการณ์โรงพยาบาลบ้านบึง
         </h2>
 
         <p>
-          ได้ฝึกประสบการณ์ที่โรงพยาบาลบ้านบึง เป็นเวลารวม 5 วัน 40 ชั่วโมง ได้รับความรู้ เห็นแผลอุบัติเหตุ เข้าห้องแลป นักฉายรังสี เทคนิคการแพทย์ เยี่ยมชมแผนกเภสัชจ่ายยา เข้าเวรเช้า วัดความดัน รอบเอว ซักถามประวัติผู้ป่วย ฝึกฝนการพูดจาและความกล้าแสดงออกได้ดีเยี่ยม
+            ได้ฝึกประสบการณ์ที่โรงพยาบาลบ้านบึง เป็นเวลารวม 5 วัน 40 ชั่วโมง
+            ได้รับความรู้ เห็นแผลอุบัติเหตุ เข้าห้องแลป นักฉายรังสี
+            เทคนิคการแพทย์ เยี่ยมชมแผนกเภสัชจ่ายยา เข้าเวรเช้า
+            วัดความดัน รอบเอว ซักถามประวัติผู้ป่วย
+            ฝึกฝนการพูดจาและความกล้าแสดงออกได้ดีเยี่ยม
         </p>
-
-      </div>
 
     </div>
 
 
     <!-- =========================
-         เกียรติบัตรเพิ่มเติม
-    ========================== -->
+         หัวข้อเกียรติบัตร
+    ========================= -->
 
     <div class="certificate-title">
 
-      <h1>📜 เกียรติบัตรเพิ่มเติม</h1>
-
-      <p>
-        Certificates
-      </p>
-
-    </div>
-
-
-    <!-- เกียรติบัตร 01 -->
-    <div class="certificate-card">
-
-      <img src="เกียรติบัตร ป่าชาย.png" alt="เกียรติบัตรที่ 1">
-
-      <div class="certificate-content">
-
-        <span class="work-number">
-          เกียรติบัตรที่ 01
-        </span>
+        <h1>
+            เกียรติบัตรและกิจกรรมเพิ่มเติม 🏆
+        </h1>
 
         <p>
-          เข้าร่วมปลูกป่าชายเลน ได้รับความรู้เรื่องป่าชายเลน และลงสถานที่จริง
+            เกียรติบัตรที่ได้รับจากการเข้าร่วมกิจกรรมต่าง ๆ
         </p>
-
-      </div>
 
     </div>
 
 
-    <!-- เกียรติบัตร 02 -->
+    <!-- =========================
+         เกียรติบัตรที่ 1
+    ========================= -->
+
     <div class="certificate-card">
 
-      <img src="เกียรติบัตร อุ่นใจไซเบอร์.JPG" alt="เกียรติบัตรที่ 2">
+        <img
+            src="เกียรติบัตร ป่าชาย.png"
+            alt="เกียรติบัตรที่ 1"
+        >
 
-      <div class="certificate-content">
+        <div class="certificate-content">
 
-        <span class="work-number">
-          เกียรติบัตรที่ 02
-        </span>
+            <span class="work-number">
+                เกียรติบัตรที่ 01
+            </span>
 
-        <p>
-          เข้าร่วมการอบรม อุ่นใจไซเบอร์ ได้รับความรู้จากวิทยาการ
-        </p>
+            <p>
+                เข้าร่วมปลูกป่าชายเลน ได้รับความรู้เรื่องป่าชายเลน และลงสถานที่จริง
+            </p>
 
-      </div>
+        </div>
 
     </div>
 
 
-    <!-- เกียรติบัตร 03 -->
+    <!-- =========================
+         เกียรติบัตรที่ 2
+    ========================= -->
+
     <div class="certificate-card">
 
-      <img src="เกียรติบัตรทำบ้านปลา.png" alt="เกียรติบัตรที่ 3">
+        <img
+            src="เกียรติบัตร อุ่นใจไซเบอร์.JPG"
+            alt="เกียรติบัตรที่ 2"
+        >
 
-      <div class="certificate-content">
+        <div class="certificate-content">
 
-        <span class="work-number">
-          เกียรติบัตรที่ 03
-        </span>
+            <span class="work-number">
+                เกียรติบัตรที่ 02
+            </span>
 
-        <p>
-          เข้าร่วมกิจกรรม สร้างบ้านปลาให้ป่าชายเลน ได้รับความรู้เรื่องป่าชายเลนมากขึ้น
-        </p>
+            <p>
+                เข้าร่วมการอบรม อุ่นใจไซเบอร์ ได้รับความรู้จากวิทยาการ
+            </p>
 
-      </div>
+        </div>
 
     </div>
 
 
-    <!-- เกียรติบัตร 04 -->
+    <!-- =========================
+         เกียรติบัตรที่ 3
+    ========================= -->
+
     <div class="certificate-card">
 
-      <img src="เกียรติบัตรบุคคลรุ่นใหม่.png" alt="เกียรติบัตรที่ 4">
+        <img
+            src="เกียรติบัตรทำบ้านปลา.png"
+            alt="เกียรติบัตรที่ 3"
+        >
 
-      <div class="certificate-content">
+        <div class="certificate-content">
 
-        <span class="work-number">
-          เกียรติบัตรที่ 04
-        </span>
+            <span class="work-number">
+                เกียรติบัตรที่ 03
+            </span>
 
-        <p>
-          เข้าร่วมการอบรมบุคคลรุ่นใหม่ ได้รับความรู้มากมาย
-        </p>
+            <p>
+                เข้าร่วมกิจกรรม สร้างบ้านปลาให้ป่าชายเลน ได้รับความรู้เรื่องป่าชายเลนมากขึ้น
+            </p>
 
-      </div>
+        </div>
 
     </div>
 
 
-    <!-- เกียรติบัตร 05 -->
+    <!-- =========================
+         เกียรติบัตรที่ 4
+    ========================= -->
+
     <div class="certificate-card">
 
-      <img src="เกียรติบัตรวันวิทย์.png" alt="เกียรติบัตรที่ 5">
+        <img
+            src="เกียรติบัตรบุคคลรุ่นใหม่.png"
+            alt="เกียรติบัตรที่ 4"
+        >
 
-      <div class="certificate-content">
+        <div class="certificate-content">
 
-        <span class="work-number">
-          เกียรติบัตรที่ 05
-        </span>
+            <span class="work-number">
+                เกียรติบัตรที่ 04
+            </span>
 
-        <p>
-          เข้าร่วมกิจกรรมวันวิทย์ ทั้งหมด 12ซุ้ม ได้รับความรู้และความสนุกมากมาย
-        </p>
+            <p>
+                เข้าร่วมการอบรมบุคคลรุ่นใหม่ ได้รับความรู้มากมาย
+            </p>
 
-      </div>
+        </div>
 
     </div>
 
 
-    <!-- เกียรติบัตร 06 -->
+    <!-- =========================
+         เกียรติบัตรที่ 5
+    ========================= -->
+
     <div class="certificate-card">
 
-      <img src="เกียรติบัตรอบรมดับเพลิง.png" alt="เกียรติบัตรที่ 6">
+        <img
+            src="เกียรติบัตรวันวิทย์.png"
+            alt="เกียรติบัตรที่ 5"
+        >
 
-      <div class="certificate-content">
+        <div class="certificate-content">
 
-        <span class="work-number">
-          เกียรติบัตรที่ 06
-        </span>
+            <span class="work-number">
+                เกียรติบัตรที่ 05
+            </span>
 
-        <p>
-          อบรมดับเพลิงและการฝึกช้อมอพยพหนีไฟในสถานศึกษา ได้ความรู้ ความอันตรายของไฟ รู้สึกตื่นเต้น ได้เห็นและลองปฏิบัติ
-        </p>
+            <p>
+                เข้าร่วมกิจกรรมวันวิทย์ ทั้งหมด 12ซุ้ม ได้รับความรู้และความสนุกมากมาย
+            </p>
 
-      </div>
+        </div>
 
     </div>
 
 
-    <!-- เกียรติบัตร 07 -->
+    <!-- =========================
+         เกียรติบัตรที่ 6
+    ========================= -->
+
     <div class="certificate-card">
 
-      <img src="เกียรติบัตรสภานักเรียน.png" alt="เกียรติบัตรที่ 7">
+        <img
+            src="เกียรติบัตรอบรมดับเพลิง.png"
+            alt="เกียรติบัตรที่ 6"
+        >
 
-      <div class="certificate-content">
+        <div class="certificate-content">
 
-        <span class="work-number">
-          เกียรติบัตรที่ 07
-        </span>
+            <span class="work-number">
+                เกียรติบัตรที่ 06
+            </span>
 
-        <p>
-          เป็นสภานักเรียนตลอดปีการศึกษา 2567 เปิดประสบการณ์ต่างๆมากๆ พี่ๆใจดี เป็นกันเองมากๆ ฝึกทักษะหลายๆด้าย ทั้งการพูด ความคิด มีสติยิ่งขึ้น ความเป็นผู้นำ ความเสียสละ
-        </p>
+            <p>
+                อบรมดับเพลิงและการฝึกช้อมอพยพหนีไฟในสถานศึกษา
+                ได้ความรู้ ความอันตรายของไฟ รู้สึกตื่นเต้น ได้เห็นและลองปฏิบัติ
+            </p>
 
-      </div>
+        </div>
 
     </div>
 
 
-    <!-- เกียรติบัตร 08 -->
+    <!-- =========================
+         เกียรติบัตรที่ 7
+    ========================= -->
+
     <div class="certificate-card">
 
-      <img src="certificate8.png" alt="เกียรติบัตรที่ 8">
+        <img
+            src="เกียรติบัตรสภานักเรียน.png"
+            alt="เกียรติบัตรที่ 7"
+        >
 
-      <div class="certificate-content">
+        <div class="certificate-content">
 
-        <span class="work-number">
-          เกียรติบัตรที่ 08
-        </span>
+            <span class="work-number">
+                เกียรติบัตรที่ 07
+            </span>
 
-        <p>
-          เข้าร่วมกิจกรรมเพื่อเพิ่มพูนประสบการณ์และนำความรู้ไปต่อยอด
-        </p>
+            <p>
+                เป็นสภานักเรียนตลอดปีการศึกษา 2567 เปิดประสบการณ์ต่างๆมากๆ
+                พี่ๆใจดี เป็นกันเองมากๆ ฝึกทักษะหลายๆด้าย ทั้งการพูด ความคิด
+                มีสติยิ่งขึ้น ความเป็นผู้นำ ความเสียสละ
+            </p>
 
-      </div>
+        </div>
 
     </div>
 
 
-    <!-- เกียรติบัตร 09 -->
+    <!-- =========================
+         เกียรติบัตรที่ 8
+    ========================= -->
+
     <div class="certificate-card">
 
-      <img src="certificate9.png" alt="เกียรติบัตรที่ 9">
+        <img
+            src="กิจกรรมวันครู สภาม4.JPG"
+            alt="เกียรติบัตรที่ 8"
+        >
 
-      <div class="certificate-content">
+        <div class="certificate-content">
 
-        <span class="work-number">
-          เกียรติบัตรที่ 09
-        </span>
+            <span class="work-number">
+                เกียรติบัตรที่ 08
+            </span>
 
-        <p>
-          ได้รับประสบการณ์และความรู้ใหม่จากการเข้าร่วมกิจกรรม
-        </p>
+            <p>
+                จิตอาสาวันไหว้ครู ได้ทำหน้าที่ รับพานไหว้ครู 
+            </p>
 
-      </div>
+        </div>
 
     </div>
 
 
-    <!-- เกียรติบัตร 10 -->
+    <!-- =========================
+         เกียรติบัตรที่ 9
+    ========================= -->
+
     <div class="certificate-card">
 
-      <img src="certificate10.png" alt="เกียรติบัตรที่ 10">
+        <img
+            src="จิตอาสา ทำความสะอาด.JPG"
+            alt="เกียรติบัตรที่ 9"
+        >
 
-      <div class="certificate-content">
+        <div class="certificate-content">
 
-        <span class="work-number">
-          เกียรติบัตรที่ 10
-        </span>
+            <span class="work-number">
+                เกียรติบัตรที่ 09
+            </span>
 
-        <p>
-          เกียรติบัตรจากการเข้าร่วมกิจกรรมและพัฒนาศักยภาพของตนเอง
-        </p>
+            <p>
+                จิตอาสา ทำความสะอาด โรงเรียน มีความสุขในการทำ เห็นโรงเรียนสะอาดก็น่าอยุ๋
+            </p>
 
-      </div>
+        </div>
 
     </div>
 
 
-  </div>
+    <!-- =========================
+         เกียรติบัตรที่ 10
+    ========================= -->
+
+    <div class="certificate-card">
+
+        <img
+            src="ตัวแทนเดินขบวนกีฬาสี ม4.JPG"
+            alt="เกียรติบัตรที่ 10"
+        >
+
+        <div class="certificate-content">
+
+            <span class="work-number">
+                เกียรติบัตรที่ 10
+            </span>
+
+            <p>
+               จิตอาสาเดินขบวนกีฬาสี ปี2567 ฝึกความอดทนต่อแดด ฝน 
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         Footer
+    ========================= -->
+
+    <div class="footer">
+
+        ✦ Warintha Lueangoon ✦
+        <br>
+        Portfolio & Activities
+
+    </div>
+
+</div>
 
 </body>
 </html>

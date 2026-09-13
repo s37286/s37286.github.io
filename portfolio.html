@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -19,14 +20,14 @@
 
 body{
     min-height:100vh;
-    padding-top:75px;
+    padding-top:72px;
     overflow-x:hidden;
 
     background:
-        radial-gradient(circle at 10% 15%, #f9a8d4 0%, transparent 25%),
-        radial-gradient(circle at 90% 20%, #ddd6fe 0%, transparent 28%),
-        radial-gradient(circle at 80% 90%, #e9d5ff 0%, transparent 30%),
-        linear-gradient(135deg,#fff1f8,#fce7f3,#ede9fe);
+        radial-gradient(circle at 8% 18%, rgba(244,114,182,0.38), transparent 25%),
+        radial-gradient(circle at 92% 15%, rgba(196,181,253,0.45), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(232,121,249,0.25), transparent 35%),
+        linear-gradient(135deg,#fff1f8,#fce7f3,#ede9fe,#fdf2f8);
 
     position:relative;
 }
@@ -36,55 +37,100 @@ body{
    พื้นหลังตกแต่ง
 ========================= */
 
-.bg-circle{
+.bg{
     position:fixed;
-    border-radius:50%;
+    pointer-events:none;
     z-index:-1;
-    opacity:0.5;
-    animation:float 7s ease-in-out infinite;
 }
 
-.circle1{
-    width:180px;
-    height:180px;
+.glow1{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+
     background:#f472b6;
-    top:15%;
-    left:-70px;
+    opacity:0.18;
+
+    top:80px;
+    left:-120px;
+
+    filter:blur(5px);
 }
 
-.circle2{
-    width:250px;
-    height:250px;
-    background:#c4b5fd;
-    bottom:-80px;
-    right:-60px;
-    animation-delay:2s;
+.glow2{
+    width:330px;
+    height:330px;
+    border-radius:50%;
+
+    background:#a78bfa;
+    opacity:0.20;
+
+    right:-150px;
+    bottom:-100px;
+
+    filter:blur(8px);
 }
 
-.circle3{
-    width:90px;
-    height:90px;
+.glow3{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+
     background:#e879f9;
-    top:25%;
-    right:12%;
+    opacity:0.20;
+
+    right:15%;
+    top:180px;
+
+    filter:blur(5px);
+}
+
+
+/* ดาวตกแต่ง */
+
+.star{
+    position:fixed;
+    color:#d946ef;
+    font-size:25px;
+    opacity:0.5;
+
+    animation:twinkle 2.5s ease-in-out infinite;
+}
+
+.star1{
+    top:150px;
+    left:8%;
+}
+
+.star2{
+    top:350px;
+    right:8%;
     animation-delay:1s;
 }
 
-@keyframes float{
+.star3{
+    bottom:90px;
+    left:12%;
+    animation-delay:1.5s;
+}
+
+@keyframes twinkle{
 
     0%,100%{
-        transform:translateY(0);
+        transform:scale(1) rotate(0);
+        opacity:0.35;
     }
 
     50%{
-        transform:translateY(-25px);
+        transform:scale(1.35) rotate(15deg);
+        opacity:0.8;
     }
 
 }
 
 
 /* =========================
-   แถบด้านบน
+   NAVBAR
 ========================= */
 
 .navbar{
@@ -96,32 +142,32 @@ body{
     width:100%;
     height:70px;
 
-    background:rgba(255,255,255,0.90);
-    backdrop-filter:blur(15px);
-
     display:flex;
     align-items:center;
     justify-content:space-between;
 
     padding:0 7%;
 
-    z-index:1000;
+    background:rgba(255,255,255,0.88);
 
-    border-bottom:1px solid rgba(217,70,239,0.12);
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+        1px solid rgba(217,70,239,0.15);
 
     box-shadow:
-        0 5px 25px rgba(180,70,170,0.12);
+        0 8px 30px rgba(168,85,247,0.12);
+
+    z-index:1000;
 }
 
 
-/* โลโก้ */
+/* โรงเรียน */
 
 .school{
-
     display:flex;
     align-items:center;
     gap:12px;
-
 }
 
 .school-logo{
@@ -131,41 +177,42 @@ body{
 
     object-fit:contain;
 
-    background:white;
-
-    border-radius:12px;
-
     padding:3px;
 
-    box-shadow:
-        0 4px 12px rgba(180,70,170,0.15);
+    background:white;
 
+    border-radius:13px;
+
+    box-shadow:
+        0 0 0 2px #f9a8d4,
+        0 5px 12px rgba(190,70,170,0.15);
 }
 
 .school-name{
 
-    font-size:16px;
+    color:#663c6b;
+
+    font-size:15px;
+
     font-weight:bold;
-
-    color:#6b3f68;
-
 }
 
 
-/* ปุ่มกลับ */
+/* ปุ่มหน้าแรก */
 
 .back-button{
 
     text-decoration:none;
 
-    padding:9px 18px;
-
-    border-radius:30px;
-
     color:white;
 
     font-size:14px;
+
     font-weight:bold;
+
+    padding:10px 20px;
+
+    border-radius:30px;
 
     background:
         linear-gradient(
@@ -176,89 +223,162 @@ body{
         );
 
     box-shadow:
-        0 6px 18px rgba(217,70,239,0.25);
+        0 8px 20px rgba(217,70,239,0.30);
 
     transition:0.35s;
-
 }
 
 .back-button:hover{
 
     transform:
         translateY(-3px)
-        scale(1.04);
+        scale(1.05);
 
     box-shadow:
-        0 10px 25px rgba(217,70,239,0.35);
-
+        0 12px 28px rgba(217,70,239,0.42);
 }
 
 
 /* =========================
-   เนื้อหาหลัก
+   CONTAINER
 ========================= */
 
 .container{
 
     width:92%;
-    max-width:1000px;
+    max-width:1050px;
 
     margin:auto;
 
-    padding:35px 20px 60px;
+    padding:38px 10px 70px;
 
     text-align:center;
-
 }
 
 
 /* =========================
-   หัวข้อ
+   TITLE
 ========================= */
 
 .title{
 
-    font-size:42px;
+    font-size:48px;
+
+    line-height:1.3;
 
     background:
         linear-gradient(
             90deg,
             #db2777,
+            #ec4899,
             #c026d3,
-            #8b5cf6
+            #7c3aed
         );
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 
+    text-shadow:
+        0 5px 25px rgba(217,70,239,0.12);
+
     margin-bottom:5px;
 
+    animation:titleShow 1s ease;
 }
 
 .subtitle{
 
-    color:#95658f;
+    color:#92518c;
 
-    font-size:16px;
+    font-size:17px;
 
-    margin-bottom:28px;
+    margin-bottom:25px;
+
+    animation:titleShow 1.2s ease;
+}
+
+@keyframes titleShow{
+
+    from{
+        opacity:0;
+        transform:translateY(-15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 
 }
 
 
 /* =========================
-   รูปตัวเอง
+   PROFILE
 ========================= */
 
 .top-profile{
 
-    margin:10px 0 35px;
+    position:relative;
 
-    text-align:center;
+    display:inline-block;
+
+    margin:5px 0 45px;
+}
+
+
+/* วงแหวนด้านหลัง */
+
+.top-profile::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:175px;
+    height:175px;
+
+    border-radius:50%;
+
+    top:50%;
+    left:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f472b6,
+            #d946ef,
+            #a78bfa
+        );
+
+    opacity:0.28;
+
+    filter:blur(4px);
+
+    animation:pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+    }
+
+    50%{
+        transform:
+            translate(-50%,-50%)
+            scale(1.08);
+    }
 
 }
 
 .top-profile img{
+
+    position:relative;
 
     width:145px;
     height:145px;
@@ -273,27 +393,31 @@ body{
         0 0 0 4px #f472b6,
         0 0 0 9px #c084fc,
         0 0 0 14px #fbcfe8,
-        0 15px 30px rgba(160,70,150,0.22);
+        0 15px 35px rgba(160,70,150,0.25);
 
     transition:0.5s;
 
-    animation:imageShow 1s ease;
-
+    animation:profileShow 1s ease;
 }
 
 .top-profile img:hover{
 
     transform:
         scale(1.08)
-        rotate(-3deg);
+        rotate(-4deg);
 
+    box-shadow:
+        0 0 0 5px #ec4899,
+        0 0 0 10px #c026d3,
+        0 0 0 15px #ddd6fe,
+        0 20px 40px rgba(160,70,150,0.30);
 }
 
-@keyframes imageShow{
+@keyframes profileShow{
 
     from{
         opacity:0;
-        transform:scale(0.8);
+        transform:scale(0.75);
     }
 
     to{
@@ -305,7 +429,7 @@ body{
 
 
 /* =========================
-   เมนูแบบใหม่
+   MENU
 ========================= */
 
 .menu-list{
@@ -315,57 +439,82 @@ body{
     grid-template-columns:
         repeat(2,1fr);
 
-    gap:18px;
+    gap:22px;
 
-    max-width:900px;
+    max-width:960px;
 
     margin:auto;
-
 }
 
 
 /* =========================
-   การ์ด
+   MENU CARD
 ========================= */
 
 .menu-card{
+
+    min-height:125px;
 
     display:flex;
 
     align-items:center;
 
-    text-decoration:none;
-
     position:relative;
-
-    min-height:95px;
-
-    padding:18px 20px;
-
-    background:
-        rgba(255,255,255,0.78);
-
-    border:2px solid rgba(255,255,255,0.95);
-
-    border-radius:25px;
-
-    color:#4a3152;
-
-    backdrop-filter:blur(10px);
-
-    box-shadow:
-        0 10px 25px rgba(170,70,160,0.10);
 
     overflow:hidden;
 
+    text-decoration:none;
+
+    padding:20px 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.92),
+            rgba(255,245,252,0.80)
+        );
+
+    border:
+        2px solid rgba(255,255,255,0.95);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 12px 30px rgba(168,85,247,0.13);
+
     transition:
-        transform 0.35s,
-        box-shadow 0.35s;
+        transform 0.4s,
+        box-shadow 0.4s;
 
 }
 
 
-/* แถบสีด้านข้าง */
+/* แสงด้านบนของการ์ด */
+
+.menu-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    right:-70px;
+    top:-80px;
+
+    background:#f9a8d4;
+
+    opacity:0.22;
+
+}
+
+
+/* เส้นสีด้านซ้าย */
 
 .menu-card::before{
 
@@ -376,7 +525,7 @@ body{
     left:0;
     top:0;
 
-    width:6px;
+    width:7px;
     height:100%;
 
     background:
@@ -390,40 +539,40 @@ body{
 }
 
 
-/* เอฟเฟกต์ hover */
+/* Hover */
 
 .menu-card:hover{
 
     transform:
-        translateY(-7px);
+        translateY(-9px)
+        scale(1.015);
 
     box-shadow:
-        0 18px 35px rgba(170,70,160,0.20);
-
+        0 20px 45px rgba(168,85,247,0.22);
 }
 
 
 /* =========================
-   หมายเลข
+   NUMBER
 ========================= */
 
 .number{
 
-    width:48px;
-    height:48px;
+    width:52px;
+    height:52px;
 
-    min-width:48px;
-
-    border-radius:16px;
+    min-width:52px;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
+    border-radius:18px;
+
     color:white;
 
-    font-size:19px;
+    font-size:21px;
 
     font-weight:bold;
 
@@ -435,29 +584,31 @@ body{
             #8b5cf6
         );
 
-    margin-right:14px;
-
     box-shadow:
-        0 7px 15px rgba(217,70,239,0.22);
+        0 8px 18px rgba(217,70,239,0.28);
+
+    margin-right:13px;
 
 }
 
 
 /* =========================
-   ไอคอน
+   ICON
 ========================= */
 
 .icon{
 
-    width:48px;
-    height:48px;
+    width:55px;
+    height:55px;
+
+    min-width:55px;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
-    border-radius:15px;
+    border-radius:18px;
 
     background:
         linear-gradient(
@@ -466,15 +617,31 @@ body{
             #ede9fe
         );
 
-    font-size:25px;
+    border:
+        2px solid white;
 
-    margin-right:14px;
+    font-size:28px;
+
+    margin-right:15px;
+
+    box-shadow:
+        0 6px 15px rgba(168,85,247,0.10);
+
+    transition:0.4s;
+
+}
+
+.menu-card:hover .icon{
+
+    transform:
+        rotate(-5deg)
+        scale(1.08);
 
 }
 
 
 /* =========================
-   ข้อความ
+   TEXT
 ========================= */
 
 .menu-text{
@@ -483,35 +650,41 @@ body{
 
     flex:1;
 
+    position:relative;
+
+    z-index:2;
+
 }
 
 .menu-text h2{
 
-    font-size:19px;
+    font-size:20px;
 
-    color:#8b3a82;
+    color:#7138a3;
 
-    margin-bottom:2px;
+    margin-bottom:3px;
 
 }
 
 .menu-text p{
 
-    font-size:13px;
+    font-size:14px;
 
-    color:#c026a5;
+    color:#ec4899;
 
 }
 
 
 /* =========================
-   ลูกศร
+   ARROW
 ========================= */
 
 .arrow{
 
-    width:35px;
-    height:35px;
+    width:38px;
+    height:38px;
+
+    min-width:38px;
 
     display:flex;
 
@@ -520,155 +693,194 @@ body{
 
     border-radius:50%;
 
-    background:#fce7f3;
+    color:white;
 
-    color:#a855f7;
+    font-size:27px;
 
-    font-size:24px;
+    background:
+        linear-gradient(
+            135deg,
+            #ec4899,
+            #a855f7
+        );
 
-    transition:0.3s;
+    box-shadow:
+        0 6px 15px rgba(217,70,239,0.20);
 
+    transition:0.35s;
+
+    position:relative;
+
+    z-index:2;
 }
 
 .menu-card:hover .arrow{
 
-    background:#e9d5ff;
-
-    transform:translateX(4px);
+    transform:
+        translateX(6px)
+        rotate(5deg);
 
 }
 
 
 /* =========================
-   มือถือ
+   การ์ดที่ 5 อยู่ตรงกลาง
 ========================= */
 
-@media(max-width:700px){
+.menu-card:nth-child(5){
+
+    grid-column:
+        1 / 3;
+
+    width:50%;
+
+    justify-self:center;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:750px){
 
     body{
-        padding-top:65px;
+        padding-top:64px;
     }
 
     .navbar{
 
-        height:58px;
+        height:60px;
 
         padding:0 15px;
-
     }
 
     .school-logo{
 
         width:35px;
         height:35px;
-
     }
 
     .school-name{
 
         font-size:10px;
-
     }
 
     .back-button{
 
         font-size:10px;
 
-        padding:7px 11px;
-
+        padding:7px 12px;
     }
 
     .container{
 
         padding:
-            28px 10px 40px;
-
+            30px 5px 45px;
     }
 
     .title{
 
-        font-size:30px;
-
+        font-size:32px;
     }
 
     .subtitle{
 
         font-size:14px;
+    }
 
+    .top-profile{
+
+        margin-bottom:35px;
     }
 
     .top-profile img{
 
-        width:115px;
-        height:115px;
+        width:120px;
+        height:120px;
+    }
 
+    .top-profile::before{
+
+        width:150px;
+        height:150px;
     }
 
     .menu-list{
 
         grid-template-columns:1fr;
 
-        gap:13px;
-
+        gap:14px;
     }
 
     .menu-card{
 
-        min-height:82px;
+        min-height:95px;
 
         padding:14px;
 
-        border-radius:20px;
+        border-radius:22px;
+    }
 
+    .menu-card:nth-child(5){
+
+        grid-column:auto;
+
+        width:100%;
     }
 
     .number{
 
-        width:40px;
-        height:40px;
+        width:42px;
+        height:42px;
 
-        min-width:40px;
+        min-width:42px;
 
-        font-size:16px;
+        font-size:17px;
+
+        border-radius:14px;
 
         margin-right:9px;
-
-        border-radius:13px;
-
     }
 
     .icon{
 
-        width:40px;
-        height:40px;
+        width:44px;
+        height:44px;
 
-        font-size:21px;
+        min-width:44px;
+
+        font-size:23px;
+
+        border-radius:14px;
 
         margin-right:9px;
-
-        border-radius:12px;
-
     }
 
     .menu-text h2{
 
         font-size:16px;
-
     }
 
     .menu-text p{
 
         font-size:11px;
-
     }
 
     .arrow{
 
-        width:30px;
-        height:30px;
+        width:32px;
+        height:32px;
 
-        font-size:20px;
+        min-width:32px;
 
+        font-size:21px;
+    }
+
+    .star{
+
+        font-size:18px;
     }
 
 }
@@ -681,14 +893,20 @@ body{
 <body>
 
 
-<!-- พื้นหลังตกแต่ง -->
+<!-- พื้นหลัง -->
 
-<div class="bg-circle circle1"></div>
-<div class="bg-circle circle2"></div>
-<div class="bg-circle circle3"></div>
+<div class="bg glow1"></div>
+<div class="bg glow2"></div>
+<div class="bg glow3"></div>
+
+<div class="star star1">✦</div>
+<div class="star star2">✧</div>
+<div class="star star3">♡</div>
 
 
-<!-- แถบด้านบน -->
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <header class="navbar">
 
@@ -707,8 +925,6 @@ body{
     </div>
 
 
-    <!-- ปุ่มกลับหน้าแรก -->
-
     <a href="index.html" class="back-button">
         ← หน้าแรก
     </a>
@@ -716,7 +932,9 @@ body{
 </header>
 
 
-<!-- เนื้อหาหลัก -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <main class="container">
 
@@ -743,7 +961,9 @@ body{
     </div>
 
 
-    <!-- เมนู -->
+    <!-- =========================
+         MENU
+    ========================= -->
 
     <div class="menu-list">
 
@@ -853,27 +1073,6 @@ body{
         </a>
 
 
-        <!-- 6. ใบแสดงผลการเรียน -->
-
-        <a href="transcript.html" class="menu-card">
-
-            <div class="number">6</div>
-
-            <div class="icon">📄</div>
-
-            <div class="menu-text">
-
-                <h2>ใบแสดงผลการเรียน ปพ.</h2>
-
-                <p>Academic Transcript</p>
-
-            </div>
-
-            <div class="arrow">›</div>
-
-        </a>
-
-
     </div>
 
 </main>
@@ -882,4 +1081,3 @@ body{
 </body>
 </html>
 ```
-

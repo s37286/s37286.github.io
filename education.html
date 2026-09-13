@@ -1,14 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>ประวัติการศึกษา | Warintha Lueangoon</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -18,296 +21,603 @@
     body {
       font-family: 'Mali', cursive;
       min-height: 100vh;
-      background: linear-gradient(
-        135deg,
-        #d9f0ff,
-        #eadcff,
-        #ffdcef,
-        #d9e9ff
-      );
-      background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
-      padding-top: 65px;
-      color: #333;
+
+      background:
+        radial-gradient(circle at 10% 15%, #ffd6ec 0%, transparent 30%),
+        radial-gradient(circle at 90% 10%, #e9d5ff 0%, transparent 30%),
+        radial-gradient(circle at 50% 100%, #fbcfe8 0%, transparent 35%),
+        linear-gradient(135deg, #fff0f7, #f3e8ff, #fce7f3);
+
+      background-size: 200% 200%;
+      animation: bgMove 12s ease infinite;
+
+      padding-top: 25px;
+      color: #444;
+      overflow-x: hidden;
     }
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+
+    /* =========================
+       พื้นหลังเคลื่อนไหว
+    ========================= */
+
+    @keyframes bgMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
-    /* แถบด้านบน */
+
+    /* =========================
+       แถบโรงเรียน
+    ========================= */
+
     .top-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 60px;
-      background: rgba(255,255,255,0.95);
+      height: 65px;
+
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(15px);
+
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 25px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-      z-index: 1000;
+
+      padding: 0 5%;
+
+      border-bottom: 2px solid rgba(255,255,255,0.9);
+
+      box-shadow: 0 5px 25px rgba(139,92,246,0.12);
+
+      position: relative;
+      z-index: 10;
     }
+
 
     .school-info {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
+
 
     .school-info img {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
+
       object-fit: contain;
+
+      background: white;
+
+      border-radius: 50%;
+
+      padding: 3px;
+
+      box-shadow: 0 4px 12px rgba(236,72,153,0.18);
     }
+
 
     .school-info span {
-      font-size: 14px;
+      font-size: 15px;
+
       font-weight: 600;
-      color: #4b3f72;
+
+      color: #7e22ce;
     }
 
-    .back-btn {
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(135deg, #7161ef, #b05ce2);
-      padding: 8px 17px;
-      border-radius: 20px;
-      font-size: 13px;
-      transition: 0.3s;
-    }
 
-    .back-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(100,80,200,0.3);
-    }
+    /* =========================
+       เนื้อหา
+    ========================= */
 
-    /* เนื้อหา */
     .container {
       width: 92%;
       max-width: 900px;
-      margin: 35px auto 60px;
+
+      margin: auto;
+
+      padding: 45px 10px 60px;
     }
+
+
+    /* =========================
+       หัวข้อ
+    ========================= */
 
     .title {
       text-align: center;
+
       margin-bottom: 35px;
     }
 
+
     .title h1 {
-      font-size: 34px;
-      color: #51418c;
+
+      font-size: 38px;
+
       margin-bottom: 5px;
+
+      background: linear-gradient(
+        90deg,
+        #db2777,
+        #9333ea,
+        #c026d3
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      filter: drop-shadow(
+        0 3px 5px rgba(168,85,247,0.12)
+      );
     }
+
 
     .title p {
-      color: #766a91;
-      font-size: 16px;
+      color: #a855f7;
+
+      font-size: 17px;
     }
 
-    /* การ์ดการศึกษา */
+
+    /* =========================
+       การ์ดการศึกษา
+    ========================= */
+
     .education-card {
-      background: rgba(255,255,255,0.94);
-      border-radius: 25px;
+
+      background: rgba(255,255,255,0.78);
+
+      backdrop-filter: blur(15px);
+
+      border-radius: 28px;
+
       padding: 25px;
+
       margin-bottom: 22px;
+
       display: flex;
+
       align-items: center;
+
       gap: 25px;
-      box-shadow: 0 8px 25px rgba(80,60,120,0.12);
-      border: 2px solid rgba(255,255,255,0.8);
-      transition: 0.3s;
+
+      box-shadow:
+        0 12px 30px rgba(139,92,246,0.12);
+
+      border: 2px solid rgba(255,255,255,0.9);
+
+      transition: 0.35s;
+
+      position: relative;
+
+      overflow: hidden;
     }
+
+
+    /* แถบสีด้านข้าง */
+
+    .education-card::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 6px;
+      height: 100%;
+
+      background: linear-gradient(
+        180deg,
+        #ec4899,
+        #a855f7,
+        #d946ef
+      );
+    }
+
 
     .education-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(80,60,120,0.18);
+
+      transform: translateY(-6px);
+
+      box-shadow:
+        0 18px 35px rgba(139,92,246,0.18);
     }
+
+
+    /* =========================
+       กล่องโลโก้
+    ========================= */
 
     .logo-box {
-      width: 115px;
-      height: 115px;
-      min-width: 115px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, #eef7ff, #f5ecff);
+
+      width: 120px;
+      height: 120px;
+
+      min-width: 120px;
+
+      border-radius: 24px;
+
+      background: linear-gradient(
+        135deg,
+        #fce7f3,
+        #ede9fe
+      );
+
       display: flex;
+
       justify-content: center;
       align-items: center;
+
       padding: 12px;
+
+      box-shadow:
+        inset 0 0 15px rgba(255,255,255,0.8),
+        0 5px 15px rgba(168,85,247,0.08);
     }
 
+
     .logo-box img {
+
       width: 90px;
       height: 90px;
+
       object-fit: contain;
     }
+
+
+    /* =========================
+       ข้อมูลการศึกษา
+    ========================= */
 
     .education-info {
       flex: 1;
     }
 
+
     .education-info h2 {
-      font-size: 21px;
-      color: #554397;
+
+      font-size: 22px;
+
+      color: #7e22ce;
+
       margin-bottom: 8px;
     }
 
+
     .education-info h3 {
+
       font-size: 17px;
-      color: #555;
+
+      color: #db2777;
+
       margin-bottom: 10px;
+
       font-weight: 600;
     }
 
+
     .education-info p {
+
       font-size: 15px;
+
       color: #666;
+
       line-height: 1.8;
     }
 
+
+    /* =========================
+       เกรด
+    ========================= */
+
     .grade {
+
       display: inline-block;
-      margin-top: 7px;
-      padding: 6px 14px;
-      border-radius: 15px;
-      background: #f0eaff;
-      color: #624bb1;
+
+      margin-top: 8px;
+
+      padding: 7px 16px;
+
+      border-radius: 20px;
+
+      background: linear-gradient(
+        135deg,
+        #fce7f3,
+        #ede9fe
+      );
+
+      color: #9333ea;
+
       font-weight: 600;
+
+      border: 1px solid #f3e8ff;
+
+      box-shadow:
+        0 4px 10px rgba(168,85,247,0.08);
     }
 
-    /* ดาวตกแต่ง */
+
+    /* =========================
+       ดาวตกแต่ง
+    ========================= */
+
     .star {
+
       position: fixed;
-      font-size: 20px;
-      opacity: 0.5;
+
+      font-size: 22px;
+
+      color: #d946ef;
+
+      opacity: 0.55;
+
       animation: float 4s ease-in-out infinite;
+
       pointer-events: none;
+
+      z-index: 0;
     }
+
 
     .star1 {
       top: 15%;
       left: 5%;
     }
 
+
     .star2 {
       top: 30%;
       right: 6%;
+
       animation-delay: 1s;
     }
+
 
     .star3 {
       bottom: 15%;
       left: 8%;
+
       animation-delay: 2s;
     }
 
+
     @keyframes float {
+
       0%,100% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-12px);
       }
     }
 
-    /* มือถือ */
+
+    /* =========================
+       ปุ่มกลับด้านล่าง
+    ========================= */
+
+    .bottom-button {
+
+      display: block;
+
+      width: fit-content;
+
+      margin: 35px auto 0;
+
+      padding: 13px 30px;
+
+      text-decoration: none;
+
+      color: white;
+
+      font-size: 16px;
+
+      font-weight: 600;
+
+      border-radius: 30px;
+
+      background: linear-gradient(
+        135deg,
+        #ec4899,
+        #a855f7,
+        #9333ea
+      );
+
+      box-shadow:
+        0 8px 20px rgba(236,72,153,0.22);
+
+      transition: 0.3s;
+    }
+
+
+    .bottom-button:hover {
+
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 13px 25px rgba(168,85,247,0.3);
+    }
+
+
+    /* =========================
+       มือถือ
+    ========================= */
+
     @media (max-width: 650px) {
 
       .top-bar {
-        padding: 0 12px;
+        height: 55px;
+
+        padding: 0 13px;
       }
+
 
       .school-info span {
-        font-size: 11px;
+        font-size: 10px;
       }
+
 
       .school-info img {
-        width: 32px;
-        height: 32px;
+        width: 33px;
+        height: 33px;
       }
 
-      .back-btn {
-        padding: 7px 11px;
-        font-size: 11px;
-      }
 
       .title h1 {
-        font-size: 27px;
+        font-size: 29px;
       }
+
+
+      .title p {
+        font-size: 14px;
+      }
+
 
       .education-card {
+
         flex-direction: column;
+
         text-align: center;
-        padding: 22px;
+
+        padding: 25px 20px;
       }
+
 
       .logo-box {
-        width: 100px;
-        height: 100px;
-        min-width: 100px;
+
+        width: 105px;
+        height: 105px;
+
+        min-width: 105px;
       }
 
+
       .logo-box img {
+
         width: 75px;
         height: 75px;
       }
+
 
       .education-info h2 {
         font-size: 19px;
       }
 
+
       .education-info h3 {
         font-size: 15px;
       }
+
+
+      .education-info p {
+        font-size: 14px;
+      }
+
+
+      .grade {
+        font-size: 14px;
+      }
+
+
+      .bottom-button {
+        font-size: 14px;
+
+        padding: 11px 24px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
+
   <!-- ดาวตกแต่ง -->
+
   <div class="star star1">✦</div>
+
   <div class="star star2">✧</div>
+
   <div class="star star3">✦</div>
 
-  <!-- แถบด้านบน -->
+
+
+  <!-- แถบโรงเรียน -->
+
   <div class="top-bar">
 
     <div class="school-info">
-      <img src="IMG_2964.jpeg" alt="โลโก้โรงเรียน">
-      <span>โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”</span>
-    </div>
 
-    <a href="portfolio.html" class="back-btn">
-      ← กลับหน้าหัวข้อ
-    </a>
+      <img
+        src="IMG_2964.jpeg"
+        alt="โลโก้โรงเรียน"
+      >
+
+      <span>
+        โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
+      </span>
+
+    </div>
 
   </div>
 
 
+
   <div class="container">
 
+
     <!-- หัวข้อ -->
+
     <div class="title">
-      <h1>🎓 ประวัติการศึกษา</h1>
-      <p>Education</p>
+
+      <h1>
+        🎓 ประวัติการศึกษา
+      </h1>
+
+      <p>
+        Education
+      </p>
+
     </div>
 
 
+
     <!-- ประถมต้น -->
+
     <div class="education-card">
 
       <div class="logo-box">
-        <img src="IMG_2968.jpeg" alt="โลโก้โรงเรียนบุญประทีปวิทยาการ">
+
+        <img
+          src="IMG_2968.jpeg"
+          alt="โลโก้โรงเรียนบุญประทีปวิทยาการ"
+        >
+
       </div>
 
+
       <div class="education-info">
-        <h2>ประถมศึกษาตอนต้น</h2>
-        <h3>โรงเรียนบุญประทีปวิทยาการ</h3>
+
+        <h2>
+          ประถมศึกษาตอนต้น
+        </h2>
+
+        <h3>
+          โรงเรียนบุญประทีปวิทยาการ
+        </h3>
 
         <p>
           ระดับการศึกษา : ประถมศึกษาตอนต้น
@@ -316,21 +626,36 @@
         <span class="grade">
           เกรดเฉลี่ยรวม : 3.96
         </span>
+
       </div>
 
     </div>
 
 
+
     <!-- ประถมปลาย -->
+
     <div class="education-card">
 
       <div class="logo-box">
-        <img src="IMG_2968.jpeg" alt="โลโก้โรงเรียนบุญประทีปวิทยาการ">
+
+        <img
+          src="IMG_2968.jpeg"
+          alt="โลโก้โรงเรียนบุญประทีปวิทยาการ"
+        >
+
       </div>
 
+
       <div class="education-info">
-        <h2>ประถมศึกษาตอนปลาย</h2>
-        <h3>โรงเรียนบุญประทีปวิทยาการ</h3>
+
+        <h2>
+          ประถมศึกษาตอนปลาย
+        </h2>
+
+        <h3>
+          โรงเรียนบุญประทีปวิทยาการ
+        </h3>
 
         <p>
           ระดับการศึกษา : ประถมศึกษาตอนปลาย
@@ -339,21 +664,36 @@
         <span class="grade">
           เกรดเฉลี่ยรวม : 3.93
         </span>
+
       </div>
 
     </div>
 
 
+
     <!-- มัธยมต้น -->
+
     <div class="education-card">
 
       <div class="logo-box">
-        <img src="IMG_2968.jpeg" alt="โลโก้โรงเรียนบุญประทีปวิทยาการ">
+
+        <img
+          src="IMG_2968.jpeg"
+          alt="โลโก้โรงเรียนบุญประทีปวิทยาการ"
+        >
+
       </div>
 
+
       <div class="education-info">
-        <h2>มัธยมศึกษาตอนต้น</h2>
-        <h3>โรงเรียนบุญประทีปวิทยาการ</h3>
+
+        <h2>
+          มัธยมศึกษาตอนต้น
+        </h2>
+
+        <h3>
+          โรงเรียนบุญประทีปวิทยาการ
+        </h3>
 
         <p>
           ระดับการศึกษา : มัธยมศึกษาตอนต้น
@@ -362,21 +702,36 @@
         <span class="grade">
           เกรดเฉลี่ยรวม : 3.86
         </span>
+
       </div>
 
     </div>
 
 
+
     <!-- มัธยมปลาย -->
+
     <div class="education-card">
 
       <div class="logo-box">
-        <img src="IMG_2967.jpeg" alt="โลโก้โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์">
+
+        <img
+          src="IMG_2967.jpeg"
+          alt="โลโก้โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์"
+        >
+
       </div>
 
+
       <div class="education-info">
-        <h2>มัธยมศึกษาตอนปลาย</h2>
-        <h3>โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”</h3>
+
+        <h2>
+          มัธยมศึกษาตอนปลาย
+        </h2>
+
+        <h3>
+          โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
+        </h3>
 
         <p>
           ระดับการศึกษา : ชั้นมัธยมศึกษาปีที่ 6
@@ -385,12 +740,25 @@
         <span class="grade">
           เกรดเฉลี่ยรวม 4 เทอม : 3.95
         </span>
+
       </div>
 
     </div>
+
+
+
+    <!-- ปุ่มกลับอยู่ด้านล่าง -->
+
+    <a
+      href="portfolio.html"
+      class="bottom-button"
+    >
+      ← กลับหน้าหัวข้อ
+    </a>
 
 
   </div>
 
 </body>
 </html>
+```

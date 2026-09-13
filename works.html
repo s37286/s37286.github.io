@@ -10,10 +10,6 @@
 
 <style>
 
-/* =========================
-   พื้นฐาน
-========================= */
-
 *{
     margin:0;
     padding:0;
@@ -22,73 +18,68 @@
 
 body{
     font-family:'Mali', cursive;
-    background:linear-gradient(
-        135deg,
-        #d9f0ff,
-        #eadcff,
-        #ffdcef,
-        #d9e9ff
-    );
-    background-size:400% 400%;
-    animation:bgMove 12s ease infinite;
-    color:#51418c;
     min-height:100vh;
-    padding-top:80px;
-}
 
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+    background:
+        radial-gradient(circle at 10% 20%, #ffd6e7 0%, transparent 25%),
+        radial-gradient(circle at 90% 10%, #e5d2ff 0%, transparent 25%),
+        linear-gradient(135deg,#fff0f6,#f1e5ff,#ffe5f0);
+
+    color:#4a315d;
+    padding-top:70px;
 }
 
 /* =========================
-   ดาวตกแต่ง
+   ตกแต่งพื้นหลัง
 ========================= */
 
 body::before{
-    content:"✦  ✧  ✦  ✧  ✦  ✧";
+    content:"✦  ✧  ♡  ✦  ✧";
     position:fixed;
-    top:120px;
+    top:100px;
     left:20px;
-    font-size:28px;
-    color:rgba(255,255,255,0.7);
-    letter-spacing:15px;
-    z-index:-1;
+
+    font-size:25px;
+    color:rgba(255,255,255,0.8);
+    letter-spacing:12px;
+
+    pointer-events:none;
 }
 
 body::after{
-    content:"✧  ✦  ✧  ✦  ✧";
+    content:"♡  ✦  ✧  ♡";
     position:fixed;
-    bottom:80px;
-    right:20px;
-    font-size:25px;
-    color:rgba(255,255,255,0.7);
-    letter-spacing:12px;
-    z-index:-1;
+    bottom:70px;
+    right:25px;
+
+    font-size:28px;
+    color:rgba(255,255,255,0.8);
+    letter-spacing:10px;
+
+    pointer-events:none;
 }
 
 /* =========================
-   แถบด้านบน
+   แถบโรงเรียน
 ========================= */
 
 .top-bar{
     position:fixed;
     top:0;
     left:0;
-    width:100%;
-    height:60px;
 
-    background:rgba(255,255,255,0.92);
-    backdrop-filter:blur(10px);
+    width:100%;
+    height:62px;
+
+    background:rgba(255,255,255,0.94);
+    backdrop-filter:blur(12px);
 
     display:flex;
     align-items:center;
-    justify-content:space-between;
 
     padding:0 25px;
 
-    box-shadow:0 4px 15px rgba(80,60,120,0.12);
+    box-shadow:0 5px 20px rgba(100,60,120,0.12);
 
     z-index:1000;
 }
@@ -108,22 +99,7 @@ body::after{
 .school span{
     font-size:15px;
     font-weight:600;
-    color:#51418c;
-}
-
-.back-btn{
-    text-decoration:none;
-    color:#51418c;
-    background:#eee6ff;
-    padding:7px 16px;
-    border-radius:20px;
-    font-size:13px;
-    transition:0.3s;
-}
-
-.back-btn:hover{
-    background:#d9c9ff;
-    transform:translateY(-2px);
+    color:#57376f;
 }
 
 /* =========================
@@ -132,7 +108,7 @@ body::after{
 
 .container{
     width:90%;
-    max-width:1100px;
+    max-width:1050px;
     margin:auto;
 }
 
@@ -142,102 +118,138 @@ body::after{
 
 .page-title{
     text-align:center;
-    margin:35px 0 40px;
+    margin:35px 0 45px;
 }
 
 .page-title h1{
-    font-size:38px;
-    color:#51418c;
+    font-size:40px;
+
+    background:linear-gradient(
+        90deg,
+        #b83280,
+        #7c3aed,
+        #d946a6
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
     margin-bottom:8px;
 }
 
 .page-title p{
-    color:#766a91;
+    color:#806b8f;
     font-size:16px;
 }
 
 /* =========================
-   ผลงาน
+   การ์ดผลงาน
 ========================= */
 
 .work-card{
-    background:rgba(255,255,255,0.95);
-    border-radius:30px;
+    background:rgba(255,255,255,0.94);
+
+    border-radius:28px;
 
     padding:25px;
     margin-bottom:30px;
 
-    box-shadow:0 10px 30px rgba(80,60,120,0.15);
-
     border:2px solid rgba(255,255,255,0.9);
 
-    transition:0.3s;
+    box-shadow:
+        0 10px 30px rgba(100,55,120,0.13);
+
+    transition:0.35s;
 }
 
 .work-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(80,60,120,0.22);
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 18px 35px rgba(130,60,140,0.20);
 }
 
-/* กลุ่มรูป */
+/* =========================
+   รูปภาพ
+========================= */
 
 .image-group{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+
     margin-bottom:20px;
 }
 
 .image-group img{
-    width:48%;
-    height:300px;
+    width:100%;
+    height:280px;
 
     object-fit:contain;
 
+    background:#fffafd;
+
     border-radius:20px;
 
-    background:#fafafa;
+    padding:8px;
 
-    box-shadow:0 5px 15px rgba(80,60,120,0.08);
+    box-shadow:
+        0 5px 18px rgba(100,60,120,0.10);
+
+    transition:0.3s;
 }
 
-/* หมายเลขผลงาน */
+.image-group img:hover{
+    transform:scale(1.02);
+}
+
+/* =========================
+   หมายเลขผลงาน
+========================= */
 
 .work-number{
     display:inline-block;
 
-    background:linear-gradient(
-        135deg,
-        #a8d8ff,
-        #d5b8ff
-    );
-
-    color:#51418c;
-
-    padding:5px 14px;
+    padding:6px 16px;
 
     border-radius:20px;
 
+    background:linear-gradient(
+        135deg,
+        #f8b4d9,
+        #d8b4fe
+    );
+
+    color:#663b76;
+
     font-size:13px;
-    font-weight:600;
+    font-weight:700;
 
     margin-bottom:10px;
 }
 
-/* ชื่อผลงาน */
+/* =========================
+   ชื่อผลงาน
+========================= */
 
 .work-card h2{
-    color:#51418c;
+    color:#633b78;
+
     font-size:23px;
-    margin-bottom:8px;
+
+    margin-bottom:10px;
 }
 
-/* รายละเอียด */
+/* =========================
+   รายละเอียด
+========================= */
 
 .work-card p{
-    color:#666;
+    color:#62576a;
+
     font-size:15px;
+
     line-height:1.9;
 }
 
@@ -247,50 +259,55 @@ body::after{
 
 .certificate-title{
     text-align:center;
-    margin:65px 0 30px;
+
+    margin:70px 0 30px;
 }
 
 .certificate-title h1{
     font-size:32px;
-    color:#51418c;
-    margin-bottom:5px;
+
+    color:#633b78;
+
+    margin-bottom:7px;
 }
 
 .certificate-title p{
-    color:#766a91;
+    color:#806b8f;
+
     font-size:16px;
 }
 
 /* =========================
-   เกียรติบัตร 10 ใบ
+   การ์ดเกียรติบัตร
 ========================= */
 
 .certificate-card{
-    background:rgba(255,255,255,0.97);
+    background:rgba(255,255,255,0.95);
 
     border-radius:24px;
 
-    padding:15px;
+    padding:16px;
 
     margin-bottom:20px;
-
-    box-shadow:0 8px 25px rgba(80,60,120,0.13);
-
-    border:2px solid rgba(255,255,255,0.9);
 
     display:flex;
     align-items:center;
 
     gap:25px;
 
+    border:2px solid rgba(255,255,255,0.9);
+
+    box-shadow:
+        0 8px 25px rgba(100,55,120,0.12);
+
     transition:0.3s;
 }
 
 .certificate-card:hover{
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 
     box-shadow:
-        0 14px 30px rgba(80,60,120,0.20);
+        0 15px 30px rgba(120,60,140,0.18);
 }
 
 /* รูปเกียรติบัตร */
@@ -303,32 +320,71 @@ body::after{
 
     object-fit:contain;
 
-    border-radius:15px;
+    background:#fffafd;
 
-    display:block;
+    border-radius:16px;
 
-    background:#fafafa;
+    padding:5px;
 
     flex-shrink:0;
 }
 
-/* ข้อความด้านขวา */
+/* ข้อความ */
 
 .certificate-content{
     flex:1;
+
     padding:10px 15px 10px 0;
 }
 
-.certificate-content .work-number{
-    margin-bottom:10px;
-}
-
 .certificate-content p{
-    color:#666;
+    color:#62576a;
 
     font-size:15px;
 
     line-height:1.8;
+}
+
+/* =========================
+   ปุ่มย้อนกลับด้านล่าง
+========================= */
+
+.bottom-button{
+    display:block;
+
+    width:max-content;
+
+    margin:45px auto 20px;
+
+    padding:12px 30px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        90deg,
+        #b83280,
+        #7c3aed,
+        #d946a6
+    );
+
+    box-shadow:
+        0 8px 20px rgba(150,60,150,0.22);
+
+    transition:0.3s;
+}
+
+.bottom-button:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(150,60,150,0.30);
 }
 
 /* =========================
@@ -338,11 +394,13 @@ body::after{
 .footer{
     text-align:center;
 
-    margin:50px 0 30px;
+    margin:35px 0 30px;
 
-    color:#766a91;
+    color:#806b8f;
 
     font-size:14px;
+
+    line-height:1.8;
 }
 
 /* =========================
@@ -352,7 +410,7 @@ body::after{
 @media(max-width:700px){
 
     body{
-        padding-top:75px;
+        padding-top:65px;
     }
 
     .top-bar{
@@ -361,17 +419,16 @@ body::after{
     }
 
     .school img{
-        width:35px;
-        height:35px;
+        width:34px;
+        height:34px;
     }
 
     .school span{
-        font-size:11px;
+        font-size:10px;
     }
 
-    .back-btn{
-        padding:6px 11px;
-        font-size:11px;
+    .container{
+        width:92%;
     }
 
     .page-title{
@@ -379,7 +436,7 @@ body::after{
     }
 
     .page-title h1{
-        font-size:28px;
+        font-size:29px;
     }
 
     .page-title p{
@@ -394,13 +451,12 @@ body::after{
     }
 
     .image-group{
-        display:block;
+        grid-template-columns:1fr;
+        gap:12px;
     }
 
     .image-group img{
-        width:100%;
-        height:180px;
-        margin-bottom:12px;
+        height:210px;
     }
 
     .work-card h2{
@@ -419,37 +475,36 @@ body::after{
     }
 
     .certificate-title h1{
-        font-size:27px;
+        font-size:26px;
     }
 
     .certificate-title p{
-        font-size:14px;
+        font-size:13px;
     }
 
     .certificate-card{
         display:block;
-
         padding:12px;
-
-        border-radius:20px;
     }
 
     .certificate-card img{
         width:100%;
         max-width:none;
-
-        height:190px;
-
-        border-radius:15px;
+        height:200px;
     }
 
     .certificate-content{
-        padding:12px 5px 5px;
+        padding:13px 5px 5px;
     }
 
     .certificate-content p{
         font-size:13px;
-        line-height:1.7;
+        line-height:1.8;
+    }
+
+    .bottom-button{
+        font-size:14px;
+        padding:11px 25px;
     }
 }
 
@@ -459,7 +514,7 @@ body::after{
 <body>
 
 <!-- =========================
-     TOP BAR
+     แถบโรงเรียน
 ========================= -->
 
 <div class="top-bar">
@@ -474,15 +529,11 @@ body::after{
 
     </div>
 
-    <a href="portfolio.html" class="back-btn">
-        ← กลับหน้าโปรไฟล์
-    </a>
-
 </div>
 
 
 <!-- =========================
-     CONTENT
+     เนื้อหา
 ========================= -->
 
 <div class="container">
@@ -491,7 +542,9 @@ body::after{
 
     <div class="page-title">
 
-        <h1>ผลงานและกิจกรรม ✨</h1>
+        <h1>
+            ผลงานและกิจกรรม ✨
+        </h1>
 
         <p>
             ผลงาน กิจกรรม และประสบการณ์ที่ได้เข้าร่วม
@@ -531,8 +584,8 @@ body::after{
         <p>
             เข้าร่วมการอบรม "ระดมสมองคนรุ่นใหม่"
             ในการอบรมครั้งนี้ มีการเยี่ยมชมสถานที่ในวิทยาลัยเทคนิคชลบุรี
-            จังหวัดชลบุรีและได้มีการรณรงค์ความคิดในหัวข้อ
-            "worldclass standard school"
+            จังหวัดชลบุรี และได้มีการระดมความคิดในหัวข้อ
+            "Worldclass Standard School"
             ได้รับความรู้ ความกล้าแสดงออก และความสามัคคีในการทำกิจกรรมกลุ่ม
         </p>
 
@@ -569,9 +622,9 @@ body::after{
 
         <p>
             เสริมสร้างประสบการณ์และเป็นแนวทางในการประกอบอาชีพด้านทันตกรรม
-            ที่ คลินิกทันตกรรมเอสซี ได้รับความรู้การพิมพ์ฟัน
-            การเอ็กซเรย์ช่องปาก จำลองการเป็นหมอฟัน ผู้ช่วยหมอฟัน
-            และผู้ที่มาทำฟัน
+            ที่คลินิกทันตกรรมเอสซี ได้รับความรู้เกี่ยวกับการพิมพ์ฟัน
+            การเอ็กซเรย์ช่องปาก การจำลองบทบาทเป็นทันตแพทย์
+            ผู้ช่วยทันตแพทย์ และผู้รับบริการ
         </p>
 
     </div>
@@ -606,10 +659,10 @@ body::after{
         </h2>
 
         <p>
-            จิตอาสา เป็นผู้ช่วยวิทยากรกิจกรรม เกมต่อเลขสมการคณิตศาสตร์ที่โรงเรียน
-            ได้รับรู้แนวคิดที่แตกต่าง สอนรุ่นน้องในการเล่น ฝึกการสื่อสาร
-            ฝึกความอดทน และได้รับความสนุกสนาน ให้น้องๆ ไม่มองว่า
-            ตัวเลขไม่ได้น่ากลัวแบบที่คิด
+            จิตอาสา เป็นผู้ช่วยวิทยากรกิจกรรมเกมต่อเลขสมการคณิตศาสตร์ที่โรงเรียน
+            ได้เรียนรู้แนวคิดที่แตกต่าง สอนรุ่นน้องในการเล่น
+            ฝึกการสื่อสาร ฝึกความอดทน และได้รับความสนุกสนาน
+            ทำให้น้อง ๆ ได้เรียนรู้ว่าตัวเลขไม่ได้น่ากลัวอย่างที่คิด
         </p>
 
     </div>
@@ -644,9 +697,9 @@ body::after{
         </h2>
 
         <p>
-            เข้าร่วมอบรมโครงการ เปิดโลกวิชาการ 2026
-            ได้รับความรู้ ได้ลงมือทำ ในการชำและหัวใจกบ ทำฟัน
-            และได้ฝึกความสามัคคีในการสร้างสะพาน
+            เข้าร่วมอบรมโครงการเปิดโลกวิชาการ 2026
+            ได้รับความรู้และได้ลงมือปฏิบัติจริงในการชำแหละหัวใจกบ
+            การทำฟัน และได้ฝึกความสามัคคีในการสร้างสะพาน
         </p>
 
     </div>
@@ -682,17 +735,17 @@ body::after{
 
         <p>
             ได้ฝึกประสบการณ์ที่โรงพยาบาลบ้านบึง เป็นเวลารวม 5 วัน 40 ชั่วโมง
-            ได้รับความรู้ เห็นแผลอุบัติเหตุ เข้าห้องแลป นักฉายรังสี
-            เทคนิคการแพทย์ เยี่ยมชมแผนกเภสัชจ่ายยา เข้าเวรเช้า
-            วัดความดัน รอบเอว ซักถามประวัติผู้ป่วย
-            ฝึกฝนการพูดจาและความกล้าแสดงออกได้ดีเยี่ยม
+            ได้รับความรู้จากการเรียนรู้หลายแผนก เช่น ห้องแล็บ
+            นักรังสีการแพทย์ เทคนิคการแพทย์ และแผนกเภสัชกรรม
+            รวมถึงได้เข้าเวรเช้า วัดความดัน วัดรอบเอว
+            ซักถามประวัติผู้ป่วย ฝึกการพูดและความกล้าแสดงออก
         </p>
 
     </div>
 
 
     <!-- =========================
-         หัวข้อเกียรติบัตร
+         เกียรติบัตร
     ========================= -->
 
     <div class="certificate-title">
@@ -708,9 +761,7 @@ body::after{
     </div>
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 1
-    ========================= -->
+    <!-- เกียรติบัตร 1 -->
 
     <div class="certificate-card">
 
@@ -726,7 +777,9 @@ body::after{
             </span>
 
             <p>
-                เข้าร่วมปลูกป่าชายเลน ได้รับความรู้เรื่องป่าชายเลน และลงสถานที่จริง
+                เข้าร่วมกิจกรรมปลูกป่าชายเลน
+                ได้รับความรู้เกี่ยวกับระบบนิเวศป่าชายเลน
+                และได้ลงพื้นที่ปฏิบัติจริง
             </p>
 
         </div>
@@ -734,9 +787,7 @@ body::after{
     </div>
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 2
-    ========================= -->
+    <!-- เกียรติบัตร 2 -->
 
     <div class="certificate-card">
 
@@ -752,7 +803,8 @@ body::after{
             </span>
 
             <p>
-                เข้าร่วมการอบรม อุ่นใจไซเบอร์ ได้รับความรู้จากวิทยาการ
+                เข้าร่วมการอบรมอุ่นใจไซเบอร์
+                ได้รับความรู้เกี่ยวกับการใช้งานโลกออนไลน์อย่างปลอดภัย
             </p>
 
         </div>
@@ -760,9 +812,7 @@ body::after{
     </div>
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 3
-    ========================= -->
+    <!-- เกียรติบัตร 3 -->
 
     <div class="certificate-card">
 
@@ -778,7 +828,8 @@ body::after{
             </span>
 
             <p>
-                เข้าร่วมกิจกรรม สร้างบ้านปลาให้ป่าชายเลน ได้รับความรู้เรื่องป่าชายเลนมากขึ้น
+                เข้าร่วมกิจกรรมสร้างบ้านปลาให้ป่าชายเลน
+                ได้รับความรู้เกี่ยวกับการอนุรักษ์ป่าชายเลนมากขึ้น
             </p>
 
         </div>
@@ -786,9 +837,7 @@ body::after{
     </div>
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 4
-    ========================= -->
+    <!-- เกียรติบัตร 4 -->
 
     <div class="certificate-card">
 
@@ -804,7 +853,8 @@ body::after{
             </span>
 
             <p>
-                เข้าร่วมการอบรมบุคคลรุ่นใหม่ ได้รับความรู้มากมาย
+                เข้าร่วมการอบรมบุคคลรุ่นใหม่
+                ได้รับความรู้และประสบการณ์ใหม่ ๆ มากมาย
             </p>
 
         </div>
@@ -812,9 +862,7 @@ body::after{
     </div>
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 5
-    ========================= -->
+    <!-- เกียรติบัตร 5 -->
 
     <div class="certificate-card">
 
@@ -830,7 +878,8 @@ body::after{
             </span>
 
             <p>
-                เข้าร่วมกิจกรรมวันวิทย์ ทั้งหมด 12ซุ้ม ได้รับความรู้และความสนุกมากมาย
+                เข้าร่วมกิจกรรมวันวิทยาศาสตร์ทั้งหมด 12 ซุ้ม
+                ได้รับทั้งความรู้และความสนุกสนาน
             </p>
 
         </div>
@@ -838,9 +887,7 @@ body::after{
     </div>
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 6
-    ========================= -->
+    <!-- เกียรติบัตร 6 -->
 
     <div class="certificate-card">
 
@@ -856,8 +903,9 @@ body::after{
             </span>
 
             <p>
-                อบรมดับเพลิงและการฝึกช้อมอพยพหนีไฟในสถานศึกษา
-                ได้ความรู้ ความอันตรายของไฟ รู้สึกตื่นเต้น ได้เห็นและลองปฏิบัติ
+                เข้าร่วมอบรมดับเพลิงและการฝึกซ้อมอพยพหนีไฟในสถานศึกษา
+                ได้รับความรู้เกี่ยวกับอันตรายจากไฟ
+                และได้ทดลองปฏิบัติจริง
             </p>
 
         </div>
@@ -865,9 +913,7 @@ body::after{
     </div>
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 7
-    ========================= -->
+    <!-- เกียรติบัตร 7 -->
 
     <div class="certificate-card">
 
@@ -883,9 +929,10 @@ body::after{
             </span>
 
             <p>
-                เป็นสภานักเรียนตลอดปีการศึกษา 2567 เปิดประสบการณ์ต่างๆมากๆ
-                พี่ๆใจดี เป็นกันเองมากๆ ฝึกทักษะหลายๆด้าย ทั้งการพูด ความคิด
-                มีสติยิ่งขึ้น ความเป็นผู้นำ ความเสียสละ
+                เป็นสภานักเรียนตลอดปีการศึกษา 2567
+                ได้เปิดประสบการณ์ใหม่ ๆ และฝึกทักษะหลายด้าน
+                ทั้งการพูด การคิด การมีสติ ความเป็นผู้นำ
+                และความเสียสละ
             </p>
 
         </div>
@@ -893,9 +940,7 @@ body::after{
     </div>
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 8
-    ========================= -->
+    <!-- เกียรติบัตร 8 -->
 
     <div class="certificate-card">
 
@@ -911,7 +956,8 @@ body::after{
             </span>
 
             <p>
-                จิตอาสาวันไหว้ครู ได้ทำหน้าที่ รับพานไหว้ครู 
+                จิตอาสาในกิจกรรมวันไหว้ครู
+                ได้ทำหน้าที่รับพานไหว้ครู
             </p>
 
         </div>
@@ -919,9 +965,7 @@ body::after{
     </div>
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 9
-    ========================= -->
+    <!-- เกียรติบัตร 9 -->
 
     <div class="certificate-card">
 
@@ -937,7 +981,9 @@ body::after{
             </span>
 
             <p>
-                จิตอาสา ทำความสะอาด โรงเรียน มีความสุขในการทำ เห็นโรงเรียนสะอาดก็น่าอยุ๋
+                จิตอาสาทำความสะอาดโรงเรียน
+                รู้สึกมีความสุขที่ได้ช่วยดูแลสถานที่
+                และเห็นโรงเรียนสะอาดน่าอยู่มากขึ้น
             </p>
 
         </div>
@@ -945,9 +991,7 @@ body::after{
     </div>
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 10
-    ========================= -->
+    <!-- เกียรติบัตร 10 -->
 
     <div class="certificate-card">
 
@@ -963,7 +1007,8 @@ body::after{
             </span>
 
             <p>
-               จิตอาสาเดินขบวนกีฬาสี ปี2567 ฝึกความอดทนต่อแดด ฝน 
+                จิตอาสาเดินขบวนกีฬาสี ปี 2567
+                ได้ฝึกความอดทนและการทำงานร่วมกับผู้อื่น
             </p>
 
         </div>
@@ -972,8 +1017,15 @@ body::after{
 
 
     <!-- =========================
-         Footer
+         ปุ่มกลับด้านล่าง
     ========================= -->
+
+    <a href="portfolio.html" class="bottom-button">
+        ← กลับไปเลือกหัวข้อ
+    </a>
+
+
+    <!-- Footer -->
 
     <div class="footer">
 

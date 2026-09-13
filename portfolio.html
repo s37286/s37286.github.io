@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -19,40 +20,73 @@
 
 body{
     min-height:100vh;
-    padding-top:70px;
+    padding-top:75px;
+    overflow-x:hidden;
 
-    background:linear-gradient(
-        135deg,
-        #dbeafe,
-        #fce7f3,
-        #e9d5ff,
-        #dbeafe
-    );
+    background:
+        radial-gradient(circle at 10% 15%, #f9a8d4 0%, transparent 25%),
+        radial-gradient(circle at 90% 20%, #ddd6fe 0%, transparent 28%),
+        radial-gradient(circle at 80% 90%, #e9d5ff 0%, transparent 30%),
+        linear-gradient(135deg,#fff1f8,#fce7f3,#ede9fe);
 
-    background-size:400% 400%;
-    animation:gradientMove 12s ease infinite;
+    position:relative;
 }
 
 
-/* พื้นหลังเคลื่อนไหว */
+/* =========================
+   พื้นหลังตกแต่ง
+========================= */
 
-@keyframes gradientMove{
+.bg-circle{
+    position:fixed;
+    border-radius:50%;
+    z-index:-1;
+    opacity:0.5;
+    animation:float 7s ease-in-out infinite;
+}
 
-    0%{
-        background-position:0% 50%;
+.circle1{
+    width:180px;
+    height:180px;
+    background:#f472b6;
+    top:15%;
+    left:-70px;
+}
+
+.circle2{
+    width:250px;
+    height:250px;
+    background:#c4b5fd;
+    bottom:-80px;
+    right:-60px;
+    animation-delay:2s;
+}
+
+.circle3{
+    width:90px;
+    height:90px;
+    background:#e879f9;
+    top:25%;
+    right:12%;
+    animation-delay:1s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
     }
 
     50%{
-        background-position:100% 50%;
+        transform:translateY(-25px);
     }
 
-    100%{
-        background-position:0% 50%;
-    }
 }
 
 
-/* แถบด้านบน */
+/* =========================
+   แถบด้านบน
+========================= */
 
 .navbar{
 
@@ -61,40 +95,61 @@ body{
     left:0;
 
     width:100%;
-    height:58px;
+    height:70px;
 
-    background:rgba(255,255,255,0.96);
+    background:rgba(255,255,255,0.90);
+    backdrop-filter:blur(15px);
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    padding:0 5%;
+    padding:0 7%;
 
     z-index:1000;
 
-    box-shadow:0 3px 15px rgba(60,60,120,0.10);
+    border-bottom:1px solid rgba(217,70,239,0.12);
+
+    box-shadow:
+        0 5px 25px rgba(180,70,170,0.12);
 }
 
 
-/* โลโก้และชื่อโรงเรียน */
+/* โลโก้ */
 
 .school{
+
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
+
 }
 
 .school-logo{
-    width:38px;
-    height:38px;
+
+    width:42px;
+    height:42px;
+
     object-fit:contain;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:3px;
+
+    box-shadow:
+        0 4px 12px rgba(180,70,170,0.15);
+
 }
 
 .school-name{
-    font-size:15px;
+
+    font-size:16px;
     font-weight:bold;
-    color:#374151;
+
+    color:#6b3f68;
+
 }
 
 
@@ -104,142 +159,175 @@ body{
 
     text-decoration:none;
 
-    padding:6px 14px;
+    padding:9px 18px;
 
-    border-radius:20px;
+    border-radius:30px;
 
     color:white;
 
-    font-size:13px;
+    font-size:14px;
+    font-weight:bold;
 
-    background:linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #ec4899,
+            #d946ef,
+            #8b5cf6
+        );
 
-    transition:0.3s;
+    box-shadow:
+        0 6px 18px rgba(217,70,239,0.25);
+
+    transition:0.35s;
+
 }
 
 .back-button:hover{
-    transform:scale(1.05);
+
+    transform:
+        translateY(-3px)
+        scale(1.04);
+
+    box-shadow:
+        0 10px 25px rgba(217,70,239,0.35);
+
 }
 
 
-/* เนื้อหาหลัก */
+/* =========================
+   เนื้อหาหลัก
+========================= */
 
 .container{
 
-    max-width:750px;
+    width:92%;
+    max-width:1000px;
 
     margin:auto;
 
-    padding:30px 20px 50px;
+    padding:35px 20px 60px;
 
     text-align:center;
+
 }
 
 
-/* หัวข้อหลัก */
+/* =========================
+   หัวข้อ
+========================= */
 
 .title{
 
-    font-size:38px;
+    font-size:42px;
 
-    background:linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed,
-        #ec4899
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #db2777,
+            #c026d3,
+            #8b5cf6
+        );
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 
     margin-bottom:5px;
+
 }
 
 .subtitle{
 
-    color:#64748b;
+    color:#95658f;
 
     font-size:16px;
 
-    margin-bottom:20px;
+    margin-bottom:28px;
+
 }
 
 
-/* รูปตัวเองด้านบน */
+/* =========================
+   รูปตัวเอง
+========================= */
 
 .top-profile{
 
-    margin:15px 0 25px;
+    margin:10px 0 35px;
 
     text-align:center;
+
 }
 
 .top-profile img{
 
-    width:130px;
-    height:130px;
+    width:145px;
+    height:145px;
 
     object-fit:cover;
 
     border-radius:50%;
 
-    border:5px solid white;
+    border:6px solid white;
 
     box-shadow:
-        0 0 0 4px #60a5fa,
-        0 0 0 8px #c084fc,
-        0 0 0 12px #f9a8d4,
-        0 12px 25px rgba(100,80,180,0.25);
+        0 0 0 4px #f472b6,
+        0 0 0 9px #c084fc,
+        0 0 0 14px #fbcfe8,
+        0 15px 30px rgba(160,70,150,0.22);
 
-    transition:0.4s;
+    transition:0.5s;
 
-    animation:showImage 1s ease;
+    animation:imageShow 1s ease;
+
 }
 
 .top-profile img:hover{
 
     transform:
         scale(1.08)
-        rotate(3deg);
+        rotate(-3deg);
+
 }
 
-
-/* เอฟเฟกต์รูป */
-
-@keyframes showImage{
+@keyframes imageShow{
 
     from{
         opacity:0;
-        transform:translateY(25px);
+        transform:scale(0.8);
     }
 
     to{
         opacity:1;
-        transform:translateY(0);
+        transform:scale(1);
     }
+
 }
 
 
-/* เมนู */
+/* =========================
+   เมนูแบบใหม่
+========================= */
 
 .menu-list{
 
-    display:flex;
-    flex-direction:column;
+    display:grid;
 
-    gap:12px;
+    grid-template-columns:
+        repeat(2,1fr);
 
-    max-width:650px;
+    gap:18px;
+
+    max-width:900px;
 
     margin:auto;
+
 }
 
 
-/* การ์ดหัวข้อ */
+/* =========================
+   การ์ด
+========================= */
 
 .menu-card{
 
@@ -249,192 +337,356 @@ body{
 
     text-decoration:none;
 
-    background:rgba(255,255,255,0.85);
+    position:relative;
 
-    padding:13px 20px;
+    min-height:95px;
 
-    border-radius:18px;
+    padding:18px 20px;
 
-    border:2px solid white;
+    background:
+        rgba(255,255,255,0.78);
 
-    color:#374151;
+    border:2px solid rgba(255,255,255,0.95);
+
+    border-radius:25px;
+
+    color:#4a3152;
+
+    backdrop-filter:blur(10px);
 
     box-shadow:
-        0 5px 15px rgba(80,80,150,0.10);
+        0 10px 25px rgba(170,70,160,0.10);
 
-    transition:0.3s;
+    overflow:hidden;
+
+    transition:
+        transform 0.35s,
+        box-shadow 0.35s;
+
 }
 
 
-/* เอฟเฟกต์ */
+/* แถบสีด้านข้าง */
+
+.menu-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:6px;
+    height:100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ec4899,
+            #d946ef,
+            #8b5cf6
+        );
+
+}
+
+
+/* เอฟเฟกต์ hover */
 
 .menu-card:hover{
 
-    transform:translateX(8px);
+    transform:
+        translateY(-7px);
 
     box-shadow:
-        0 10px 20px rgba(90,70,180,0.20);
+        0 18px 35px rgba(170,70,160,0.20);
+
 }
 
 
-/* หมายเลข */
+/* =========================
+   หมายเลข
+========================= */
 
 .number{
 
-    width:42px;
-    height:42px;
+    width:48px;
+    height:48px;
 
-    min-width:42px;
+    min-width:48px;
 
-    border-radius:50%;
+    border-radius:16px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     color:white;
 
-    font-size:18px;
+    font-size:19px;
+
     font-weight:bold;
 
-    background:linear-gradient(
-        135deg,
-        #2563eb,
-        #7c3aed,
-        #ec4899
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ec4899,
+            #d946ef,
+            #8b5cf6
+        );
 
-    margin-right:15px;
+    margin-right:14px;
+
+    box-shadow:
+        0 7px 15px rgba(217,70,239,0.22);
+
 }
 
 
-/* ไอคอน */
+/* =========================
+   ไอคอน
+========================= */
 
 .icon{
 
-    font-size:26px;
+    width:48px;
+    height:48px;
 
-    margin-right:12px;
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fce7f3,
+            #ede9fe
+        );
+
+    font-size:25px;
+
+    margin-right:14px;
+
 }
 
 
-/* ข้อความ */
+/* =========================
+   ข้อความ
+========================= */
 
 .menu-text{
 
     text-align:left;
 
     flex:1;
+
 }
-
-
-/* ชื่อหัวข้อ */
 
 .menu-text h2{
 
     font-size:19px;
 
-    color:#4338ca;
+    color:#8b3a82;
+
+    margin-bottom:2px;
+
 }
-
-
-/* ภาษาอังกฤษ */
 
 .menu-text p{
 
     font-size:13px;
 
-    color:#ec4899;
+    color:#c026a5;
 
-    margin-top:2px;
 }
 
 
-/* ลูกศร */
+/* =========================
+   ลูกศร
+========================= */
 
 .arrow{
 
-    font-size:22px;
+    width:35px;
+    height:35px;
 
-    color:#7c3aed;
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#fce7f3;
+
+    color:#a855f7;
+
+    font-size:24px;
+
+    transition:0.3s;
+
+}
+
+.menu-card:hover .arrow{
+
+    background:#e9d5ff;
+
+    transform:translateX(4px);
+
 }
 
 
-/* มือถือ */
+/* =========================
+   มือถือ
+========================= */
 
-@media(max-width:600px){
+@media(max-width:700px){
 
     body{
         padding-top:65px;
     }
 
     .navbar{
-        height:52px;
+
+        height:58px;
+
         padding:0 15px;
+
     }
 
     .school-logo{
-        width:32px;
-        height:32px;
+
+        width:35px;
+        height:35px;
+
     }
 
     .school-name{
+
         font-size:10px;
+
     }
 
     .back-button{
+
         font-size:10px;
-        padding:5px 9px;
+
+        padding:7px 11px;
+
     }
 
     .container{
-        padding:25px 15px 40px;
+
+        padding:
+            28px 10px 40px;
+
     }
 
     .title{
-        font-size:29px;
+
+        font-size:30px;
+
     }
 
     .subtitle{
+
         font-size:14px;
+
     }
 
     .top-profile img{
-        width:110px;
-        height:110px;
+
+        width:115px;
+        height:115px;
+
+    }
+
+    .menu-list{
+
+        grid-template-columns:1fr;
+
+        gap:13px;
+
     }
 
     .menu-card{
-        padding:11px 12px;
+
+        min-height:82px;
+
+        padding:14px;
+
+        border-radius:20px;
+
     }
 
     .number{
-        width:38px;
-        height:38px;
-        min-width:38px;
+
+        width:40px;
+        height:40px;
+
+        min-width:40px;
+
         font-size:16px;
-        margin-right:10px;
+
+        margin-right:9px;
+
+        border-radius:13px;
+
     }
 
     .icon{
-        font-size:22px;
-        margin-right:8px;
+
+        width:40px;
+        height:40px;
+
+        font-size:21px;
+
+        margin-right:9px;
+
+        border-radius:12px;
+
     }
 
     .menu-text h2{
+
         font-size:16px;
+
     }
 
     .menu-text p{
+
         font-size:11px;
+
+    }
+
+    .arrow{
+
+        width:30px;
+        height:30px;
+
+        font-size:20px;
+
     }
 
 }
 
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- พื้นหลังตกแต่ง -->
+
+<div class="bg-circle circle1"></div>
+<div class="bg-circle circle2"></div>
+<div class="bg-circle circle3"></div>
 
 
 <!-- แถบด้านบน -->
@@ -443,7 +695,6 @@ body{
 
     <div class="school">
 
-        <!-- โลโก้โรงเรียน -->
         <img
             src="IMG_2964.jpeg"
             alt="โลโก้โรงเรียน"
@@ -628,5 +879,8 @@ body{
 
 </main>
 
+
 </body>
 </html>
+```
+

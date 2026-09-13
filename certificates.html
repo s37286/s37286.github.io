@@ -6,6 +6,7 @@
 
   <title>เกียรติบัตรและรางวัล | Warintha Lueangoon</title>
 
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -20,22 +21,30 @@
       font-family: 'Mali', cursive;
       min-height: 100vh;
 
-      background: linear-gradient(
-        135deg,
-        #d9f0ff,
-        #eadcff,
-        #ffdcef,
-        #d9e9ff
-      );
+      background:
+        radial-gradient(circle at 10% 15%, rgba(255,255,255,0.8), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(255,190,230,0.45), transparent 28%),
+        radial-gradient(circle at 20% 90%, rgba(210,180,255,0.4), transparent 30%),
+        linear-gradient(
+          135deg,
+          #fff0f8,
+          #f4ddff,
+          #eadcff,
+          #ffd9ec
+        );
 
-      background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
+      background-size: 180% 180%;
+      animation: bgMove 12s ease infinite;
 
-      padding-top: 65px;
-      color: #333;
+      color: #3d3158;
+      min-height: 100vh;
+      padding-top: 70px;
+      padding-bottom: 40px;
+
+      overflow-x: hidden;
     }
 
-    @keyframes gradientMove {
+    @keyframes bgMove {
       0% {
         background-position: 0% 50%;
       }
@@ -51,7 +60,40 @@
 
 
     /* =========================
-       แถบด้านบน
+       แสงตกแต่งพื้นหลัง
+    ========================== */
+
+    body::before {
+      content: "✦  ✧  ✦  ✧  ✦";
+      position: fixed;
+      top: 100px;
+      left: 20px;
+
+      font-size: 25px;
+      color: rgba(190, 120, 220, 0.25);
+      letter-spacing: 12px;
+
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::after {
+      content: "✧  ✦  ✧  ✦";
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+
+      font-size: 28px;
+      color: rgba(220, 100, 180, 0.25);
+      letter-spacing: 12px;
+
+      pointer-events: none;
+      z-index: -1;
+    }
+
+
+    /* =========================
+       แถบโรงเรียนด้านบน
     ========================== */
 
     .top-bar {
@@ -60,17 +102,21 @@
       left: 0;
 
       width: 100%;
-      height: 60px;
+      height: 65px;
 
-      background: rgba(255,255,255,0.96);
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(15px);
 
       display: flex;
       align-items: center;
-      justify-content: space-between;
 
       padding: 0 25px;
 
-      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      box-shadow:
+        0 5px 25px rgba(120,70,150,0.12);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.8);
 
       z-index: 1000;
     }
@@ -78,108 +124,152 @@
     .school-info {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .school-info img {
-      width: 38px;
-      height: 38px;
+      width: 42px;
+      height: 42px;
+
       object-fit: contain;
+
+      background: white;
+      border-radius: 50%;
+
+      padding: 3px;
+
+      box-shadow:
+        0 4px 12px rgba(120,70,150,0.15);
     }
 
     .school-info span {
       font-size: 14px;
       font-weight: 600;
-      color: #4b3f72;
-    }
 
-    .back-btn {
-      text-decoration: none;
-
-      color: white;
-
-      background: linear-gradient(
-        135deg,
-        #7161ef,
-        #b05ce2
-      );
-
-      padding: 8px 17px;
-
-      border-radius: 20px;
-
-      font-size: 13px;
-
-      transition: 0.3s;
-    }
-
-    .back-btn:hover {
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 5px 15px rgba(100,80,200,0.3);
+      color: #6a397d;
     }
 
 
     /* =========================
-       เนื้อหา
+       เนื้อหาหลัก
     ========================== */
 
     .container {
       width: 92%;
       max-width: 1050px;
 
-      margin: 35px auto 60px;
+      margin: 30px auto 50px;
     }
+
+
+    /* =========================
+       หัวข้อ
+    ========================== */
 
     .title {
       text-align: center;
 
-      margin-bottom: 35px;
+      margin: 30px 0 45px;
     }
 
     .title h1 {
-      font-size: 34px;
+      font-size: 38px;
 
-      color: #51418c;
+      color: #8d3d91;
 
-      margin-bottom: 5px;
+      margin-bottom: 8px;
+
+      text-shadow:
+        0 3px 12px rgba(180,80,170,0.2);
     }
 
     .title p {
-      color: #766a91;
+      color: #85658e;
 
       font-size: 16px;
     }
 
 
     /* =========================
-       กรอบเกียรติบัตรหลัก
+       เส้นตกแต่งหัวข้อ
+    ========================== */
+
+    .title::after {
+      content: "";
+
+      display: block;
+
+      width: 90px;
+      height: 5px;
+
+      margin: 15px auto 0;
+
+      border-radius: 10px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #d94fa8,
+          #9d55d8,
+          #d94fa8
+        );
+
+      box-shadow:
+        0 4px 12px rgba(190,70,170,0.3);
+    }
+
+
+    /* =========================
+       การ์ดเกียรติบัตรหลัก
     ========================== */
 
     .certificate-card {
-      background: rgba(255,255,255,0.96);
+      position: relative;
 
-      border-radius: 28px;
+      background: rgba(255,255,255,0.88);
 
-      padding: 18px;
+      border-radius: 30px;
 
-      margin-bottom: 28px;
+      padding: 20px;
+
+      margin-bottom: 30px;
 
       box-shadow:
-        0 8px 25px rgba(80,60,120,0.13);
+        0 12px 35px rgba(110,60,140,0.14);
 
       border:
         2px solid rgba(255,255,255,0.9);
 
-      transition: 0.3s;
+      transition: 0.35s;
+
+      overflow: hidden;
+    }
+
+    .certificate-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 5px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #d94fa8,
+          #a755d8,
+          #f28ac8
+        );
     }
 
     .certificate-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-7px);
 
       box-shadow:
-        0 14px 30px rgba(80,60,120,0.2);
+        0 18px 40px rgba(110,60,140,0.22);
     }
 
 
@@ -190,28 +280,42 @@
     .image-group {
       display: grid;
 
-      grid-template-columns:
-        1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 
-      gap: 12px;
+      gap: 15px;
     }
 
     .image-group img {
       width: 100%;
 
-      height: 300px;
+      height: 310px;
 
-      object-fit: cover;
+      object-fit: contain;
 
       border-radius: 20px;
 
       display: block;
 
+      background:
+        linear-gradient(
+          135deg,
+          #fff8fc,
+          #f8efff
+        );
+
+      padding: 8px;
+
+      box-shadow:
+        0 5px 18px rgba(100,60,130,0.10);
+
       transition: 0.3s;
     }
 
     .image-group img:hover {
-      transform: scale(1.02);
+      transform: scale(1.025);
+
+      box-shadow:
+        0 8px 25px rgba(150,70,160,0.18);
     }
 
 
@@ -220,7 +324,7 @@
     ========================== */
 
     .certificate-content {
-      padding: 20px 10px 8px;
+      padding: 22px 10px 8px;
     }
 
     .certificate-number {
@@ -229,31 +333,35 @@
       background:
         linear-gradient(
           135deg,
-          #7161ef,
-          #c06be8
+          #d94fa8,
+          #9b55d5
         );
 
       color: white;
 
-      padding: 5px 13px;
+      padding: 6px 15px;
 
-      border-radius: 15px;
+      border-radius: 20px;
 
       font-size: 12px;
+      font-weight: 600;
+
+      margin-bottom: 11px;
+
+      box-shadow:
+        0 5px 15px rgba(180,70,160,0.22);
+    }
+
+    .certificate-content h2 {
+      color: #713b82;
+
+      font-size: 23px;
 
       margin-bottom: 10px;
     }
 
-    .certificate-content h2 {
-      color: #554397;
-
-      font-size: 22px;
-
-      margin-bottom: 9px;
-    }
-
     .certificate-content p {
-      color: #666;
+      color: #62576b;
 
       font-size: 15px;
 
@@ -262,136 +370,167 @@
 
 
     /* =========================
-       เกียรติบัตรเพิ่มเติม 9 ใบ
+       หัวข้อเกียรติบัตรเพิ่มเติม
     ========================== */
 
     .extra-title {
       text-align: center;
 
-      margin-bottom: 20px;
+      margin: 10px 0 25px;
     }
 
     .extra-title h2 {
-      color: #554397;
+      color: #713b82;
 
-      font-size: 24px;
+      font-size: 25px;
 
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     .extra-title p {
-      color: #777;
+      color: #806b87;
 
       font-size: 13px;
     }
+
+
+    /* =========================
+       เกียรติบัตรเพิ่มเติม
+    ========================== */
 
     .extra-certificate {
       display: flex;
 
       align-items: center;
 
-      gap: 20px;
+      gap: 22px;
 
       padding: 15px;
 
-      margin-top: 15px;
+      margin-top: 16px;
 
       background:
         linear-gradient(
           135deg,
-          #f8f5ff,
-          #fff3fa
+          rgba(255,245,252,0.95),
+          rgba(246,238,255,0.95)
         );
 
-      border-radius: 20px;
+      border-radius: 22px;
 
       border:
-        1px solid rgba(120,90,200,0.1);
+        1px solid rgba(170,100,180,0.12);
 
       transition: 0.3s;
+
+      box-shadow:
+        0 5px 15px rgba(100,60,130,0.05);
     }
 
     .extra-certificate:hover {
-      transform: translateX(5px);
+      transform: translateX(7px);
 
       box-shadow:
-        0 6px 18px rgba(100,80,180,0.12);
+        0 8px 22px rgba(130,70,150,0.15);
     }
 
     .extra-certificate img {
-      width: 190px;
+      width: 195px;
 
-      height: 125px;
+      height: 130px;
 
-      object-fit: cover;
+      object-fit: contain;
 
-      border-radius: 14px;
+      background: white;
+
+      padding: 5px;
+
+      border-radius: 15px;
 
       display: block;
+
+      flex-shrink: 0;
+
+      box-shadow:
+        0 5px 15px rgba(100,60,130,0.10);
     }
 
     .extra-certificate h3 {
-      color: #554397;
+      color: #7a4388;
 
       font-size: 17px;
 
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     .extra-certificate p {
-      color: #666;
+      color: #665b6d;
 
       font-size: 13px;
 
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
 
     /* =========================
-       ดาวตกแต่ง
+       ปุ่มย้อนกลับด้านล่าง
     ========================== */
 
-    .star {
-      position: fixed;
+    .bottom-back {
+      text-align: center;
 
-      font-size: 20px;
-
-      opacity: 0.5;
-
-      animation:
-        float 4s ease-in-out infinite;
-
-      pointer-events: none;
+      margin: 45px 0 25px;
     }
 
-    .star1 {
-      top: 15%;
-      left: 5%;
+    .back-btn {
+      display: inline-block;
+
+      text-decoration: none;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d94fa8,
+          #9954d5
+        );
+
+      padding: 12px 28px;
+
+      border-radius: 30px;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      box-shadow:
+        0 7px 20px rgba(160,70,170,0.25);
+
+      transition: 0.3s;
     }
 
-    .star2 {
-      top: 35%;
-      right: 6%;
+    .back-btn:hover {
+      transform: translateY(-4px);
 
-      animation-delay: 1s;
+      box-shadow:
+        0 12px 28px rgba(160,70,170,0.35);
     }
 
-    .star3 {
-      bottom: 15%;
-      left: 8%;
 
-      animation-delay: 2s;
-    }
+    /* =========================
+       Footer
+    ========================== */
 
-    @keyframes float {
+    .footer {
+      text-align: center;
 
-      0%,100% {
-        transform: translateY(0);
-      }
+      margin: 25px 0 10px;
 
-      50% {
-        transform: translateY(-12px);
-      }
+      color: #806b87;
+
+      font-size: 13px;
+
+      line-height: 1.8;
     }
 
 
@@ -401,40 +540,63 @@
 
     @media (max-width: 700px) {
 
+      body {
+        padding-top: 65px;
+      }
+
       .top-bar {
+        height: 60px;
+
         padding: 0 12px;
+      }
+
+      .school-info {
+        gap: 7px;
+      }
+
+      .school-info img {
+        width: 34px;
+        height: 34px;
       }
 
       .school-info span {
         font-size: 10px;
       }
 
-      .school-info img {
-        width: 32px;
-        height: 32px;
-      }
-
-      .back-btn {
-        padding: 7px 11px;
-
-        font-size: 11px;
+      .title {
+        margin: 25px 0 35px;
       }
 
       .title h1 {
-        font-size: 27px;
+        font-size: 28px;
+      }
+
+      .title p {
+        font-size: 13px;
+      }
+
+      .certificate-card {
+        padding: 14px;
+
+        border-radius: 23px;
       }
 
       .image-group {
-        grid-template-columns:
-          1fr 1fr;
+        grid-template-columns: 1fr 1fr;
 
-        gap: 7px;
+        gap: 8px;
       }
 
       .image-group img {
-        height: 180px;
+        height: 190px;
+
+        padding: 5px;
 
         border-radius: 15px;
+      }
+
+      .certificate-content {
+        padding: 17px 5px 5px;
       }
 
       .certificate-content h2 {
@@ -443,6 +605,12 @@
 
       .certificate-content p {
         font-size: 13px;
+
+        line-height: 1.8;
+      }
+
+      .extra-title h2 {
+        font-size: 21px;
       }
 
       .extra-certificate {
@@ -452,7 +620,7 @@
       }
 
       .extra-certificate img {
-        width: 115px;
+        width: 105px;
 
         height: 80px;
 
@@ -466,7 +634,17 @@
       .extra-certificate p {
         font-size: 11px;
 
-        line-height: 1.5;
+        line-height: 1.6;
+      }
+
+      .back-btn {
+        padding: 10px 22px;
+
+        font-size: 13px;
+      }
+
+      .footer {
+        font-size: 11px;
       }
 
     }
@@ -479,16 +657,7 @@
 
 
   <!-- =========================
-       ดาวตกแต่ง
-  ========================== -->
-
-  <div class="star star1">✦</div>
-  <div class="star star2">✧</div>
-  <div class="star star3">✦</div>
-
-
-  <!-- =========================
-       แถบด้านบน
+       แถบโรงเรียนด้านบน
   ========================== -->
 
   <div class="top-bar">
@@ -506,19 +675,12 @@
 
     </div>
 
-
-    <a
-      href="portfolio.html"
-      class="back-btn"
-    >
-      ← กลับหน้าหัวข้อ
-    </a>
-
   </div>
 
 
+
   <!-- =========================
-       เนื้อหา
+       เนื้อหาหลัก
   ========================== -->
 
   <div class="container">
@@ -537,6 +699,7 @@
       </p>
 
     </div>
+
 
 
     <!-- =========================
@@ -570,12 +733,16 @@
         </h2>
 
         <p>
-          ROBINSON Lifestyle World Youth Qualifying Thailand 2025 โดยจัดตั้งโดย bangkok crossword club ได้รับรางวัลรองชนะเลิศ เกมต่อสมการคณิตศาสตร์ รุ่นอายุไม่เกิน 18 ปี รางวัลนี้เป็นรางวัลที่ได้รับถ้วยสนามที่ 1 รู้สึกภูมิใจและชมตัวเองเสมอมา ไม่เคยคิดจะท้อกับการแข่งขัน
+          เข้าร่วมการแข่งขัน ROBINSON Lifestyle World Youth Qualifying Thailand 2025
+          ซึ่งจัดโดย Bangkok Crossword Club และได้รับรางวัลรองชนะเลิศ
+          เกมต่อสมการคณิตศาสตร์ รุ่นอายุไม่เกิน 18 ปี
+          เป็นรางวัลที่สร้างความภาคภูมิใจและเป็นแรงผลักดันให้พัฒนาตนเองต่อไป
         </p>
 
       </div>
 
     </div>
+
 
 
     <!-- =========================
@@ -605,16 +772,20 @@
         </span>
 
         <h2>
-          A-math รางวัลรองชนะเลิศลำดับ 2
+          A-math รางวัลรองชนะเลิศลำดับที่ 2
         </h2>
 
         <p>
-          เป็นสนามที่ไม่ย่อท้อ เต็มที่ สุดความสามารถ รู้สึกภูมิใจในตัวเอง และรู้สึกขอบคุณพี่น้องคุณครู พ่อแม่ ที่ซัพพอร์ตตลอดมา
+          เป็นการแข่งขันที่ได้ทุ่มเทและพยายามอย่างเต็มความสามารถ
+          สามารถก้าวผ่านความกดดันและพัฒนาตนเองได้มากขึ้น
+          รู้สึกภาคภูมิใจในผลงาน และขอขอบคุณครอบครัว คุณครู
+          และพี่น้องที่คอยสนับสนุนมาโดยตลอด
         </p>
 
       </div>
 
     </div>
+
 
 
     <!-- =========================
@@ -644,16 +815,19 @@
         </span>
 
         <h2>
-          A-math รางวัลรองชนะเลิศลำดับ 2
+          A-math รางวัลรองชนะเลิศลำดับที่ 2
         </h2>
 
         <p>
-          ได้รางวัลรองชนะเลิศนี้ด้วยความตั้งใจ ความมุ่งมั่น ไม่ท้อ หมั่นซ้อม แต่ไม่ทิ้งการเรียน จนมาได้จนถึงวันนี้ ภูมิใจมาก ๆ ค่ะ
+          ได้รับรางวัลจากความตั้งใจ ความมุ่งมั่น และการฝึกฝนอย่างสม่ำเสมอ
+          โดยสามารถแบ่งเวลาในการฝึกซ้อมควบคู่กับการเรียน
+          ประสบการณ์ครั้งนี้ทำให้ได้เรียนรู้และพัฒนาตนเองมากยิ่งขึ้น
         </p>
 
       </div>
 
     </div>
+
 
 
     <!-- =========================
@@ -687,12 +861,16 @@
         </h2>
 
         <p>
-          ดีใจมากที่สุดเลยค่ะที่ได้รางวัลนี้ ชนะเลิศระดับประเทศ ไม่เสียแรงเลยที่หมั่นซ้อม ฝึกฝนอยู่เสมอ มีความคิดที่แตกต่าง ตัดสินใจได้ดีมากขึ้นค่ะ
+          ได้รับรางวัลชนะเลิศระดับประเทศจากการแข่งขัน A-math
+          ซึ่งเป็นผลจากความพยายามและการฝึกฝนอย่างต่อเนื่อง
+          ทำให้ได้พัฒนาทักษะการคิดวิเคราะห์ การตัดสินใจ
+          และการแก้ปัญหาอย่างเป็นระบบ
         </p>
 
       </div>
 
     </div>
+
 
 
     <!-- =========================
@@ -726,12 +904,17 @@
         </h2>
 
         <p>
-          รู้สึกดีใจจนพูดไม่ออก ภูมิใจที่มาถึงจุดนี้ได้ จากเด็กวันแรกที่มาไม่มั่นใจจนวันนี้ได้มีถ้วยประธานเป็นของตัวเอง รู้สึกการตัดสินใจดีขึ้น การเล่นดีขึ้น และยังต้องขอบคุณทุกคนที่ซัพพอร์ตเสมอจริง ๆ เมื่อก่อนได้มองรุ่นพี่รับถ้วย จนวันนี้มีถ้วยประธานแล้วนะ
+          ความสำเร็จครั้งนี้เป็นอีกหนึ่งความภาคภูมิใจ
+          จากจุดเริ่มต้นที่ยังขาดความมั่นใจ จนสามารถพัฒนาตนเอง
+          และคว้ารางวัลถ้วยประธานมาได้
+          ประสบการณ์นี้ทำให้มีความมั่นใจ การตัดสินใจ และทักษะในการแข่งขันมากขึ้น
+          รวมถึงได้รับกำลังใจและการสนับสนุนจากคนรอบข้างเสมอมา
         </p>
 
       </div>
 
     </div>
+
 
 
     <!-- =========================
@@ -761,16 +944,19 @@
         </span>
 
         <h2>
-          Mathsmit รางวัลรองชนะเลิศลำดับที่2
+          Mathsmit รางวัลรองชนะเลิศลำดับที่ 2
         </h2>
 
         <p>
-          ได้รางวัลรองชนะเลิศลำดับที่2 เป็นสนามแรกๆ ค่อนข้างรู้สึกกดดัน แต่ก็เอาชนะความกดดันของตัวเองได้เสมอ
+          เป็นหนึ่งในสนามการแข่งขันช่วงแรก ๆ ที่ได้เข้าร่วม
+          แม้จะรู้สึกกดดัน แต่สามารถควบคุมความรู้สึกและทำหน้าที่ได้อย่างเต็มที่
+          ประสบการณ์ครั้งนี้ช่วยเสริมสร้างความมั่นใจและความกล้าในการแข่งขัน
         </p>
 
       </div>
 
     </div>
+
 
 
     <!-- =========================
@@ -800,16 +986,20 @@
         </span>
 
         <h2>
-          Speedy Math ได้เหรียญเงิน ลำดับที่7
+          Speedy Math ได้เหรียญเงิน ลำดับที่ 7
         </h2>
 
         <p>
-          เป็นการลองลงแข่งคิดเลขไว มีคิด24 คิด2หลัก3หลัก คิดสมการให้ถูกต้อง เป็นสนามแรกที่ลงแล้วภูมิใจมาก ถ้ามีโอกาศก็อยากลองเรื่อยๆ
+          เข้าร่วมการแข่งขันคิดเลขเร็ว ซึ่งมีทั้งการคิดเลขหลายรูปแบบ
+          และการแก้สมการให้ถูกต้องและรวดเร็ว
+          เป็นสนามแรกที่ได้ทดลองทักษะด้านการคิดเลขเร็ว
+          และเป็นประสบการณ์ที่สร้างความภูมิใจและแรงบันดาลใจในการพัฒนาต่อไป
         </p>
 
       </div>
 
     </div>
+
 
 
     <!-- =========================
@@ -839,16 +1029,19 @@
         </span>
 
         <h2>
-          A-math ได้เหรียญรางวัลระดับสีทอง
+          A-math ได้รับเหรียญรางวัลระดับสีทอง
         </h2>
 
         <p>
-          ได้เหรียญสนามการแข่งขัน A-mathครั้งแรก ได้เปิดหูเปิดตา เต็มที่แล้ว ได้เท่าไหนก็ภูมิใจมากๆเลย เพราะเห็นการพัฒนาจากวันแรกมากๆ
+          เข้าร่วมการแข่งขัน A-math และได้รับเหรียญรางวัลระดับสีทอง
+          เป็นการแข่งขันครั้งแรกที่ทำให้ได้เปิดประสบการณ์ใหม่ ๆ
+          และเห็นพัฒนาการของตนเองตั้งแต่วันแรกจนถึงวันที่ได้รับรางวัล
         </p>
 
       </div>
 
     </div>
+
 
 
     <!-- ==================================================
@@ -868,10 +1061,11 @@
         </h2>
 
         <p>
-          รวมเกียรติบัตรเพิ่มเติมจากการเรียน การแข่งขัน และกิจกรรมต่าง ๆ
+          รวมผลงานและเกียรติบัตรจากการเรียน การแข่งขัน และกิจกรรมต่าง ๆ
         </p>
 
       </div>
+
 
 
       <!-- 09 -->
@@ -890,12 +1084,14 @@
           </h3>
 
           <p>
-            การแข่งขันทดสอบความรู้คณิตศาสตร์ ได้รางวัลชนะเลิศ ของภาคตะวันออก
+            เข้าร่วมการแข่งขันทดสอบความรู้คณิตศาสตร์
+            และได้รับรางวัลชนะเลิศระดับภาคตะวันออก
           </p>
 
         </div>
 
       </div>
+
 
 
       <!-- 10 -->
@@ -914,12 +1110,14 @@
           </h3>
 
           <p>
-            แข่งขันแต่งคำขวัญเนื่องในวันคณิตศาสตร์ ได้รางวัลชนะเลิศ
+            เข้าร่วมการแข่งขันแต่งคำขวัญเนื่องในวันคณิตศาสตร์
+            และได้รับรางวัลชนะเลิศ
           </p>
 
         </div>
 
       </div>
+
 
 
       <!-- 11 -->
@@ -938,12 +1136,14 @@
           </h3>
 
           <p>
-            เข้าร่วมการแข่งขันแต่งคำขวัญต้านยาเสพติด
+            เข้าร่วมการแข่งขันแต่งคำขวัญต่อต้านยาเสพติด
+            เพื่อส่งเสริมความคิดสร้างสรรค์และการใช้เวลาว่างอย่างเหมาะสม
           </p>
 
         </div>
 
       </div>
+
 
 
       <!-- 12 -->
@@ -962,12 +1162,14 @@
           </h3>
 
           <p>
-            แข่งขันคณิตคิดเร็ว ได้รับรางวัลชมเชย
+            เข้าร่วมการแข่งขันคณิตคิดเร็ว
+            และได้รับรางวัลชมเชย
           </p>
 
         </div>
 
       </div>
+
 
 
       <!-- 13 -->
@@ -986,12 +1188,14 @@
           </h3>
 
           <p>
-            แข่งขันการแต่งกายในหัวข้อ "คณิตกับชีวิตประจำวัน" ได้รับรางวัลรองชนะเลิศ ลำดับที่2
+            เข้าร่วมการแข่งขันการแต่งกายในหัวข้อ
+            "คณิตกับชีวิตประจำวัน" และได้รับรางวัลรองชนะเลิศลำดับที่ 2
           </p>
 
         </div>
 
       </div>
+
 
 
       <!-- 14 -->
@@ -1010,12 +1214,14 @@
           </h3>
 
           <p>
-            เข้าร่วมการแข่งขัน a-math ในสัปดาห์คณิตศาสตร์
+            เข้าร่วมการแข่งขัน A-math
+            ในกิจกรรมสัปดาห์คณิตศาสตร์
           </p>
 
         </div>
 
       </div>
+
 
 
       <!-- 15 -->
@@ -1034,12 +1240,14 @@
           </h3>
 
           <p>
-            แข่งขันคณิตคิดเร็ว รางวัลรองชนะเลิศลำดับที่2
+            เข้าร่วมการแข่งขันคณิตคิดเร็ว
+            และได้รับรางวัลรองชนะเลิศลำดับที่ 2
           </p>
 
         </div>
 
       </div>
+
 
 
       <!-- 16 -->
@@ -1058,12 +1266,14 @@
           </h3>
 
           <p>
-            แข่งขันอัจฉริยะภาพ ได้รางวัลรองชนะเลิศ ลำดับที่1
+            เข้าร่วมการแข่งขันอัจฉริยภาพ
+            และได้รับรางวัลรองชนะเลิศลำดับที่ 1
           </p>
 
         </div>
 
       </div>
+
 
 
       <!-- 17 -->
@@ -1082,13 +1292,45 @@
           </h3>
 
           <p>
-            แข่งขันa-math ได้รังราวัลรองชนะเลิศ ลำดับที่1 
+            เข้าร่วมการแข่งขัน A-math
+            และได้รับรางวัลรองชนะเลิศลำดับที่ 1
           </p>
 
         </div>
 
       </div>
 
+    </div>
+
+
+
+    <!-- =========================
+         ปุ่มย้อนกลับ
+    ========================== -->
+
+    <div class="bottom-back">
+
+      <a
+        href="portfolio.html"
+        class="back-btn"
+      >
+        ← กลับหน้าหัวข้อ Portfolio
+      </a>
+
+    </div>
+
+
+
+    <!-- =========================
+         Footer
+    ========================== -->
+
+    <div class="footer">
+
+      ✦ Warintha Lueangoon ✦
+      <br>
+
+      Certificates & Awards Portfolio
 
     </div>
 

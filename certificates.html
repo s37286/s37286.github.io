@@ -36,11 +36,13 @@
       animation: bgMove 12s ease infinite;
 
       color: #62545a;
+
       padding-top: 70px;
       padding-bottom: 40px;
 
       overflow-x: hidden;
     }
+
 
     @keyframes bgMove {
       0% {
@@ -63,29 +65,40 @@
 
     body::before {
       content: "✦  ✧  ♡  ✦  ✧";
+
       position: fixed;
+
       top: 100px;
       left: 20px;
 
       font-size: 25px;
+
       color: rgba(201,76,125,0.22);
+
       letter-spacing: 12px;
 
       pointer-events: none;
+
       z-index: -1;
     }
 
+
     body::after {
       content: "✧  ♡  ✦  ✧";
+
       position: fixed;
+
       bottom: 80px;
       right: 20px;
 
       font-size: 28px;
+
       color: rgba(150,52,93,0.22);
+
       letter-spacing: 12px;
 
       pointer-events: none;
+
       z-index: -1;
     }
 
@@ -96,6 +109,7 @@
 
     .top-bar {
       position: fixed;
+
       top: 0;
       left: 0;
 
@@ -103,9 +117,11 @@
       height: 65px;
 
       background: rgba(255,255,255,0.90);
+
       backdrop-filter: blur(15px);
 
       display: flex;
+
       align-items: center;
 
       padding: 0 25px;
@@ -119,11 +135,15 @@
       z-index: 1000;
     }
 
+
     .school-info {
       display: flex;
+
       align-items: center;
+
       gap: 12px;
     }
+
 
     .school-info img {
       width: 42px;
@@ -132,6 +152,7 @@
       object-fit: contain;
 
       background: white;
+
       border-radius: 50%;
 
       padding: 3px;
@@ -140,8 +161,10 @@
         0 4px 12px rgba(150,52,93,0.15);
     }
 
+
     .school-info span {
       font-size: 14px;
+
       font-weight: 600;
 
       color: #96345d;
@@ -154,6 +177,7 @@
 
     .container {
       width: 92%;
+
       max-width: 1050px;
 
       margin: 30px auto 50px;
@@ -170,6 +194,7 @@
       margin: 30px 0 45px;
     }
 
+
     .title h1 {
       font-size: 38px;
 
@@ -181,11 +206,13 @@
         0 3px 12px rgba(201,76,125,0.20);
     }
 
+
     .title p {
       color: #9b657b;
 
       font-size: 16px;
     }
+
 
     .title::after {
       content: "";
@@ -213,7 +240,7 @@
 
 
     /* =========================
-       การ์ดเกียรติบัตร
+       การ์ดเกียรติบัตรหลัก
     ========================== */
 
     .certificate-card {
@@ -238,6 +265,7 @@
       overflow: hidden;
     }
 
+
     .certificate-card::before {
       content: "";
 
@@ -258,6 +286,7 @@
         );
     }
 
+
     .certificate-card:hover {
       transform: translateY(-7px);
 
@@ -267,7 +296,7 @@
 
 
     /* =========================
-       รูปภาพหลัก 2 รูป
+       รูปหลัก 2 รูป
     ========================== */
 
     .image-group {
@@ -277,6 +306,7 @@
 
       gap: 15px;
     }
+
 
     .image-group img {
       width: 100%;
@@ -304,6 +334,7 @@
       transition: 0.3s;
     }
 
+
     .image-group img:hover {
       transform: scale(1.025);
 
@@ -313,12 +344,13 @@
 
 
     /* =========================
-       ข้อมูล
+       ข้อมูลเกียรติบัตร
     ========================== */
 
     .certificate-content {
       padding: 22px 10px 8px;
     }
+
 
     .certificate-number {
       display: inline-block;
@@ -338,6 +370,7 @@
       border-radius: 20px;
 
       font-size: 12px;
+
       font-weight: 600;
 
       margin-bottom: 11px;
@@ -346,6 +379,7 @@
         0 5px 15px rgba(201,76,125,0.22);
     }
 
+
     .certificate-content h2 {
       color: #96345d;
 
@@ -353,6 +387,7 @@
 
       margin-bottom: 10px;
     }
+
 
     .certificate-content p {
       color: #62545a;
@@ -364,7 +399,7 @@
 
 
     /* =========================
-       เกียรติบัตรเพิ่มเติม
+       หัวข้อเกียรติบัตรเพิ่มเติม
     ========================== */
 
     .extra-title {
@@ -372,6 +407,7 @@
 
       margin: 10px 0 25px;
     }
+
 
     .extra-title h2 {
       color: #96345d;
@@ -381,18 +417,25 @@
       margin-bottom: 6px;
     }
 
+
     .extra-title p {
       color: #9b657b;
 
       font-size: 13px;
     }
 
+
+    /* =========================
+       เกียรติบัตรเพิ่มเติม
+       รูป 2 รูป + ข้อความ
+    ========================== */
+
     .extra-certificate {
       display: flex;
 
       align-items: center;
 
-      gap: 22px;
+      gap: 20px;
 
       padding: 15px;
 
@@ -416,6 +459,7 @@
         0 5px 15px rgba(150,52,93,0.05);
     }
 
+
     .extra-certificate:hover {
       transform: translateX(7px);
 
@@ -423,26 +467,58 @@
         0 8px 22px rgba(150,52,93,0.15);
     }
 
-    .extra-certificate img {
-      width: 195px;
 
-      height: 130px;
+    /* =========================
+       กลุ่มรูปเพิ่มเติม 2 รูป
+    ========================== */
+
+    .extra-images {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 8px;
+
+      width: 300px;
+
+      flex-shrink: 0;
+    }
+
+
+    .extra-images img {
+      width: 100%;
+
+      height: 105px;
 
       object-fit: contain;
 
       background: white;
 
-      padding: 5px;
+      padding: 4px;
 
-      border-radius: 15px;
+      border-radius: 12px;
 
       display: block;
 
-      flex-shrink: 0;
-
       box-shadow:
         0 5px 15px rgba(150,52,93,0.10);
+
+      transition: 0.3s;
     }
+
+
+    .extra-images img:hover {
+      transform: scale(1.04);
+
+      box-shadow:
+        0 7px 20px rgba(201,76,125,0.18);
+    }
+
+
+    .extra-certificate > div:last-child {
+      flex: 1;
+    }
+
 
     .extra-certificate h3 {
       color: #c94c7d;
@@ -451,6 +527,7 @@
 
       margin-bottom: 6px;
     }
+
 
     .extra-certificate p {
       color: #665b60;
@@ -470,6 +547,7 @@
 
       margin: 45px 0 25px;
     }
+
 
     .back-btn {
       display: inline-block;
@@ -491,6 +569,7 @@
       border-radius: 30px;
 
       font-size: 14px;
+
       font-weight: 600;
 
       box-shadow:
@@ -498,6 +577,7 @@
 
       transition: 0.3s;
     }
+
 
     .back-btn:hover {
       transform: translateY(-4px);
@@ -534,36 +614,44 @@
         padding-top: 65px;
       }
 
+
       .top-bar {
         height: 60px;
 
         padding: 0 12px;
       }
 
+
       .school-info {
         gap: 7px;
       }
+
 
       .school-info img {
         width: 34px;
         height: 34px;
       }
 
+
       .school-info span {
         font-size: 10px;
       }
+
 
       .title {
         margin: 25px 0 35px;
       }
 
+
       .title h1 {
         font-size: 28px;
       }
 
+
       .title p {
         font-size: 13px;
       }
+
 
       .certificate-card {
         padding: 14px;
@@ -571,11 +659,13 @@
         border-radius: 23px;
       }
 
+
       .image-group {
         grid-template-columns: 1fr 1fr;
 
         gap: 8px;
       }
+
 
       .image-group img {
         height: 190px;
@@ -585,13 +675,16 @@
         border-radius: 15px;
       }
 
+
       .certificate-content {
         padding: 17px 5px 5px;
       }
 
+
       .certificate-content h2 {
         font-size: 19px;
       }
+
 
       .certificate-content p {
         font-size: 13px;
@@ -599,39 +692,57 @@
         line-height: 1.8;
       }
 
+
       .extra-title h2 {
         font-size: 21px;
       }
 
+
+      /* รูปเพิ่มเติมบนมือถือ */
+
       .extra-certificate {
-        gap: 12px;
+        gap: 10px;
 
         padding: 10px;
+
+        align-items: flex-start;
       }
 
-      .extra-certificate img {
-        width: 105px;
 
-        height: 80px;
+      .extra-images {
+        width: 145px;
 
-        border-radius: 10px;
+        gap: 5px;
       }
+
+
+      .extra-images img {
+        height: 75px;
+
+        padding: 3px;
+
+        border-radius: 8px;
+      }
+
 
       .extra-certificate h3 {
-        font-size: 14px;
+        font-size: 13px;
       }
 
+
       .extra-certificate p {
-        font-size: 11px;
+        font-size: 10px;
 
         line-height: 1.6;
       }
+
 
       .back-btn {
         padding: 10px 22px;
 
         font-size: 13px;
       }
+
 
       .footer {
         font-size: 11px;
@@ -706,6 +817,7 @@
 
       </div>
 
+
       <div class="certificate-content">
 
         <span class="certificate-number">
@@ -749,6 +861,7 @@
 
       </div>
 
+
       <div class="certificate-content">
 
         <span class="certificate-number">
@@ -790,6 +903,7 @@
         >
 
       </div>
+
 
       <div class="certificate-content">
 
@@ -833,6 +947,7 @@
 
       </div>
 
+
       <div class="certificate-content">
 
         <span class="certificate-number">
@@ -875,6 +990,7 @@
 
       </div>
 
+
       <div class="certificate-content">
 
         <span class="certificate-number">
@@ -916,6 +1032,7 @@
 
       </div>
 
+
       <div class="certificate-content">
 
         <span class="certificate-number">
@@ -956,6 +1073,7 @@
         >
 
       </div>
+
 
       <div class="certificate-content">
 
@@ -1002,14 +1120,25 @@
       </div>
 
 
-      <!-- 09 -->
+      <!-- =========================
+           เกียรติบัตรที่ 09
+      ========================== -->
 
       <div class="extra-certificate">
 
-        <img
-          src="เกียรติบัตร ที่1 อัจฉริยะ ม4.png"
-          alt="เกียรติบัตรที่ 9"
-        >
+        <div class="extra-images">
+
+          <img
+            src="เกียรติบัตร ที่1 อัจฉริยะ ม4.png"
+            alt="เกียรติบัตรที่ 9 รูปที่ 1"
+          >
+
+          <img
+            src="ใส่รูปที่สอง 09.png"
+            alt="เกียรติบัตรที่ 9 รูปที่ 2"
+          >
+
+        </div>
 
         <div>
 
@@ -1027,14 +1156,25 @@
       </div>
 
 
-      <!-- 10 -->
+      <!-- =========================
+           เกียรติบัตรที่ 10
+      ========================== -->
 
       <div class="extra-certificate">
 
-        <img
-          src="เกียรติบัตรคำขวัญ คณิต ม4.png"
-          alt="เกียรติบัตรที่ 10"
-        >
+        <div class="extra-images">
+
+          <img
+            src="เกียรติบัตรคำขวัญ คณิต ม4.png"
+            alt="เกียรติบัตรที่ 10 รูปที่ 1"
+          >
+
+          <img
+            src="ใส่รูปที่สอง 10.png"
+            alt="เกียรติบัตรที่ 10 รูปที่ 2"
+          >
+
+        </div>
 
         <div>
 
@@ -1052,14 +1192,25 @@
       </div>
 
 
-      <!-- 11 -->
+      <!-- =========================
+           เกียรติบัตรที่ 11
+      ========================== -->
 
       <div class="extra-certificate">
 
-        <img
-          src="เกียรติบัตรคำขวัญต้านยา.png"
-          alt="เกียรติบัตรที่ 11"
-        >
+        <div class="extra-images">
+
+          <img
+            src="เกียรติบัตรคำขวัญต้านยา.png"
+            alt="เกียรติบัตรที่ 11 รูปที่ 1"
+          >
+
+          <img
+            src="ใส่รูปที่สอง 11.png"
+            alt="เกียรติบัตรที่ 11 รูปที่ 2"
+          >
+
+        </div>
 
         <div>
 
@@ -1077,14 +1228,25 @@
       </div>
 
 
-      <!-- 12 -->
+      <!-- =========================
+           เกียรติบัตรที่ 12
+      ========================== -->
 
       <div class="extra-certificate">
 
-        <img
-          src="เกียรติบัตรคิดเร็วม4.png"
-          alt="เกียรติบัตรที่ 12"
-        >
+        <div class="extra-images">
+
+          <img
+            src="เกียรติบัตรคิดเร็วม4.png"
+            alt="เกียรติบัตรที่ 12 รูปที่ 1"
+          >
+
+          <img
+            src="ใส่รูปที่สอง 12.png"
+            alt="เกียรติบัตรที่ 12 รูปที่ 2"
+          >
+
+        </div>
 
         <div>
 
@@ -1102,14 +1264,25 @@
       </div>
 
 
-      <!-- 13 -->
+      <!-- =========================
+           เกียรติบัตรที่ 13
+      ========================== -->
 
       <div class="extra-certificate">
 
-        <img
-          src="เกียรติบัตรประกวดชุด ม4.png"
-          alt="เกียรติบัตรที่ 13"
-        >
+        <div class="extra-images">
+
+          <img
+            src="เกียรติบัตรประกวดชุด ม4.png"
+            alt="เกียรติบัตรที่ 13 รูปที่ 1"
+          >
+
+          <img
+            src="ใส่รูปที่สอง 13.png"
+            alt="เกียรติบัตรที่ 13 รูปที่ 2"
+          >
+
+        </div>
 
         <div>
 
@@ -1127,14 +1300,25 @@
       </div>
 
 
-      <!-- 14 -->
+      <!-- =========================
+           เกียรติบัตรที่ 14
+      ========================== -->
 
       <div class="extra-certificate">
 
-        <img
-          src="เกียรติบัตรเอแม็ทรร ม4.png"
-          alt="เกียรติบัตรที่ 14"
-        >
+        <div class="extra-images">
+
+          <img
+            src="เกียรติบัตรเอแม็ทรร ม4.png"
+            alt="เกียรติบัตรที่ 14 รูปที่ 1"
+          >
+
+          <img
+            src="ใส่รูปที่สอง 14.png"
+            alt="เกียรติบัตรที่ 14 รูปที่ 2"
+          >
+
+        </div>
 
         <div>
 
@@ -1152,14 +1336,25 @@
       </div>
 
 
-      <!-- 15 -->
+      <!-- =========================
+           เกียรติบัตรที่ 15
+      ========================== -->
 
       <div class="extra-certificate">
 
-        <img
-          src="เกียรติบัตรคิดเร็ว ม6.png"
-          alt="เกียรติบัตรที่ 15"
-        >
+        <div class="extra-images">
+
+          <img
+            src="เกียรติบัตรคิดเร็ว ม6.png"
+            alt="เกียรติบัตรที่ 15 รูปที่ 1"
+          >
+
+          <img
+            src="ใส่รูปที่สอง 15.png"
+            alt="เกียรติบัตรที่ 15 รูปที่ 2"
+          >
+
+        </div>
 
         <div>
 
@@ -1177,14 +1372,25 @@
       </div>
 
 
-      <!-- 16 -->
+      <!-- =========================
+           เกียรติบัตรที่ 16
+      ========================== -->
 
       <div class="extra-certificate">
 
-        <img
-          src="เกียรติบัตรอัจฉริยะภาพ ม6.png"
-          alt="เกียรติบัตรที่ 16"
-        >
+        <div class="extra-images">
+
+          <img
+            src="เกียรติบัตรอัจฉริยะภาพ ม6.png"
+            alt="เกียรติบัตรที่ 16 รูปที่ 1"
+          >
+
+          <img
+            src="ใส่รูปที่สอง 16.png"
+            alt="เกียรติบัตรที่ 16 รูปที่ 2"
+          >
+
+        </div>
 
         <div>
 
@@ -1202,14 +1408,25 @@
       </div>
 
 
-      <!-- 17 -->
+      <!-- =========================
+           เกียรติบัตรที่ 17
+      ========================== -->
 
       <div class="extra-certificate">
 
-        <img
-          src="เกียรติบัตรเอแม้ทรร ม6.png"
-          alt="เกียรติบัตรที่ 17"
-        >
+        <div class="extra-images">
+
+          <img
+            src="เกียรติบัตรเอแม้ทรร ม6.png"
+            alt="เกียรติบัตรที่ 17 รูปที่ 1"
+          >
+
+          <img
+            src="ใส่รูปที่สอง 17.png"
+            alt="เกียรติบัตรที่ 17 รูปที่ 2"
+          >
+
+        </div>
 
         <div>
 
@@ -1252,6 +1469,7 @@
     <div class="footer">
 
       ✦ Warintha Lueangoon ✦
+
       <br>
 
       Certificates & Awards Portfolio

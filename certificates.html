@@ -21,21 +21,21 @@
       min-height: 100vh;
 
       background:
-        radial-gradient(circle at 10% 15%, rgba(255,255,255,0.8), transparent 25%),
-        radial-gradient(circle at 90% 20%, rgba(255,190,230,0.45), transparent 28%),
-        radial-gradient(circle at 20% 90%, rgba(210,180,255,0.4), transparent 30%),
+        radial-gradient(circle at 10% 15%, rgba(255,255,255,0.9), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(255,177,208,0.45), transparent 28%),
+        radial-gradient(circle at 20% 90%, rgba(204,91,139,0.25), transparent 30%),
         linear-gradient(
           135deg,
-          #fff0f8,
-          #f4ddff,
-          #eadcff,
-          #ffd9ec
+          #fff7fb,
+          #ffe8f2,
+          #ffd4e5,
+          #f5bfd5
         );
 
       background-size: 180% 180%;
       animation: bgMove 12s ease infinite;
 
-      color: #3d3158;
+      color: #62545a;
       padding-top: 70px;
       padding-bottom: 40px;
 
@@ -58,17 +58,17 @@
 
 
     /* =========================
-       แสงตกแต่งพื้นหลัง
+       ของตกแต่งพื้นหลัง
     ========================== */
 
     body::before {
-      content: "✦  ✧  ✦  ✧  ✦";
+      content: "✦  ✧  ♡  ✦  ✧";
       position: fixed;
       top: 100px;
       left: 20px;
 
       font-size: 25px;
-      color: rgba(190, 120, 220, 0.25);
+      color: rgba(201,76,125,0.22);
       letter-spacing: 12px;
 
       pointer-events: none;
@@ -76,13 +76,13 @@
     }
 
     body::after {
-      content: "✧  ✦  ✧  ✦";
+      content: "✧  ♡  ✦  ✧";
       position: fixed;
       bottom: 80px;
       right: 20px;
 
       font-size: 28px;
-      color: rgba(220, 100, 180, 0.25);
+      color: rgba(150,52,93,0.22);
       letter-spacing: 12px;
 
       pointer-events: none;
@@ -91,7 +91,7 @@
 
 
     /* =========================
-       แถบโรงเรียนด้านบน
+       แถบโรงเรียน
     ========================== */
 
     .top-bar {
@@ -102,7 +102,7 @@
       width: 100%;
       height: 65px;
 
-      background: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.90);
       backdrop-filter: blur(15px);
 
       display: flex;
@@ -111,10 +111,10 @@
       padding: 0 25px;
 
       box-shadow:
-        0 5px 25px rgba(120,70,150,0.12);
+        0 5px 25px rgba(150,52,93,0.12);
 
       border-bottom:
-        1px solid rgba(255,255,255,0.8);
+        1px solid rgba(255,255,255,0.85);
 
       z-index: 1000;
     }
@@ -137,14 +137,14 @@
       padding: 3px;
 
       box-shadow:
-        0 4px 12px rgba(120,70,150,0.15);
+        0 4px 12px rgba(150,52,93,0.15);
     }
 
     .school-info span {
       font-size: 14px;
       font-weight: 600;
 
-      color: #6a397d;
+      color: #96345d;
     }
 
 
@@ -173,24 +173,19 @@
     .title h1 {
       font-size: 38px;
 
-      color: #8d3d91;
+      color: #c83f73;
 
       margin-bottom: 8px;
 
       text-shadow:
-        0 3px 12px rgba(180,80,170,0.2);
+        0 3px 12px rgba(201,76,125,0.20);
     }
 
     .title p {
-      color: #85658e;
+      color: #9b657b;
 
       font-size: 16px;
     }
-
-
-    /* =========================
-       เส้นตกแต่งหัวข้อ
-    ========================== */
 
     .title::after {
       content: "";
@@ -207,24 +202,24 @@
       background:
         linear-gradient(
           90deg,
-          #d94fa8,
-          #9d55d8,
-          #d94fa8
+          #e66d9c,
+          #c94c7d,
+          #96345d
         );
 
       box-shadow:
-        0 4px 12px rgba(190,70,170,0.3);
+        0 4px 12px rgba(201,76,125,0.30);
     }
 
 
     /* =========================
-       การ์ดเกียรติบัตรหลัก
+       การ์ดเกียรติบัตร
     ========================== */
 
     .certificate-card {
       position: relative;
 
-      background: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.90);
 
       border-radius: 30px;
 
@@ -233,10 +228,10 @@
       margin-bottom: 30px;
 
       box-shadow:
-        0 12px 35px rgba(110,60,140,0.14);
+        0 12px 35px rgba(150,52,93,0.13);
 
       border:
-        2px solid rgba(255,255,255,0.9);
+        2px solid rgba(255,255,255,0.92);
 
       transition: 0.35s;
 
@@ -257,9 +252,9 @@
       background:
         linear-gradient(
           90deg,
-          #d94fa8,
-          #a755d8,
-          #f28ac8
+          #e66d9c,
+          #c94c7d,
+          #96345d
         );
     }
 
@@ -267,12 +262,12 @@
       transform: translateY(-7px);
 
       box-shadow:
-        0 18px 40px rgba(110,60,140,0.22);
+        0 18px 40px rgba(150,52,93,0.22);
     }
 
 
     /* =========================
-       รูป 2 รูป
+       รูปภาพหลัก 2 รูป
     ========================== */
 
     .image-group {
@@ -297,14 +292,14 @@
       background:
         linear-gradient(
           135deg,
-          #fff8fc,
-          #f8efff
+          #fffafd,
+          #fff0f6
         );
 
       padding: 8px;
 
       box-shadow:
-        0 5px 18px rgba(100,60,130,0.10);
+        0 5px 18px rgba(150,52,93,0.10);
 
       transition: 0.3s;
     }
@@ -313,12 +308,12 @@
       transform: scale(1.025);
 
       box-shadow:
-        0 8px 25px rgba(150,70,160,0.18);
+        0 8px 25px rgba(201,76,125,0.20);
     }
 
 
     /* =========================
-       ข้อมูลเกียรติบัตร
+       ข้อมูล
     ========================== */
 
     .certificate-content {
@@ -331,8 +326,9 @@
       background:
         linear-gradient(
           135deg,
-          #d94fa8,
-          #9b55d5
+          #e66d9c,
+          #c94c7d,
+          #96345d
         );
 
       color: white;
@@ -347,11 +343,11 @@
       margin-bottom: 11px;
 
       box-shadow:
-        0 5px 15px rgba(180,70,160,0.22);
+        0 5px 15px rgba(201,76,125,0.22);
     }
 
     .certificate-content h2 {
-      color: #713b82;
+      color: #96345d;
 
       font-size: 23px;
 
@@ -359,7 +355,7 @@
     }
 
     .certificate-content p {
-      color: #62576b;
+      color: #62545a;
 
       font-size: 15px;
 
@@ -368,7 +364,7 @@
 
 
     /* =========================
-       หัวข้อเกียรติบัตรเพิ่มเติม
+       เกียรติบัตรเพิ่มเติม
     ========================== */
 
     .extra-title {
@@ -378,7 +374,7 @@
     }
 
     .extra-title h2 {
-      color: #713b82;
+      color: #96345d;
 
       font-size: 25px;
 
@@ -386,15 +382,10 @@
     }
 
     .extra-title p {
-      color: #806b87;
+      color: #9b657b;
 
       font-size: 13px;
     }
-
-
-    /* =========================
-       เกียรติบัตรเพิ่มเติม
-    ========================== */
 
     .extra-certificate {
       display: flex;
@@ -410,26 +401,26 @@
       background:
         linear-gradient(
           135deg,
-          rgba(255,245,252,0.95),
-          rgba(246,238,255,0.95)
+          rgba(255,247,251,0.96),
+          rgba(255,232,242,0.96)
         );
 
       border-radius: 22px;
 
       border:
-        1px solid rgba(170,100,180,0.12);
+        1px solid rgba(201,76,125,0.13);
 
       transition: 0.3s;
 
       box-shadow:
-        0 5px 15px rgba(100,60,130,0.05);
+        0 5px 15px rgba(150,52,93,0.05);
     }
 
     .extra-certificate:hover {
       transform: translateX(7px);
 
       box-shadow:
-        0 8px 22px rgba(130,70,150,0.15);
+        0 8px 22px rgba(150,52,93,0.15);
     }
 
     .extra-certificate img {
@@ -450,11 +441,11 @@
       flex-shrink: 0;
 
       box-shadow:
-        0 5px 15px rgba(100,60,130,0.10);
+        0 5px 15px rgba(150,52,93,0.10);
     }
 
     .extra-certificate h3 {
-      color: #7a4388;
+      color: #c94c7d;
 
       font-size: 17px;
 
@@ -462,7 +453,7 @@
     }
 
     .extra-certificate p {
-      color: #665b6d;
+      color: #665b60;
 
       font-size: 13px;
 
@@ -471,7 +462,7 @@
 
 
     /* =========================
-       ปุ่มย้อนกลับด้านล่าง
+       ปุ่มย้อนกลับ
     ========================== */
 
     .bottom-back {
@@ -490,8 +481,9 @@
       background:
         linear-gradient(
           135deg,
-          #d94fa8,
-          #9954d5
+          #e66d9c,
+          #c94c7d,
+          #96345d
         );
 
       padding: 12px 28px;
@@ -502,7 +494,7 @@
       font-weight: 600;
 
       box-shadow:
-        0 7px 20px rgba(160,70,170,0.25);
+        0 7px 20px rgba(150,52,93,0.25);
 
       transition: 0.3s;
     }
@@ -511,7 +503,7 @@
       transform: translateY(-4px);
 
       box-shadow:
-        0 12px 28px rgba(160,70,170,0.35);
+        0 12px 28px rgba(150,52,93,0.35);
     }
 
 
@@ -524,7 +516,7 @@
 
       margin: 25px 0 10px;
 
-      color: #806b87;
+      color: #9b657b;
 
       font-size: 13px;
 
@@ -653,9 +645,8 @@
 
 <body>
 
-
   <!-- =========================
-       แถบโรงเรียนด้านบน
+       แถบโรงเรียน
   ========================== -->
 
   <div class="top-bar">
@@ -676,15 +667,11 @@
   </div>
 
 
-
   <!-- =========================
        เนื้อหาหลัก
   ========================== -->
 
   <div class="container">
-
-
-    <!-- หัวข้อ -->
 
     <div class="title">
 
@@ -699,11 +686,9 @@
     </div>
 
 
-
-    <!-- =================================================
-         อันที่ 1
-         ย้ายมาจากอันที่ 5 เดิม
-    ================================================== -->
+    <!-- =========================
+         เกียรติบัตรที่ 01
+    ========================== -->
 
     <div class="certificate-card">
 
@@ -744,11 +729,9 @@
     </div>
 
 
-
-    <!-- =================================================
-         อันที่ 2
-         ย้ายมาจากอันที่ 4 เดิม
-    ================================================== -->
+    <!-- =========================
+         เกียรติบัตรที่ 02
+    ========================== -->
 
     <div class="certificate-card">
 
@@ -788,11 +771,9 @@
     </div>
 
 
-
-    <!-- =================================================
-         อันที่ 3
-         ย้ายมาจากอันที่ 1 เดิม
-    ================================================== -->
+    <!-- =========================
+         เกียรติบัตรที่ 03
+    ========================== -->
 
     <div class="certificate-card">
 
@@ -832,11 +813,9 @@
     </div>
 
 
-
-    <!-- =================================================
-         อันที่ 4
-         ย้ายมาจากอันที่ 2 เดิม
-    ================================================== -->
+    <!-- =========================
+         เกียรติบัตรที่ 04
+    ========================== -->
 
     <div class="certificate-card">
 
@@ -876,11 +855,9 @@
     </div>
 
 
-
-    <!-- =================================================
-         อันที่ 5
-         ย้ายมาจากอันที่ 3 เดิม
-    ================================================== -->
+    <!-- =========================
+         เกียรติบัตรที่ 05
+    ========================== -->
 
     <div class="certificate-card">
 
@@ -919,11 +896,9 @@
     </div>
 
 
-
-    <!-- =================================================
-         อันที่ 6
-         ยังคงเป็นอันที่ 6 เดิม
-    ================================================== -->
+    <!-- =========================
+         เกียรติบัตรที่ 06
+    ========================== -->
 
     <div class="certificate-card">
 
@@ -962,11 +937,9 @@
     </div>
 
 
-
-    <!-- =================================================
-         อันที่ 7
-         ยังคงเป็นอันที่ 7 เดิม
-    ================================================== -->
+    <!-- =========================
+         เกียรติบัตรที่ 07
+    ========================== -->
 
     <div class="certificate-card">
 
@@ -1006,22 +979,9 @@
     </div>
 
 
-
-    <!-- =================================================
-         ❌ อันที่ 8 เดิมถูกลบออกทั้งหมด
-         
-         ลบทั้ง:
-         - รูปเหรียญทองเอแม็ท.png
-         - รูปเกียรติบัตร เหรียญทองเอแม็ท.png
-         - ข้อความ
-         - กรอบ certificate-card
-    ================================================== -->
-
-
-
-    <!-- ==================================================
+    <!-- =========================
          เกียรติบัตรเพิ่มเติม
-    =================================================== -->
+    ========================== -->
 
     <div class="certificate-card">
 
@@ -1040,7 +1000,6 @@
         </p>
 
       </div>
-
 
 
       <!-- 09 -->
@@ -1068,7 +1027,6 @@
       </div>
 
 
-
       <!-- 10 -->
 
       <div class="extra-certificate">
@@ -1092,7 +1050,6 @@
         </div>
 
       </div>
-
 
 
       <!-- 11 -->
@@ -1120,7 +1077,6 @@
       </div>
 
 
-
       <!-- 12 -->
 
       <div class="extra-certificate">
@@ -1144,7 +1100,6 @@
         </div>
 
       </div>
-
 
 
       <!-- 13 -->
@@ -1172,7 +1127,6 @@
       </div>
 
 
-
       <!-- 14 -->
 
       <div class="extra-certificate">
@@ -1196,7 +1150,6 @@
         </div>
 
       </div>
-
 
 
       <!-- 15 -->
@@ -1224,7 +1177,6 @@
       </div>
 
 
-
       <!-- 16 -->
 
       <div class="extra-certificate">
@@ -1248,7 +1200,6 @@
         </div>
 
       </div>
-
 
 
       <!-- 17 -->
@@ -1278,7 +1229,6 @@
     </div>
 
 
-
     <!-- =========================
          ปุ่มย้อนกลับ
     ========================== -->
@@ -1295,7 +1245,6 @@
     </div>
 
 
-
     <!-- =========================
          Footer
     ========================== -->
@@ -1308,7 +1257,6 @@
       Certificates & Awards Portfolio
 
     </div>
-
 
   </div>
 

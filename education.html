@@ -7,7 +7,6 @@
 
   <title>ประวัติการศึกษา | Warintha Lueangoon</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -23,10 +22,16 @@
       min-height: 100vh;
 
       background:
-        radial-gradient(circle at 10% 15%, #ffd6ec 0%, transparent 30%),
-        radial-gradient(circle at 90% 10%, #e9d5ff 0%, transparent 30%),
-        radial-gradient(circle at 50% 100%, #fbcfe8 0%, transparent 35%),
-        linear-gradient(135deg, #fff0f7, #f3e8ff, #fce7f3);
+        radial-gradient(circle at 10% 15%, #ffb1d0 0%, transparent 30%),
+        radial-gradient(circle at 90% 10%, #e9a8c2 0%, transparent 30%),
+        radial-gradient(circle at 50% 100%, #cc5b8b 0%, transparent 35%),
+        linear-gradient(
+          135deg,
+          #fff7fb,
+          #ffe8f2,
+          #ffd4e5,
+          #f5bfd5
+        );
 
       background-size: 200% 200%;
       animation: bgMove 12s ease infinite;
@@ -57,6 +62,49 @@
 
 
     /* =========================
+       แสงตกแต่ง
+    ========================= */
+
+    body::before {
+      content: "";
+      position: fixed;
+
+      width: 300px;
+      height: 300px;
+
+      background: rgba(219,91,139,0.18);
+
+      border-radius: 50%;
+
+      top: 80px;
+      left: -120px;
+
+      filter: blur(20px);
+
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+
+      width: 350px;
+      height: 350px;
+
+      background: rgba(150,52,93,0.15);
+
+      border-radius: 50%;
+
+      bottom: -150px;
+      right: -120px;
+
+      filter: blur(25px);
+
+      z-index: -1;
+    }
+
+
+    /* =========================
        แถบโรงเรียน
     ========================= */
 
@@ -64,7 +112,8 @@
       width: 100%;
       height: 65px;
 
-      background: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.80);
+
       backdrop-filter: blur(15px);
 
       display: flex;
@@ -74,7 +123,8 @@
 
       border-bottom: 2px solid rgba(255,255,255,0.9);
 
-      box-shadow: 0 5px 25px rgba(139,92,246,0.12);
+      box-shadow:
+        0 5px 25px rgba(150,52,93,0.12);
 
       position: relative;
       z-index: 10;
@@ -100,7 +150,8 @@
 
       padding: 3px;
 
-      box-shadow: 0 4px 12px rgba(236,72,153,0.18);
+      box-shadow:
+        0 4px 12px rgba(201,76,125,0.20);
     }
 
 
@@ -109,7 +160,7 @@
 
       font-weight: 600;
 
-      color: #7e22ce;
+      color: #96345d;
     }
 
 
@@ -139,29 +190,29 @@
 
 
     .title h1 {
-
       font-size: 38px;
 
       margin-bottom: 5px;
 
       background: linear-gradient(
         90deg,
-        #db2777,
-        #9333ea,
-        #c026d3
+        #c83f73,
+        #e06495,
+        #c94c7d,
+        #96345d
       );
 
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
       filter: drop-shadow(
-        0 3px 5px rgba(168,85,247,0.12)
+        0 3px 5px rgba(150,52,93,0.12)
       );
     }
 
 
     .title p {
-      color: #a855f7;
+      color: #c94c7d;
 
       font-size: 17px;
     }
@@ -172,8 +223,7 @@
     ========================= */
 
     .education-card {
-
-      background: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.82);
 
       backdrop-filter: blur(15px);
 
@@ -190,9 +240,9 @@
       gap: 25px;
 
       box-shadow:
-        0 12px 30px rgba(139,92,246,0.12);
+        0 12px 30px rgba(150,52,93,0.12);
 
-      border: 2px solid rgba(255,255,255,0.9);
+      border: 2px solid rgba(255,255,255,0.92);
 
       transition: 0.35s;
 
@@ -205,7 +255,6 @@
     /* แถบสีด้านข้าง */
 
     .education-card::before {
-
       content: "";
 
       position: absolute;
@@ -218,19 +267,18 @@
 
       background: linear-gradient(
         180deg,
-        #ec4899,
-        #a855f7,
-        #d946ef
+        #e66d9c,
+        #c94c7d,
+        #96345d
       );
     }
 
 
     .education-card:hover {
-
       transform: translateY(-6px);
 
       box-shadow:
-        0 18px 35px rgba(139,92,246,0.18);
+        0 18px 35px rgba(150,52,93,0.20);
     }
 
 
@@ -239,7 +287,6 @@
     ========================= */
 
     .logo-box {
-
       width: 120px;
       height: 120px;
 
@@ -249,8 +296,9 @@
 
       background: linear-gradient(
         135deg,
-        #fce7f3,
-        #ede9fe
+        #ffe5ef,
+        #f8c8da,
+        #f2b5cc
       );
 
       display: flex;
@@ -261,13 +309,12 @@
       padding: 12px;
 
       box-shadow:
-        inset 0 0 15px rgba(255,255,255,0.8),
-        0 5px 15px rgba(168,85,247,0.08);
+        inset 0 0 15px rgba(255,255,255,0.85),
+        0 5px 15px rgba(201,76,125,0.10);
     }
 
 
     .logo-box img {
-
       width: 90px;
       height: 90px;
 
@@ -285,20 +332,18 @@
 
 
     .education-info h2 {
-
       font-size: 22px;
 
-      color: #7e22ce;
+      color: #96345d;
 
       margin-bottom: 8px;
     }
 
 
     .education-info h3 {
-
       font-size: 17px;
 
-      color: #db2777;
+      color: #c83f73;
 
       margin-bottom: 10px;
 
@@ -307,7 +352,6 @@
 
 
     .education-info p {
-
       font-size: 15px;
 
       color: #666;
@@ -321,7 +365,6 @@
     ========================= */
 
     .grade {
-
       display: inline-block;
 
       margin-top: 8px;
@@ -332,18 +375,18 @@
 
       background: linear-gradient(
         135deg,
-        #fce7f3,
-        #ede9fe
+        #ffe5ef,
+        #f8c8da
       );
 
-      color: #9333ea;
+      color: #b6386c;
 
       font-weight: 600;
 
-      border: 1px solid #f3e8ff;
+      border: 1px solid #f4c5d7;
 
       box-shadow:
-        0 4px 10px rgba(168,85,247,0.08);
+        0 4px 10px rgba(201,76,125,0.10);
     }
 
 
@@ -352,12 +395,11 @@
     ========================= */
 
     .star {
-
       position: fixed;
 
       font-size: 22px;
 
-      color: #d946ef;
+      color: #c94c7d;
 
       opacity: 0.55;
 
@@ -392,7 +434,6 @@
 
 
     @keyframes float {
-
       0%,100% {
         transform: translateY(0);
       }
@@ -404,11 +445,10 @@
 
 
     /* =========================
-       ปุ่มกลับด้านล่าง
+       ปุ่มกลับ
     ========================= */
 
     .bottom-button {
-
       display: block;
 
       width: fit-content;
@@ -429,24 +469,23 @@
 
       background: linear-gradient(
         135deg,
-        #ec4899,
-        #a855f7,
-        #9333ea
+        #e66d9c,
+        #c94c7d,
+        #96345d
       );
 
       box-shadow:
-        0 8px 20px rgba(236,72,153,0.22);
+        0 8px 20px rgba(201,76,125,0.22);
 
       transition: 0.3s;
     }
 
 
     .bottom-button:hover {
-
       transform: translateY(-5px);
 
       box-shadow:
-        0 13px 25px rgba(168,85,247,0.3);
+        0 13px 25px rgba(150,52,93,0.30);
     }
 
 
@@ -455,6 +494,10 @@
     ========================= */
 
     @media (max-width: 650px) {
+
+      body {
+        padding-top: 0;
+      }
 
       .top-bar {
         height: 55px;
@@ -485,7 +528,6 @@
 
 
       .education-card {
-
         flex-direction: column;
 
         text-align: center;
@@ -495,7 +537,6 @@
 
 
       .logo-box {
-
         width: 105px;
         height: 105px;
 
@@ -504,7 +545,6 @@
 
 
       .logo-box img {
-
         width: 75px;
         height: 75px;
       }
@@ -548,11 +588,8 @@
   <!-- ดาวตกแต่ง -->
 
   <div class="star star1">✦</div>
-
   <div class="star star2">✧</div>
-
   <div class="star star3">✦</div>
-
 
 
   <!-- แถบโรงเรียน -->
@@ -575,7 +612,6 @@
   </div>
 
 
-
   <div class="container">
 
 
@@ -592,7 +628,6 @@
       </p>
 
     </div>
-
 
 
     <!-- ประถมต้น -->
@@ -632,7 +667,6 @@
     </div>
 
 
-
     <!-- ประถมปลาย -->
 
     <div class="education-card">
@@ -668,7 +702,6 @@
       </div>
 
     </div>
-
 
 
     <!-- มัธยมต้น -->
@@ -708,7 +741,6 @@
     </div>
 
 
-
     <!-- มัธยมปลาย -->
 
     <div class="education-card">
@@ -746,8 +778,7 @@
     </div>
 
 
-
-    <!-- ปุ่มกลับอยู่ด้านล่าง -->
+    <!-- ปุ่มกลับ -->
 
     <a
       href="portfolio.html"
@@ -761,4 +792,3 @@
 
 </body>
 </html>
-```

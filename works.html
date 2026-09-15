@@ -21,12 +21,43 @@ body{
     min-height:100vh;
 
     background:
-        radial-gradient(circle at 10% 20%, #ffd6e7 0%, transparent 25%),
-        radial-gradient(circle at 90% 10%, #e5d2ff 0%, transparent 25%),
-        linear-gradient(135deg,#fff0f6,#f1e5ff,#ffe5f0);
+        radial-gradient(circle at 10% 20%, #ffb1d0 0%, transparent 25%),
+        radial-gradient(circle at 90% 10%, #e9a8c2 0%, transparent 25%),
+        radial-gradient(circle at 50% 100%, #cc5b8b 0%, transparent 35%),
+        linear-gradient(
+            135deg,
+            #fff7fb,
+            #ffe8f2,
+            #ffd4e5,
+            #f5bfd5
+        );
 
-    color:#4a315d;
+    background-size:200% 200%;
+    animation:bgMove 12s ease infinite;
+
+    color:#59424c;
     padding-top:70px;
+}
+
+
+/* =========================
+   พื้นหลังเคลื่อนไหว
+========================= */
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
 }
 
 
@@ -36,28 +67,52 @@ body{
 
 body::before{
     content:"✦  ✧  ♡  ✦  ✧";
+
     position:fixed;
+
     top:100px;
     left:20px;
 
     font-size:25px;
-    color:rgba(255,255,255,0.8);
+
+    color:rgba(255,255,255,0.82);
+
     letter-spacing:12px;
 
     pointer-events:none;
+
+    animation:floatDecor 4s ease-in-out infinite;
 }
 
 body::after{
     content:"♡  ✦  ✧  ♡";
+
     position:fixed;
+
     bottom:70px;
     right:25px;
 
     font-size:28px;
-    color:rgba(255,255,255,0.8);
+
+    color:rgba(255,255,255,0.82);
+
     letter-spacing:10px;
 
     pointer-events:none;
+
+    animation:floatDecor 5s ease-in-out infinite;
+}
+
+@keyframes floatDecor{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
 }
 
 
@@ -67,6 +122,7 @@ body::after{
 
 .top-bar{
     position:fixed;
+
     top:0;
     left:0;
 
@@ -74,34 +130,51 @@ body::after{
     height:62px;
 
     background:rgba(255,255,255,0.94);
+
     backdrop-filter:blur(12px);
 
     display:flex;
+
     align-items:center;
 
     padding:0 25px;
 
-    box-shadow:0 5px 20px rgba(100,60,120,0.12);
+    box-shadow:
+        0 5px 20px rgba(150,52,93,0.12);
 
     z-index:1000;
 }
 
 .school{
     display:flex;
+
     align-items:center;
+
     gap:10px;
 }
 
 .school img{
     width:40px;
     height:40px;
+
     object-fit:contain;
+
+    background:white;
+
+    border-radius:50%;
+
+    padding:3px;
+
+    box-shadow:
+        0 3px 10px rgba(201,76,125,0.18);
 }
 
 .school span{
     font-size:15px;
+
     font-weight:600;
-    color:#57376f;
+
+    color:#96345d;
 }
 
 
@@ -111,7 +184,9 @@ body::after{
 
 .container{
     width:90%;
+
     max-width:1050px;
+
     margin:auto;
 }
 
@@ -122,6 +197,7 @@ body::after{
 
 .page-title{
     text-align:center;
+
     margin:35px 0 45px;
 }
 
@@ -130,19 +206,25 @@ body::after{
 
     background:linear-gradient(
         90deg,
-        #b83280,
-        #7c3aed,
-        #d946a6
+        #c83f73,
+        #e06495,
+        #c94c7d,
+        #96345d
     );
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 
     margin-bottom:8px;
+
+    filter:drop-shadow(
+        0 3px 5px rgba(150,52,93,0.12)
+    );
 }
 
 .page-title p{
-    color:#806b8f;
+    color:#9b6377;
+
     font-size:16px;
 }
 
@@ -157,21 +239,48 @@ body::after{
     border-radius:28px;
 
     padding:25px;
+
     margin-bottom:30px;
 
-    border:2px solid rgba(255,255,255,0.9);
+    border:2px solid rgba(255,255,255,0.92);
 
     box-shadow:
-        0 10px 30px rgba(100,55,120,0.13);
+        0 10px 30px rgba(150,52,93,0.13);
 
     transition:0.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* แถบด้านบนการ์ด */
+
+.work-card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #e66d9c,
+        #c94c7d,
+        #96345d
+    );
 }
 
 .work-card:hover{
     transform:translateY(-6px);
 
     box-shadow:
-        0 18px 35px rgba(130,60,140,0.20);
+        0 18px 35px rgba(150,52,93,0.20);
 }
 
 
@@ -181,6 +290,7 @@ body::after{
 
 .image-group{
     display:grid;
+
     grid-template-columns:1fr 1fr;
 
     gap:18px;
@@ -190,24 +300,28 @@ body::after{
 
 .image-group img{
     width:100%;
+
     height:280px;
 
     object-fit:contain;
 
-    background:#fffafd;
+    background:#fff8fb;
 
     border-radius:20px;
 
     padding:8px;
 
     box-shadow:
-        0 5px 18px rgba(100,60,120,0.10);
+        0 5px 18px rgba(150,52,93,0.10);
 
     transition:0.3s;
 }
 
 .image-group img:hover{
     transform:scale(1.02);
+
+    box-shadow:
+        0 8px 20px rgba(201,76,125,0.16);
 }
 
 
@@ -224,16 +338,20 @@ body::after{
 
     background:linear-gradient(
         135deg,
-        #f8b4d9,
-        #d8b4fe
+        #ffe1ec,
+        #f5bfd5
     );
 
-    color:#663b76;
+    color:#96345d;
 
     font-size:13px;
+
     font-weight:700;
 
     margin-bottom:10px;
+
+    box-shadow:
+        0 3px 8px rgba(201,76,125,0.08);
 }
 
 
@@ -242,7 +360,7 @@ body::after{
 ========================= */
 
 .work-card h2{
-    color:#633b78;
+    color:#96345d;
 
     font-size:23px;
 
@@ -255,7 +373,7 @@ body::after{
 ========================= */
 
 .work-card p{
-    color:#62576a;
+    color:#62545a;
 
     font-size:15px;
 
@@ -276,13 +394,21 @@ body::after{
 .certificate-title h1{
     font-size:32px;
 
-    color:#633b78;
+    background:linear-gradient(
+        90deg,
+        #c83f73,
+        #e06495,
+        #96345d
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 
     margin-bottom:7px;
 }
 
 .certificate-title p{
-    color:#806b8f;
+    color:#9b6377;
 
     font-size:16px;
 }
@@ -302,47 +428,82 @@ body::after{
     margin-bottom:20px;
 
     display:flex;
+
     align-items:center;
 
     gap:25px;
 
-    border:2px solid rgba(255,255,255,0.9);
+    border:2px solid rgba(255,255,255,0.92);
 
     box-shadow:
-        0 8px 25px rgba(100,55,120,0.12);
+        0 8px 25px rgba(150,52,93,0.12);
 
     transition:0.3s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* แถบด้านซ้าย */
+
+.certificate-card::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:5px;
+    height:100%;
+
+    background:linear-gradient(
+        180deg,
+        #e66d9c,
+        #c94c7d,
+        #96345d
+    );
 }
 
 .certificate-card:hover{
     transform:translateY(-5px);
 
     box-shadow:
-        0 15px 30px rgba(120,60,140,0.18);
+        0 15px 30px rgba(150,52,93,0.18);
 }
 
 
-/* รูปเกียรติบัตร */
+/* =========================
+   รูปเกียรติบัตร
+========================= */
 
 .certificate-card img{
     width:32%;
+
     max-width:330px;
 
     height:190px;
 
     object-fit:contain;
 
-    background:#fffafd;
+    background:#fff8fb;
 
     border-radius:16px;
 
     padding:5px;
 
     flex-shrink:0;
+
+    box-shadow:
+        0 4px 12px rgba(150,52,93,0.08);
 }
 
 
-/* ข้อความ */
+/* =========================
+   ข้อความ
+========================= */
 
 .certificate-content{
     flex:1;
@@ -351,7 +512,7 @@ body::after{
 }
 
 .certificate-content p{
-    color:#62576a;
+    color:#62545a;
 
     font-size:15px;
 
@@ -360,7 +521,7 @@ body::after{
 
 
 /* =========================
-   ปุ่มย้อนกลับด้านล่าง
+   ปุ่มย้อนกลับ
 ========================= */
 
 .bottom-button{
@@ -377,19 +538,20 @@ body::after{
     color:white;
 
     font-size:16px;
+
     font-weight:600;
 
     border-radius:30px;
 
     background:linear-gradient(
-        90deg,
-        #b83280,
-        #7c3aed,
-        #d946a6
+        135deg,
+        #e66d9c,
+        #c94c7d,
+        #96345d
     );
 
     box-shadow:
-        0 8px 20px rgba(150,60,150,0.22);
+        0 8px 20px rgba(201,76,125,0.22);
 
     transition:0.3s;
 }
@@ -398,7 +560,7 @@ body::after{
     transform:translateY(-4px);
 
     box-shadow:
-        0 12px 25px rgba(150,60,150,0.30);
+        0 12px 25px rgba(150,52,93,0.30);
 }
 
 
@@ -411,7 +573,7 @@ body::after{
 
     margin:35px 0 30px;
 
-    color:#806b8f;
+    color:#9b6377;
 
     font-size:14px;
 
@@ -431,6 +593,7 @@ body::after{
 
     .top-bar{
         height:55px;
+
         padding:0 12px;
     }
 
@@ -464,11 +627,13 @@ body::after{
 
     .work-card{
         padding:15px;
+
         border-radius:22px;
     }
 
     .image-group{
         grid-template-columns:1fr;
+
         gap:12px;
     }
 
@@ -482,6 +647,7 @@ body::after{
 
     .work-card p{
         font-size:13px;
+
         line-height:1.8;
     }
 
@@ -502,12 +668,15 @@ body::after{
 
     .certificate-card{
         display:block;
+
         padding:12px;
     }
 
     .certificate-card img{
         width:100%;
+
         max-width:none;
+
         height:200px;
     }
 
@@ -517,13 +686,16 @@ body::after{
 
     .certificate-content p{
         font-size:13px;
+
         line-height:1.8;
     }
 
     .bottom-button{
         font-size:14px;
+
         padding:11px 25px;
     }
+
 }
 
 </style>
@@ -541,7 +713,10 @@ body::after{
 
     <div class="school">
 
-        <img src="IMG_2964.jpeg" alt="โลโก้โรงเรียน">
+        <img
+            src="IMG_2964.jpeg"
+            alt="โลโก้โรงเรียน"
+        >
 
         <span>
             โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
@@ -578,7 +753,6 @@ body::after{
 
     <!-- =========================
          ผลงานที่ 01
-         เดิมคือผลงานที่ 03
     ========================= -->
 
     <div class="work-card">
@@ -618,7 +792,6 @@ body::after{
 
     <!-- =========================
          ผลงานที่ 02
-         เดิมคือผลงานที่ 04
     ========================= -->
 
     <div class="work-card">
@@ -647,8 +820,8 @@ body::after{
 
         <p>
             เข้าร่วมอบรมโครงการเปิดโลกวิชาการ 2026
-            ได้รับความรู้และได้ลงมือปฏิบัติจริงในการชำแหละหัวใจกบ
-            การทำฟัน และได้ฝึกความสามัคคีในการสร้างสะพาน
+            กิจกรรมนี้ได้รับความรู้และได้ลงมือปฏิบัติจริงในการชำแหละหัวใจกบ
+            และได้ฝึกความสามัคคีในการสร้างสะพาน การสื่อสารกับผู้อื่น
         </p>
 
     </div>
@@ -657,7 +830,6 @@ body::after{
 
     <!-- =========================
          ผลงานที่ 03
-         เดิมคือผลงานที่ 05
     ========================= -->
 
     <div class="work-card">
@@ -685,11 +857,10 @@ body::after{
         </h2>
 
         <p>
-            ได้ฝึกประสบการณ์ที่โรงพยาบาลบ้านบึง เป็นเวลารวม 5 วัน 40 ชั่วโมง
-            ได้รับความรู้จากการเรียนรู้หลายแผนก เช่น ห้องแล็บ
-            นักรังสีการแพทย์ เทคนิคการแพทย์ และแผนกเภสัชกรรม
-            รวมถึงได้เข้าเวรเช้า วัดความดัน วัดรอบเอว
-            ซักถามประวัติผู้ป่วย ฝึกการพูดและความกล้าแสดงออก
+            ได้ฝึกประสบการณ์ที่โรงพยาบาลบ้านบึง 40 ชั่วโมง
+            ได้ เข้าเวรเช้า วัดความดัน วัดรอบเอว
+            ซักถามประวัติผู้ป่วย ฝึกการพูดและความกล้าแสดงออก และการบริการ
+            ให้กับผู้ป่วย
         </p>
 
     </div>
@@ -714,10 +885,7 @@ body::after{
 
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 01
-         เดิมคือเกียรติบัตรที่ 03
-    ========================= -->
+    <!-- เกียรติบัตร 01 -->
 
     <div class="certificate-card">
 
@@ -743,10 +911,7 @@ body::after{
 
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 02
-         เดิมคือเกียรติบัตรที่ 04
-    ========================= -->
+    <!-- เกียรติบัตร 02 -->
 
     <div class="certificate-card">
 
@@ -772,22 +937,7 @@ body::after{
 
 
 
-    <!--
-        ❌ เกียรติบัตรเดิมที่ 5 ถูกลบออกทั้งกรอบ รูป และข้อความ
-    -->
-
-
-
-    <!--
-        ❌ เกียรติบัตรเดิมที่ 6 ถูกลบออกทั้งกรอบ รูป และข้อความ
-    -->
-
-
-
-    <!-- =========================
-         เกียรติบัตรที่ 03
-         เดิมคือเกียรติบัตรที่ 07
-    ========================= -->
+    <!-- เกียรติบัตร 03 -->
 
     <div class="certificate-card">
 
@@ -815,10 +965,7 @@ body::after{
 
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 04
-         เดิมคือเกียรติบัตรที่ 08
-    ========================= -->
+    <!-- เกียรติบัตร 04 -->
 
     <div class="certificate-card">
 
@@ -844,10 +991,7 @@ body::after{
 
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 05
-         เดิมคือเกียรติบัตรที่ 09
-    ========================= -->
+    <!-- เกียรติบัตร 05 -->
 
     <div class="certificate-card">
 
@@ -874,10 +1018,7 @@ body::after{
 
 
 
-    <!-- =========================
-         เกียรติบัตรที่ 06
-         เดิมคือเกียรติบัตรที่ 10
-    ========================= -->
+    <!-- เกียรติบัตร 06 -->
 
     <div class="certificate-card">
 
@@ -904,7 +1045,7 @@ body::after{
 
 
     <!-- =========================
-         ปุ่มกลับด้านล่าง
+         ปุ่มกลับ
     ========================= -->
 
     <a href="portfolio.html" class="bottom-button">
@@ -919,9 +1060,11 @@ body::after{
 
         ✦ Warintha Lueangoon ✦
         <br>
+
         Portfolio & Activities
 
     </div>
+
 
 </div>
 

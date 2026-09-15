@@ -17,17 +17,45 @@
       font-family:'Mali', cursive;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       min-height:100vh;
       padding-top:70px;
+      overflow-x:hidden;
+
+      color:#5b3048;
 
       background:
-        radial-gradient(circle at 10% 15%, #f9a8d4 0%, transparent 25%),
-        radial-gradient(circle at 90% 20%, #ddd6fe 0%, transparent 28%),
-        radial-gradient(circle at 80% 90%, #e9d5ff 0%, transparent 30%),
-        linear-gradient(135deg,#fff1f8,#fce7f3,#ede9fe);
+        radial-gradient(
+          circle at 8% 15%,
+          rgba(255,177,208,0.82),
+          transparent 25%
+        ),
 
-      color:#4a3152;
+        radial-gradient(
+          circle at 92% 20%,
+          rgba(245,185,207,0.78),
+          transparent 28%
+        ),
+
+        radial-gradient(
+          circle at 80% 90%,
+          rgba(204,91,139,0.35),
+          transparent 30%
+        ),
+
+        linear-gradient(
+          135deg,
+          #fff7fb,
+          #ffe8f2,
+          #ffd4e5,
+          #f5bfd5
+        );
+
+      position:relative;
     }
 
 
@@ -49,15 +77,20 @@
 
       padding:8px 6%;
 
-      background:rgba(255,255,255,0.90);
+      background:
+        rgba(255,250,253,0.90);
 
-      backdrop-filter:blur(15px);
+      backdrop-filter:blur(18px);
+
+      border-bottom:
+        1px solid rgba(190,65,115,0.15);
 
       box-shadow:
-        0 5px 20px rgba(180,70,170,0.12);
+        0 5px 25px rgba(150,45,90,0.13);
 
       z-index:1000;
     }
+
 
     .school-logo{
 
@@ -72,9 +105,13 @@
 
       background:white;
 
+      padding:3px;
+
       box-shadow:
-        0 0 0 2px #f9a8d4;
+        0 0 0 2px #f3a2bd,
+        0 5px 14px rgba(160,50,90,0.16);
     }
+
 
     .school-name{
 
@@ -82,7 +119,7 @@
 
       font-weight:bold;
 
-      color:#6b3f68;
+      color:#71354f;
     }
 
 
@@ -99,6 +136,11 @@
 
     }
 
+
+    /* =========================
+       TITLE
+    ========================= */
+
     .title{
 
       text-align:center;
@@ -108,9 +150,10 @@
       background:
         linear-gradient(
           90deg,
-          #db2777,
-          #c026d3,
-          #8b5cf6
+          #c83f73,
+          #e06495,
+          #c94c7d,
+          #96345d
         );
 
       -webkit-background-clip:text;
@@ -118,18 +161,20 @@
 
       margin-bottom:3px;
 
+      text-shadow:
+        0 5px 20px rgba(190,65,115,0.12);
     }
+
 
     .subtitle{
 
       text-align:center;
 
-      color:#95558e;
+      color:#92516b;
 
       font-size:17px;
 
       margin-bottom:30px;
-
     }
 
 
@@ -140,28 +185,52 @@
     .sop-card{
 
       background:
-        rgba(255,255,255,0.86);
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,0.90),
+          rgba(255,239,247,0.82),
+          rgba(255,222,236,0.72)
+        );
 
       border:
-        2px solid rgba(255,255,255,0.95);
+        2px solid rgba(255,255,255,0.96);
 
       border-radius:32px;
 
       padding:35px;
 
-      backdrop-filter:blur(15px);
+      backdrop-filter:blur(18px);
 
       box-shadow:
-        0 18px 45px rgba(168,85,247,0.16);
+        0 20px 50px rgba(150,45,90,0.18),
+        0 0 35px rgba(230,109,156,0.10);
 
       position:relative;
 
       overflow:hidden;
 
+      animation:cardShow 0.9s ease;
     }
 
 
-    /* แสงตกแต่ง */
+    @keyframes cardShow{
+
+      from{
+        opacity:0;
+        transform:translateY(35px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+
+    /* =========================
+       แสงตกแต่ง
+    ========================= */
 
     .sop-card::before{
 
@@ -169,19 +238,26 @@
 
       position:absolute;
 
-      width:180px;
-      height:180px;
+      width:210px;
+      height:210px;
 
       border-radius:50%;
 
-      background:#f9a8d4;
+      background:
+        linear-gradient(
+          135deg,
+          #f4a1bd,
+          #d95b8b
+        );
 
-      opacity:0.18;
+      opacity:0.17;
 
-      top:-90px;
-      right:-70px;
+      top:-105px;
+      right:-80px;
 
+      filter:blur(2px);
     }
+
 
     .sop-card::after{
 
@@ -189,18 +265,24 @@
 
       position:absolute;
 
-      width:150px;
-      height:150px;
+      width:170px;
+      height:170px;
 
       border-radius:50%;
 
-      background:#c4b5fd;
+      background:
+        linear-gradient(
+          135deg,
+          #ffd1e1,
+          #c94c7d
+        );
 
-      opacity:0.18;
+      opacity:0.15;
 
-      bottom:-80px;
-      left:-70px;
+      bottom:-90px;
+      left:-80px;
 
+      filter:blur(3px);
     }
 
 
@@ -227,11 +309,25 @@
       border:5px solid white;
 
       box-shadow:
-        0 10px 25px rgba(160,70,150,0.18);
+        0 0 0 3px #f1a1bc,
+        0 12px 30px rgba(135,45,85,0.20);
 
       position:relative;
+
       z-index:2;
 
+      transition:0.45s;
+    }
+
+
+    .sop-image:hover{
+
+      transform:
+        scale(1.015);
+
+      box-shadow:
+        0 0 0 4px #d95b8b,
+        0 16px 35px rgba(135,45,85,0.25);
     }
 
 
@@ -242,6 +338,7 @@
     .sop-content{
 
       position:relative;
+
       z-index:2;
 
       padding:28px 30px;
@@ -249,29 +346,30 @@
       background:
         linear-gradient(
           135deg,
-          rgba(253,242,248,0.95),
-          rgba(245,243,255,0.95)
+          rgba(255,248,252,0.97),
+          rgba(255,231,241,0.94),
+          rgba(250,210,225,0.84)
         );
 
       border-left:
-        6px solid #d946ef;
+        6px solid #d95b8b;
 
       border-radius:22px;
 
       box-shadow:
-        0 8px 20px rgba(168,85,247,0.08);
-
+        0 10px 25px rgba(150,45,90,0.10);
     }
+
 
     .sop-content h2{
 
-      color:#a21caf;
+      color:#a33862;
 
       font-size:24px;
 
       margin-bottom:12px;
-
     }
+
 
     .sop-content p{
 
@@ -281,8 +379,7 @@
 
       text-align:justify;
 
-      color:#57445b;
-
+      color:#57404c;
     }
 
 
@@ -302,10 +399,10 @@
 
       background:
         linear-gradient(
-          90deg,
-          #ec4899,
-          #d946ef,
-          #8b5cf6
+          100deg,
+          #e66d9c,
+          #c94c7d,
+          #96345d
         );
 
       color:white;
@@ -317,17 +414,80 @@
       font-weight:bold;
 
       box-shadow:
-        0 8px 20px rgba(217,70,239,0.25);
+        0 9px 22px rgba(160,50,90,0.28);
 
       transition:0.35s;
-
     }
+
 
     .back-button:hover{
 
       transform:
         translateY(-4px)
         scale(1.04);
+
+      box-shadow:
+        0 13px 30px rgba(145,45,80,0.35);
+    }
+
+
+    /* =========================
+       ตกแต่งเล็ก ๆ
+    ========================= */
+
+    .container::before{
+
+      content:"✦";
+
+      position:fixed;
+
+      top:120px;
+
+      left:8%;
+
+      color:#c94c7d;
+
+      font-size:22px;
+
+      opacity:0.45;
+
+      animation:floatStar 3s ease-in-out infinite;
+    }
+
+
+    .container::after{
+
+      content:"♡";
+
+      position:fixed;
+
+      bottom:90px;
+
+      right:9%;
+
+      color:#d95b8b;
+
+      font-size:25px;
+
+      opacity:0.45;
+
+      animation:floatStar 3s ease-in-out infinite 1s;
+    }
+
+
+    @keyframes floatStar{
+
+      0%,100%{
+        transform:
+          translateY(0)
+          rotate(0);
+      }
+
+      50%{
+        transform:
+          translateY(-12px)
+          rotate(8deg);
+      }
 
     }
 
@@ -342,6 +502,7 @@
         padding-top:60px;
       }
 
+
       .top-bar{
 
         height:58px;
@@ -350,6 +511,7 @@
 
       }
 
+
       .school-logo{
 
         width:36px;
@@ -357,11 +519,13 @@
 
       }
 
+
       .school-name{
 
         font-size:10px;
 
       }
+
 
       .container{
 
@@ -371,11 +535,13 @@
 
       }
 
+
       .title{
 
         font-size:32px;
 
       }
+
 
       .subtitle{
 
@@ -385,6 +551,7 @@
 
       }
 
+
       .sop-card{
 
         padding:18px;
@@ -392,6 +559,7 @@
         border-radius:24px;
 
       }
+
 
       .sop-image{
 
@@ -403,6 +571,7 @@
 
       }
 
+
       .sop-content{
 
         padding:20px;
@@ -411,17 +580,28 @@
 
       }
 
+
       .sop-content h2{
 
         font-size:20px;
 
       }
 
+
       .sop-content p{
 
         font-size:15px;
 
         line-height:1.9;
+
+      }
+
+
+      .back-button{
+
+        font-size:14px;
+
+        padding:10px 22px;
 
       }
 
@@ -435,13 +615,16 @@
 <body>
 
 
-  <!-- แถบบน -->
+  <!-- =========================
+       แถบบน
+  ========================= -->
 
   <div class="top-bar">
 
     <img
       src="IMG_2964.jpeg"
       class="school-logo"
+      alt="โลโก้โรงเรียน"
     >
 
     <div class="school-name">
@@ -451,7 +634,9 @@
   </div>
 
 
-  <!-- เนื้อหา -->
+  <!-- =========================
+       เนื้อหา
+  ========================= -->
 
   <div class="container">
 
@@ -474,6 +659,7 @@
       <img
         src="IMG_2955.jpeg"
         class="sop-image"
+        alt="SOP"
       >
 
 
@@ -486,13 +672,13 @@
         </h2>
 
         <p>
-          ข้าพเจ้ามีความสนใจในด้านธุรกิจ การเงินและการบัญชี
+          ดิฉันมีความสนใจในด้านธุรกิจ การเงินและการบัญชี
           และมีความชื่นชอบในตัวเลข จึงมีความตั้งใจที่จะศึกษาต่อใน
-          คณะพาณิชยศาสตร์และการบัญชี เพื่อพัฒนาความรู้ ความสามารถ 
-          และทักษะที่จำเป็นต่อการทำงาน ข้าพเจ้าตั้งใจเรียนรู้และ
-          พัฒนาตนเองอย่างต่อเนื่อง พร้อมทั้งฝึกความรับผิดชอบ
-          และการทำงานร่วมกับผู้อื่น เพื่อนำความรู้และประสบการณ์ที่ได้รับ
-          ไปต่อยอดในการประกอบอาชีพ และสร้างอนาคตที่ดีในเส้นทางนี้
+          คณะพาณิชยศาสตร์และการบัญชี จุฬาลงกรณ์มหาวิทยาลัย 
+          เพื่อพัฒนาความรู้ ความสามารถ และทักษะที่จำเป็นต่อการทำงาน 
+          ข้าพเจ้าตั้งใจเรียนรู้และ พัฒนาตนเองอย่างต่อเนื่อง พร้อมทั้งฝึก
+          ความรับผิดชอบและการทำงานร่วมกับผู้อื่น เพื่อนำความรู้และประสบการณ์
+          ที่ได้รับไปต่อยอดในการประกอบอาชีพ และสร้างอนาคตที่ดีในเส้นทางนี้
         </p>
 
       </div>
@@ -513,4 +699,3 @@
 
 </body>
 </html>
-```

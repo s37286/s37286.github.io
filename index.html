@@ -24,8 +24,16 @@ html{
 body{
     min-height:100vh;
     overflow-x:hidden;
-    background:#fff5fb;
-    color:#4a3152;
+    color:#5b3048;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7fb,
+            #ffeaf4,
+            #ffd6e7,
+            #f9c0d8
+        );
 }
 
 /* =========================
@@ -39,8 +47,8 @@ body{
     width:100%;
     height:70px;
 
-    background:rgba(255,255,255,0.90);
-    backdrop-filter:blur(15px);
+    background:rgba(255,250,253,0.88);
+    backdrop-filter:blur(18px);
 
     display:flex;
     align-items:center;
@@ -49,9 +57,10 @@ body{
 
     z-index:1000;
 
-    border-bottom:1px solid rgba(217,70,239,0.12);
+    border-bottom:1px solid rgba(190,65,115,0.15);
 
-    box-shadow:0 5px 25px rgba(190,80,180,0.12);
+    box-shadow:
+        0 5px 30px rgba(150,45,90,0.13);
 }
 
 .school{
@@ -69,11 +78,12 @@ body{
     border-radius:12px;
     padding:3px;
 
-    box-shadow:0 4px 12px rgba(180,70,170,0.15);
+    box-shadow:
+        0 5px 15px rgba(170,55,100,0.18);
 }
 
 .school-name{
-    color:#6b3f68;
+    color:#71354f;
     font-size:16px;
     font-weight:bold;
 }
@@ -95,11 +105,32 @@ body{
     overflow:hidden;
 
     background:
-        radial-gradient(circle at 10% 20%, #f9a8d4 0%, transparent 25%),
-        radial-gradient(circle at 90% 15%, #ddd6fe 0%, transparent 28%),
-        radial-gradient(circle at 80% 90%, #e9d5ff 0%, transparent 30%),
-        linear-gradient(135deg,#fff1f8,#fce7f3,#ede9fe);
 
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(255,177,208,0.85) 0%,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 92% 12%,
+            rgba(245,185,207,0.8) 0%,
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 85% 90%,
+            rgba(204,91,139,0.38) 0%,
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff7fb,
+            #ffe8f2,
+            #ffd4e5,
+            #f5bfd5
+        );
 }
 
 /* =========================
@@ -109,8 +140,11 @@ body{
 .shape{
     position:absolute;
     border-radius:50%;
-    filter:blur(1px);
+
+    filter:blur(2px);
+
     opacity:0.55;
+
     animation:moveShape 7s ease-in-out infinite;
 }
 
@@ -118,7 +152,12 @@ body{
     width:220px;
     height:220px;
 
-    background:#f472b6;
+    background:
+        linear-gradient(
+            135deg,
+            #ffb3d0,
+            #e86b9c
+        );
 
     top:8%;
     left:-70px;
@@ -128,7 +167,12 @@ body{
     width:300px;
     height:300px;
 
-    background:#c4b5fd;
+    background:
+        linear-gradient(
+            135deg,
+            #f6b4cc,
+            #b84d78
+        );
 
     right:-100px;
     bottom:-80px;
@@ -140,7 +184,12 @@ body{
     width:110px;
     height:110px;
 
-    background:#e879f9;
+    background:
+        linear-gradient(
+            135deg,
+            #ff9fc5,
+            #d95b91
+        );
 
     right:18%;
     top:20%;
@@ -152,7 +201,12 @@ body{
     width:80px;
     height:80px;
 
-    background:#fbcfe8;
+    background:
+        linear-gradient(
+            135deg,
+            #ffd3e4,
+            #ed8eb0
+        );
 
     left:15%;
     bottom:15%;
@@ -188,16 +242,22 @@ body{
 
     padding:50px;
 
-    background:rgba(255,255,255,0.72);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.82),
+            rgba(255,239,247,0.72)
+        );
 
-    border:1px solid rgba(255,255,255,0.9);
+    border:1px solid rgba(255,255,255,0.95);
 
     border-radius:35px;
 
-    backdrop-filter:blur(20px);
+    backdrop-filter:blur(22px);
 
     box-shadow:
-        0 25px 70px rgba(160,70,150,0.18);
+        0 25px 70px rgba(135,45,85,0.20),
+        0 0 40px rgba(235,120,165,0.12);
 
     position:relative;
     z-index:2;
@@ -237,11 +297,15 @@ body{
     background:
         linear-gradient(
             160deg,
-            rgba(251,207,232,0.65),
-            rgba(221,214,254,0.75)
+            rgba(255,219,233,0.82),
+            rgba(247,190,214,0.65),
+            rgba(222,128,166,0.38)
         );
 
     border-radius:30px;
+
+    box-shadow:
+        inset 0 0 30px rgba(255,255,255,0.45);
 }
 
 .profile-image{
@@ -256,8 +320,8 @@ body{
     border:7px solid white;
 
     box-shadow:
-        0 0 0 6px #f472b6,
-        0 15px 35px rgba(170,70,160,0.25);
+        0 0 0 6px #df6796,
+        0 15px 35px rgba(135,45,85,0.28);
 
     margin-bottom:22px;
 
@@ -271,8 +335,8 @@ body{
         rotate(-3deg);
 
     box-shadow:
-        0 0 0 8px #c084fc,
-        0 18px 40px rgba(170,70,160,0.3);
+        0 0 0 8px #a83f68,
+        0 18px 45px rgba(135,45,85,0.32);
 }
 
 .side-name{
@@ -280,14 +344,14 @@ body{
     font-size:22px;
     font-weight:bold;
 
-    color:#9d357f;
+    color:#8f315c;
 
     margin-bottom:5px;
 }
 
 .side-eng{
 
-    color:#86658a;
+    color:#8c6376;
     font-size:15px;
 }
 
@@ -304,7 +368,7 @@ body{
 
 .welcome{
 
-    color:#b83280;
+    color:#b44870;
 
     font-size:17px;
 
@@ -319,9 +383,9 @@ body{
     background:
         linear-gradient(
             90deg,
-            #db2777,
-            #c026d3,
-            #8b5cf6
+            #c83f73,
+            #e06495,
+            #9d365f
         );
 
     -webkit-background-clip:text;
@@ -334,7 +398,7 @@ body{
 
     font-size:34px;
 
-    color:#6d28d9;
+    color:#8d3159;
 
     margin-bottom:4px;
 }
@@ -343,7 +407,7 @@ body{
 
     font-size:18px;
 
-    color:#8b6b91;
+    color:#987083;
 
     margin-bottom:25px;
 }
@@ -359,24 +423,24 @@ body{
     background:
         linear-gradient(
             135deg,
-            rgba(253,242,248,0.95),
-            rgba(245,243,255,0.95)
+            rgba(255,248,252,0.96),
+            rgba(255,225,238,0.92),
+            rgba(250,207,224,0.82)
         );
 
-    border-left:6px solid #e879a9;
+    border-left:6px solid #d95b8b;
 
     border-radius:20px;
 
     box-shadow:
-        0 10px 25px rgba(180,80,160,0.08);
-
+        0 10px 30px rgba(150,55,95,0.10);
 }
 
 .info-item{
 
     margin:12px 0;
 
-    color:#5f4664;
+    color:#634454;
 
     line-height:1.9;
 
@@ -385,7 +449,7 @@ body{
 
 .info-item b{
 
-    color:#a21caf;
+    color:#a73868;
 
 }
 
@@ -415,14 +479,14 @@ body{
 
     background:
         linear-gradient(
-            90deg,
-            #ec4899,
-            #d946ef,
-            #8b5cf6
+            100deg,
+            #e66d9c,
+            #c94c7d,
+            #96345d
         );
 
     box-shadow:
-        0 10px 25px rgba(217,70,239,0.28);
+        0 10px 28px rgba(160,50,90,0.30);
 
     transition:0.4s;
 }
@@ -434,7 +498,7 @@ body{
         scale(1.04);
 
     box-shadow:
-        0 15px 35px rgba(217,70,239,0.38);
+        0 15px 38px rgba(145,45,80,0.38);
 }
 
 /* =========================
@@ -445,7 +509,7 @@ body{
 
     margin-top:22px;
 
-    color:#9b6d9d;
+    color:#a66d83;
 
     font-size:14px;
 }
@@ -536,9 +600,7 @@ body{
 
 </head>
 
-
 <body>
-
 
 <!-- =========================
      NAVBAR
@@ -562,26 +624,18 @@ body{
 
 </header>
 
-
 <!-- =========================
      HERO
 ========================= -->
 
 <section class="hero">
 
-
-    <!-- พื้นหลังตกแต่ง -->
-
     <div class="shape shape1"></div>
     <div class="shape shape2"></div>
     <div class="shape shape3"></div>
     <div class="shape shape4"></div>
 
-
-    <!-- CARD -->
-
     <div class="profile-card">
-
 
         <!-- PROFILE LEFT -->
 
@@ -603,7 +657,6 @@ body{
 
         </div>
 
-
         <!-- CONTENT RIGHT -->
 
         <div class="content">
@@ -612,23 +665,17 @@ body{
                 ✨ Welcome to my personal website ✨
             </p>
 
-
             <h1 class="title">
                 ยินดีต้อนรับสู่โปรไฟล์
             </h1>
-
 
             <h2 class="name">
                 วรินทรา เหลืองอ่อน
             </h2>
 
-
             <p class="eng-name">
                 ( Warintha Lueangoon )
             </p>
-
-
-            <!-- ข้อมูล -->
 
             <div class="info-box">
 
@@ -638,25 +685,21 @@ body{
 
                 <p class="info-item">
                     📚 <b>สนใจศึกษาต่อ</b>
-                    คณะพาณิชยศาสตร์และการบัญชี
+                    คณะพาณิชยศาสตร์และการบัญชี มหาวิทยาลัยจุฬาลงกรณ์
                 </p>
 
                 <p class="info-item">
-                    💜 ขอบคุณที่เข้ามาเยี่ยมชมเว็บไซต์ของฉัน
+                    💗 ขอบคุณที่เข้ามาเยี่ยมชมเว็บไซต์
                 </p>
 
             </div>
-
-
-            <!-- ปุ่ม -->
 
             <a href="portfolio.html" class="button">
                 เลือกหัวข้อ Portfolio ✨
             </a>
 
-
             <p class="footer">
-                💗 💜 ✨ Welcome to my Portfolio ✨ 💜 💗
+                💗 ✨ Welcome to my Portfolio ✨ 💗
             </p>
 
         </div>
@@ -665,7 +708,5 @@ body{
 
 </section>
 
-
 </body>
 </html>
-```

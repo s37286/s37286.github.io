@@ -17,16 +17,40 @@
     font-family:'Mali', cursive;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     min-height:100vh;
     padding-top:72px;
     overflow-x:hidden;
 
+    color:#5b3048;
+
     background:
-        radial-gradient(circle at 8% 18%, rgba(244,114,182,0.38), transparent 25%),
-        radial-gradient(circle at 92% 15%, rgba(196,181,253,0.45), transparent 28%),
-        radial-gradient(circle at 50% 100%, rgba(232,121,249,0.25), transparent 35%),
-        linear-gradient(135deg,#fff1f8,#fce7f3,#ede9fe,#fdf2f8);
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(255,177,208,0.82),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(245,185,207,0.75),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(204,91,139,0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fff7fb,
+            #ffe8f2,
+            #ffd4e5,
+            #f5bfd5
+        );
 
     position:relative;
 }
@@ -45,55 +69,85 @@ body{
 .glow1{
     width:280px;
     height:280px;
+
     border-radius:50%;
 
-    background:#f472b6;
-    opacity:0.18;
+    background:
+        linear-gradient(
+            135deg,
+            #ffb3d0,
+            #e86b9c
+        );
+
+    opacity:0.20;
 
     top:80px;
     left:-120px;
 
-    filter:blur(5px);
+    filter:blur(8px);
 }
 
 .glow2{
     width:330px;
     height:330px;
+
     border-radius:50%;
 
-    background:#a78bfa;
-    opacity:0.20;
+    background:
+        linear-gradient(
+            135deg,
+            #f6b4cc,
+            #b84d78
+        );
+
+    opacity:0.18;
 
     right:-150px;
     bottom:-100px;
 
-    filter:blur(8px);
+    filter:blur(10px);
 }
 
 .glow3{
     width:130px;
     height:130px;
+
     border-radius:50%;
 
-    background:#e879f9;
+    background:
+        linear-gradient(
+            135deg,
+            #ff9fc5,
+            #d95b91
+        );
+
     opacity:0.20;
 
     right:15%;
     top:180px;
 
-    filter:blur(5px);
+    filter:blur(7px);
 }
 
 
-/* ดาวตกแต่ง */
+/* =========================
+   ดาวตกแต่ง
+========================= */
 
 .star{
     position:fixed;
-    color:#d946ef;
+
+    color:#c94c7d;
+
     font-size:25px;
+
     opacity:0.5;
 
-    animation:twinkle 2.5s ease-in-out infinite;
+    animation:
+        twinkle
+        2.5s
+        ease-in-out
+        infinite;
 }
 
 .star1{
@@ -104,25 +158,33 @@ body{
 .star2{
     top:350px;
     right:8%;
+
     animation-delay:1s;
 }
 
 .star3{
     bottom:90px;
     left:12%;
+
     animation-delay:1.5s;
 }
 
 @keyframes twinkle{
 
     0%,100%{
-        transform:scale(1) rotate(0);
+        transform:
+            scale(1)
+            rotate(0);
+
         opacity:0.35;
     }
 
     50%{
-        transform:scale(1.35) rotate(15deg);
-        opacity:0.8;
+        transform:
+            scale(1.35)
+            rotate(15deg);
+
+        opacity:0.85;
     }
 
 }
@@ -135,6 +197,7 @@ body{
 .navbar{
 
     position:fixed;
+
     top:0;
     left:0;
 
@@ -142,30 +205,38 @@ body{
     height:70px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
     padding:0 7%;
 
-    background:rgba(255,255,255,0.88);
+    background:
+        rgba(255,250,253,0.90);
 
     backdrop-filter:blur(18px);
 
     border-bottom:
-        1px solid rgba(217,70,239,0.15);
+        1px solid rgba(190,65,115,0.15);
 
     box-shadow:
-        0 8px 30px rgba(168,85,247,0.12);
+        0 8px 30px rgba(150,45,90,0.13);
 
     z-index:1000;
 }
 
 
-/* โรงเรียน */
+/* =========================
+   โรงเรียน
+========================= */
 
 .school{
+
     display:flex;
+
     align-items:center;
+
     gap:12px;
 }
 
@@ -183,13 +254,13 @@ body{
     border-radius:13px;
 
     box-shadow:
-        0 0 0 2px #f9a8d4,
-        0 5px 12px rgba(190,70,170,0.15);
+        0 0 0 2px #f3a2bd,
+        0 5px 14px rgba(160,50,90,0.16);
 }
 
 .school-name{
 
-    color:#663c6b;
+    color:#71354f;
 
     font-size:15px;
 
@@ -197,7 +268,9 @@ body{
 }
 
 
-/* ปุ่มหน้าแรก */
+/* =========================
+   ปุ่มหน้าแรก
+========================= */
 
 .back-button{
 
@@ -215,14 +288,14 @@ body{
 
     background:
         linear-gradient(
-            90deg,
-            #ec4899,
-            #d946ef,
-            #8b5cf6
+            100deg,
+            #e66d9c,
+            #c94c7d,
+            #96345d
         );
 
     box-shadow:
-        0 8px 20px rgba(217,70,239,0.30);
+        0 8px 22px rgba(160,50,90,0.28);
 
     transition:0.35s;
 }
@@ -234,7 +307,7 @@ body{
         scale(1.05);
 
     box-shadow:
-        0 12px 28px rgba(217,70,239,0.42);
+        0 12px 30px rgba(145,45,80,0.38);
 }
 
 
@@ -268,17 +341,17 @@ body{
     background:
         linear-gradient(
             90deg,
-            #db2777,
-            #ec4899,
-            #c026d3,
-            #7c3aed
+            #c83f73,
+            #e06495,
+            #c94c7d,
+            #96345d
         );
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 
     text-shadow:
-        0 5px 25px rgba(217,70,239,0.12);
+        0 5px 25px rgba(190,65,115,0.12);
 
     margin-bottom:5px;
 
@@ -287,7 +360,7 @@ body{
 
 .subtitle{
 
-    color:#92518c;
+    color:#92516b;
 
     font-size:17px;
 
@@ -347,14 +420,14 @@ body{
     background:
         linear-gradient(
             135deg,
-            #f472b6,
-            #d946ef,
-            #a78bfa
+            #f4a1bd,
+            #d95b8b,
+            #96345d
         );
 
-    opacity:0.28;
+    opacity:0.30;
 
-    filter:blur(4px);
+    filter:blur(5px);
 
     animation:pulse 3s ease-in-out infinite;
 }
@@ -389,10 +462,10 @@ body{
     border:6px solid white;
 
     box-shadow:
-        0 0 0 4px #f472b6,
-        0 0 0 9px #c084fc,
-        0 0 0 14px #fbcfe8,
-        0 15px 35px rgba(160,70,150,0.25);
+        0 0 0 4px #e56b9b,
+        0 0 0 9px #c94c7d,
+        0 0 0 14px #f7c4d8,
+        0 15px 35px rgba(135,45,85,0.25);
 
     transition:0.5s;
 
@@ -406,10 +479,10 @@ body{
         rotate(-4deg);
 
     box-shadow:
-        0 0 0 5px #ec4899,
-        0 0 0 10px #c026d3,
-        0 0 0 15px #ddd6fe,
-        0 20px 40px rgba(160,70,150,0.30);
+        0 0 0 5px #e66d9c,
+        0 0 0 10px #b84270,
+        0 0 0 15px #f4b4cb,
+        0 20px 42px rgba(135,45,85,0.30);
 }
 
 @keyframes profileShow{
@@ -469,24 +542,24 @@ body{
     background:
         linear-gradient(
             135deg,
-            rgba(255,255,255,0.92),
-            rgba(255,245,252,0.80)
+            rgba(255,255,255,0.94),
+            rgba(255,239,247,0.88),
+            rgba(255,222,236,0.72)
         );
 
     border:
-        2px solid rgba(255,255,255,0.95);
+        2px solid rgba(255,255,255,0.96);
 
     border-radius:28px;
 
     backdrop-filter:blur(15px);
 
     box-shadow:
-        0 12px 30px rgba(168,85,247,0.13);
+        0 12px 30px rgba(150,45,90,0.12);
 
     transition:
         transform 0.4s,
         box-shadow 0.4s;
-
 }
 
 
@@ -498,17 +571,22 @@ body{
 
     position:absolute;
 
-    width:150px;
-    height:150px;
+    width:170px;
+    height:170px;
 
     border-radius:50%;
 
-    right:-70px;
-    top:-80px;
+    right:-75px;
+    top:-90px;
 
-    background:#f9a8d4;
+    background:
+        linear-gradient(
+            135deg,
+            #f4a1bd,
+            #d95b8b
+        );
 
-    opacity:0.22;
+    opacity:0.20;
 
 }
 
@@ -530,9 +608,9 @@ body{
     background:
         linear-gradient(
             180deg,
-            #ec4899,
-            #d946ef,
-            #8b5cf6
+            #e66d9c,
+            #c94c7d,
+            #96345d
         );
 
 }
@@ -547,7 +625,7 @@ body{
         scale(1.015);
 
     box-shadow:
-        0 20px 45px rgba(168,85,247,0.22);
+        0 20px 45px rgba(150,45,90,0.20);
 }
 
 
@@ -578,13 +656,13 @@ body{
     background:
         linear-gradient(
             135deg,
-            #ec4899,
-            #d946ef,
-            #8b5cf6
+            #e66d9c,
+            #c94c7d,
+            #96345d
         );
 
     box-shadow:
-        0 8px 18px rgba(217,70,239,0.28);
+        0 8px 20px rgba(160,50,90,0.25);
 
     margin-right:13px;
 
@@ -612,8 +690,9 @@ body{
     background:
         linear-gradient(
             135deg,
-            #fce7f3,
-            #ede9fe
+            #fff0f6,
+            #ffdce9,
+            #f6bfd4
         );
 
     border:
@@ -624,10 +703,9 @@ body{
     margin-right:15px;
 
     box-shadow:
-        0 6px 15px rgba(168,85,247,0.10);
+        0 6px 16px rgba(150,45,90,0.10);
 
     transition:0.4s;
-
 }
 
 .menu-card:hover .icon{
@@ -635,7 +713,6 @@ body{
     transform:
         rotate(-5deg)
         scale(1.08);
-
 }
 
 
@@ -652,25 +729,22 @@ body{
     position:relative;
 
     z-index:2;
-
 }
 
 .menu-text h2{
 
     font-size:20px;
 
-    color:#7138a3;
+    color:#813653;
 
     margin-bottom:3px;
-
 }
 
 .menu-text p{
 
     font-size:14px;
 
-    color:#ec4899;
-
+    color:#c94c7d;
 }
 
 
@@ -699,12 +773,12 @@ body{
     background:
         linear-gradient(
             135deg,
-            #ec4899,
-            #a855f7
+            #e66d9c,
+            #96345d
         );
 
     box-shadow:
-        0 6px 15px rgba(217,70,239,0.20);
+        0 6px 16px rgba(160,50,90,0.22);
 
     transition:0.35s;
 
@@ -718,7 +792,6 @@ body{
     transform:
         translateX(6px)
         rotate(5deg);
-
 }
 
 
@@ -734,7 +807,6 @@ body{
     width:50%;
 
     justify-self:center;
-
 }
 
 
@@ -888,9 +960,7 @@ body{
 
 </head>
 
-
 <body>
-
 
 <!-- พื้นหลัง -->
 
@@ -937,11 +1007,9 @@ body{
 
 <main class="container">
 
-
     <h1 class="title">
         Portfolio ของฉัน
     </h1>
-
 
     <p class="subtitle">
         ✨ Section - เลือกชม ✨
@@ -1076,7 +1144,5 @@ body{
 
 </main>
 
-
 </body>
 </html>
-```
